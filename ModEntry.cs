@@ -1,7 +1,7 @@
 ﻿using Nickel;
 using HarmonyLib;
-using AuthorName.DemoMod.Cards;
-using AuthorName.DemoMod.Artifacts;
+using DragonOfTruth01.ReshiramCCMod.Cards;
+using DragonOfTruth01.ReshiramCCMod.Artifacts;
 using Microsoft.Extensions.Logging;
 using Nanoray.PluginManager;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 
 /* In the Cobalt Core modding community it is common for namespaces to be <Author>.<ModName>
  * This is helpful to know at a glance what mod we're looking at, and who made it */
-namespace AuthorName.DemoMod;
+namespace DragonOfTruth01.ReshiramCCMod;
 
 /* ModEntry is the base for our mod. Others like to name it Manifest, and some like to name it <ModName>
  * Notice the ': SimpleMod'. This means ModEntry is a subclass (child) of the superclass SimpleMod (parent) from Nickel. This will help us use Nickel's functions more easily! */
@@ -24,21 +24,21 @@ public sealed class ModEntry : SimpleMod
     /* Woah! what's with the block of code right out the gate???
      * These are our manually declared stuff, isn't it neat?
      * Let's continue down, and you'll start getting a hang of how we utilize these */
-    internal ISpriteEntry DemoMod_Character_CardBackground { get; }
-    internal ISpriteEntry DemoMod_Character_CardFrame { get; }
-    internal ISpriteEntry DemoMod_Character_Panel { get; }
-    internal ISpriteEntry DemoMod_Character_Neutral_0 { get; }
-    internal ISpriteEntry DemoMod_Character_Neutral_1 { get; }
-    internal ISpriteEntry DemoMod_Character_Neutral_2 { get; }
-    internal ISpriteEntry DemoMod_Character_Neutral_3 { get; }
-    internal ISpriteEntry DemoMod_Character_Neutral_4 { get; }
-    internal ISpriteEntry DemoMod_Character_Mini_0 { get; }
-    internal ISpriteEntry DemoMod_Character_Squint_0 { get; }
-    internal ISpriteEntry DemoMod_Character_Squint_1 { get; }
-    internal ISpriteEntry DemoMod_Character_Squint_2 { get; }
-    internal ISpriteEntry DemoMod_Character_Squint_3 { get; }
-    internal IDeckEntry DemoMod_Deck { get; }
-    internal IShipEntry DemoMod_Ship { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Neutral_2 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Neutral_3 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Neutral_4 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Mini_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Squint_2 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Squint_3 { get; }
+    internal IDeckEntry ReshiramCCMod_Deck { get; }
+    internal IShipEntry ReshiramCCMod_Ship { get; }
     internal IStatusEntry AutododgeLeftNextTurn { get; }
     internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
         /* Add more starter cards here if you'd like. */
@@ -56,7 +56,7 @@ public sealed class ModEntry : SimpleMod
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
-    internal static IEnumerable<Type> DemoMod_AllCard_Types
+    internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
         => DemoCharacter_StarterCard_Types
         .Concat(DemoCharacter_CommonCard_Types);
 
@@ -67,7 +67,7 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> DemoShip_Artifact_Types { get; } = [
         typeof(DemoArtifactCounting)
     ];
-    internal static IEnumerable<Type> DemoMod_AllArtifact_Types
+    internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
         => DemoCharacter_CommonArtifact_Types
         .Concat(DemoShip_Artifact_Types);
 
@@ -97,23 +97,23 @@ public sealed class ModEntry : SimpleMod
 
         /* Assigning our ISpriteEntry objects manually. This is the easiest way to do it when starting out!
          * Of note: GetRelativeFile is case sensitive. Double check you've written the file names correctly */
-        DemoMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_cardbackground.png"));
-        DemoMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_cardframe.png"));
-        DemoMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_panel.png"));
-        DemoMod_Character_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_neutral_0.png"));
-        DemoMod_Character_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_neutral_1.png"));
-        DemoMod_Character_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_neutral_2.png"));
-        DemoMod_Character_Neutral_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_neutral_3.png"));
-        DemoMod_Character_Neutral_4 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_neutral_4.png"));
-        DemoMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_mini_0.png"));
-        DemoMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_squint_0.png"));
-        DemoMod_Character_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_squint_1.png"));
-        DemoMod_Character_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_squint_2.png"));
-        DemoMod_Character_Squint_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/demomod_character_squint_3.png"));
+        ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardbackground.png"));
+        ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
+        ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
+        ReshiramCCMod_Character_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_0.png"));
+        ReshiramCCMod_Character_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_1.png"));
+        ReshiramCCMod_Character_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_2.png"));
+        ReshiramCCMod_Character_Neutral_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_3.png"));
+        ReshiramCCMod_Character_Neutral_4 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_4.png"));
+        ReshiramCCMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_mini_0.png"));
+        ReshiramCCMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_0.png"));
+        ReshiramCCMod_Character_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_1.png"));
+        ReshiramCCMod_Character_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_2.png"));
+        ReshiramCCMod_Character_Squint_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_3.png"));
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
-        DemoMod_Deck = helper.Content.Decks.RegisterDeck("DemoDeck", new DeckConfiguration()
+        ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("DemoDeck", new DeckConfiguration()
         {
             Definition = new DeckDef()
             {
@@ -128,8 +128,8 @@ public sealed class ModEntry : SimpleMod
                 titleColor = new Color("000000")
             },
             /* We give it a default art and border some Sprite types by adding '.Sprite' at the end of the ISpriteEntry definitions we made above. */
-            DefaultCardArt = DemoMod_Character_CardBackground.Sprite,
-            BorderSprite = DemoMod_Character_CardFrame.Sprite,
+            DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
+            BorderSprite = ReshiramCCMod_Character_CardFrame.Sprite,
 
             /* Since this deck will be used by our Demo Character, we'll use their name. */
             Name = AnyLocalizations.Bind(["character", "DemoCharacter", "name"]).Localize,
@@ -145,8 +145,8 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
         {
             /* What we registered above was an IDeckEntry object, but when you register a character animation the Helper will ask for you to provide its Deck 'id'
-             * This is simple enough, as you can get it from DemoMod_Deck */
-            Deck = DemoMod_Deck.Deck,
+             * This is simple enough, as you can get it from ReshiramCCMod_Deck */
+            Deck = ReshiramCCMod_Deck.Deck,
 
             /* The Looptag is the 'name' of the animation. When making shouts and events, and you want your character to show emotions, the LoopTag is what you want
              * In vanilla Cobalt Core, there are 4 'animations' looptags that any character should have: "neutral", "mini", "squint" and "gameover",
@@ -156,33 +156,33 @@ public sealed class ModEntry : SimpleMod
             /* The game doesn't use frames properly when there are only 2 or 3 frames. If you want a proper animation, avoid only adding 2 or 3 frames to it */
             Frames = new[]
             {
-                DemoMod_Character_Neutral_0.Sprite,
-                DemoMod_Character_Neutral_1.Sprite,
-                DemoMod_Character_Neutral_2.Sprite,
-                DemoMod_Character_Neutral_3.Sprite,
-                DemoMod_Character_Neutral_4.Sprite
+                ReshiramCCMod_Character_Neutral_0.Sprite,
+                ReshiramCCMod_Character_Neutral_1.Sprite,
+                ReshiramCCMod_Character_Neutral_2.Sprite,
+                ReshiramCCMod_Character_Neutral_3.Sprite,
+                ReshiramCCMod_Character_Neutral_4.Sprite
             }
         });
         helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
         {
-            Deck = DemoMod_Deck.Deck,
+            Deck = ReshiramCCMod_Deck.Deck,
             LoopTag = "mini",
             Frames = new[]
             {
                 /* Mini only needs one sprite. We call it animation just because we add it the same way as other expressions. */
-                DemoMod_Character_Mini_0.Sprite
+                ReshiramCCMod_Character_Mini_0.Sprite
             }
         });
         helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
         {
-            Deck = DemoMod_Deck.Deck,
+            Deck = ReshiramCCMod_Deck.Deck,
             LoopTag = "squint",
             Frames = new[]
             {
-                DemoMod_Character_Squint_0.Sprite,
-                DemoMod_Character_Squint_1.Sprite,
-                DemoMod_Character_Squint_2.Sprite,
-                DemoMod_Character_Squint_3.Sprite,
+                ReshiramCCMod_Character_Squint_0.Sprite,
+                ReshiramCCMod_Character_Squint_1.Sprite,
+                ReshiramCCMod_Character_Squint_2.Sprite,
+                ReshiramCCMod_Character_Squint_3.Sprite,
             }
         });
 
@@ -193,7 +193,7 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.RegisterCharacter("DemoCharacter", new CharacterConfiguration()
         {
             /* Same as animations, we want to provide the appropiate Deck type */
-            Deck = DemoMod_Deck.Deck,
+            Deck = ReshiramCCMod_Deck.Deck,
 
             /* The Starter Card Types are, as the name implies, the cards you will start a DemoCharacter run with. 
              * You could provide vanilla cards if you want, but it's way more fun to create your own cards! */
@@ -205,7 +205,7 @@ public sealed class ModEntry : SimpleMod
 
             /* This is the fancy panel that encapsulates your character while in active combat.
              * It's recommended that it follows the same color scheme as the character and deck, for cohesion */
-            BorderSprite = DemoMod_Character_Panel.Sprite
+            BorderSprite = ReshiramCCMod_Character_Panel.Sprite
         });
 
         /* The basics for a Character mod are done!
@@ -222,16 +222,16 @@ public sealed class ModEntry : SimpleMod
 
         /* Here we register our cards so we can find them in game.
          * Notice the IDemoCard interface, you can find it in InternalInterfaces.cs
-         * Each card in the IEnumerable 'DemoMod_AllCard_Types' will be asked to run their 'Register' method. Open a card's .cs file, and see what it does 
+         * Each card in the IEnumerable 'ReshiramCCMod_AllCard_Types' will be asked to run their 'Register' method. Open a card's .cs file, and see what it does 
          * We *can* instead register characts one by one, like what we did with the sprites. If you'd like an example of what that looks like, check out the Randall mod by Arin! */
-        foreach (var cardType in DemoMod_AllCard_Types)
+        foreach (var cardType in ReshiramCCMod_AllCard_Types)
             AccessTools.DeclaredMethod(cardType, nameof(IDemoCard.Register))?.Invoke(null, [helper]);
 
         /* 2. ARTIFACTS
          * Creating artifacts is pretty similar to creating Cards
          * Take a look at the Artifacts folder for demo artifacts!
          * You may also notice we're using the other interface from InternalInterfaces.cs, IDemoArtifact, to help us out */
-        foreach (var artifactType in DemoMod_AllArtifact_Types)
+        foreach (var artifactType in ReshiramCCMod_AllArtifact_Types)
             AccessTools.DeclaredMethod(artifactType, nameof(IDemoArtifact.Register))?.Invoke(null, [helper]);
 
         /* 3. SHIPS
@@ -260,7 +260,7 @@ public sealed class ModEntry : SimpleMod
         var demoShipSpriteChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/demochassis.png")).Sprite;
 
         /* With the parts and sprites done, we can now create our Ship a bit more easily */
-        DemoMod_Ship = helper.Content.Ships.RegisterShip("DemoShip", new ShipConfiguration()
+        ReshiramCCMod_Ship = helper.Content.Ships.RegisterShip("DemoShip", new ShipConfiguration()
         {
             Ship = new StarterShip()
             {

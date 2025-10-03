@@ -1,7 +1,7 @@
 ﻿using Nickel;
 using System.Reflection;
 
-namespace AuthorName.DemoMod.Artifacts;
+namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
 internal sealed class DemoArtifactCounting : Artifact, IDemoArtifact
 {

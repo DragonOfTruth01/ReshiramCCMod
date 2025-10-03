@@ -1,4 +1,4 @@
-﻿namespace AuthorName.DemoMod;
+﻿namespace DragonOfTruth01.ReshiramCCMod;
 public partial interface IKokoroApi
 {
     void RegisterStatusLogicHook(IStatusLogicHook hook, double priority);

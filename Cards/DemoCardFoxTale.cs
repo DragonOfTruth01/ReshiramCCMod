@@ -4,7 +4,7 @@ using System.Reflection;
 
 /* Like other namespaces, this can be named whatever
  * However it's recommended that you follow the structure defined by ModEntry of <AuthorName>.<ModName> or <AuthorName>.<ModName>.Cards*/
-namespace AuthorName.DemoMod.Cards;
+namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
 internal sealed class DemoCardFoxTale : Card, IDemoCard
 {
@@ -17,7 +17,7 @@ internal sealed class DemoCardFoxTale : Card, IDemoCard
             Meta = new()
             {
                 /* We don't assign cards to characters, but rather to decks! It's important to keep that in mind */
-                deck = ModEntry.Instance.DemoMod_Deck.Deck,
+                deck = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
 
                 /* The vanilla rarities are Rarity.common, Rarity.uncommon, Rarity.rare */
                 rarity = Rarity.common,

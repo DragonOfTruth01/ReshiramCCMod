@@ -1,4 +1,4 @@
-﻿namespace AuthorName.DemoMod;
+﻿namespace DragonOfTruth01.ReshiramCCMod;
 internal sealed class AutododgeLeftNextTurnManager : IStatusLogicHook
 {
     public static ModEntry Instance => ModEntry.Instance;

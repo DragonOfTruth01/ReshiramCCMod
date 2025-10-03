@@ -1,10 +1,10 @@
-﻿using AuthorName.DemoMod.Cards;
+﻿using DragonOfTruth01.ReshiramCCMod.Cards;
 using Nickel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace AuthorName.DemoMod.Artifacts;
+namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
 internal sealed class DemoArtifactBookOfTails : Artifact, IDemoArtifact
 {
@@ -15,7 +15,7 @@ internal sealed class DemoArtifactBookOfTails : Artifact, IDemoArtifact
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
             {
-                owner = ModEntry.Instance.DemoMod_Deck.Deck,
+                owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
             Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/bookoftails.png")).Sprite,
