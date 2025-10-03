@@ -4,7 +4,7 @@
   "Author": "DragonOfTruth01",
   "Description": "2 cards, 2 artifacts, 1 ship, 1 status. Use to learn!",
   "RequiredApiVersion": "0.6.0",
-  "EntryPointAssembly": "DemoMod.dll",
+  "EntryPointAssembly": "ReshiramCCMod.dll",
   "Dependencies": [
     {
       "UniqueName": "Shockah.Kokoro",
