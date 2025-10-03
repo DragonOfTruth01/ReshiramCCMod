@@ -11,6 +11,8 @@
 		<WarningsAsErrors>Nullable</WarningsAsErrors>
 		<CheckEolTargetFramework>false</CheckEolTargetFramework>
 		<ModZipPath>$(MSBuildProjectDirectory)\.release\$(MSBuildProjectName)-$(Version).zip</ModZipPath>
+		<EnableDllExtract>false</EnableDllExtract>
+		<GameDllPath>../../CobaltCore.dll</GameDllPath>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Nickel.ModBuildConfig" Version="0.4.0" />
