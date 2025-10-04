@@ -12,7 +12,7 @@
 		<CheckEolTargetFramework>false</CheckEolTargetFramework>
 		<ModZipPath>$(MSBuildProjectDirectory)\.release\$(MSBuildProjectName)-$(Version).zip</ModZipPath>
 		<EnableDllExtract>false</EnableDllExtract>
-		<GameDllPath>../../CobaltCore.dll</GameDllPath>
+		<GameDllPath>C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\CobaltCore.dll</GameDllPath>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Nickel.ModBuildConfig" Version="0.4.0" />
