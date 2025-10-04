@@ -39,7 +39,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Squint_3 { get; }
     internal IDeckEntry ReshiramCCMod_Deck { get; }
     internal IShipEntry ReshiramCCMod_Ship { get; }
-    internal IStatusEntry AutododgeLeftNextTurn { get; }
+    internal IStatusEntry Smoldering { get; }
     internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
         /* Add more starter cards here if you'd like. */
         typeof(DemoCardFoxTale),
@@ -337,21 +337,21 @@ public sealed class ModEntry : SimpleMod
 
         /* 4. STATUSES
          * You might, now, with all this code behind our backs, start recognizing patterns in the way we can register stuff. */
-        AutododgeLeftNextTurn = helper.Content.Statuses.RegisterStatus("AutododgeLeftNextTurn", new()
+        Smoldering = helper.Content.Statuses.RegisterStatus("Smoldering", new()
         {
             Definition = new()
             {
                 /* We provide the icon as a Sprite type, you can find it in the given file location */
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/autododgeLeftNextTurn.png")).Sprite,
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png")).Sprite,
                 /* We give it a color, this is the border color that surrounds the status icon & number in-game */
                 color = new("b500be"),
                 /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
                 isGood = true
             },
-            Name = AnyLocalizations.Bind(["status", "AutododgeLeftNextTurn", "name"]).Localize,
-            Description = AnyLocalizations.Bind(["status", "AutododgeLeftNextTurn", "description"]).Localize
+            Name = AnyLocalizations.Bind(["status", "Smoldering", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Smoldering", "description"]).Localize
         });
-        /* Check this out in Features/AutododgeLeftNextTurn.cs */
-        _ = new AutododgeLeftNextTurnManager();
+        
+        _ = new SmolderingManager();
     }
 }
