@@ -121,7 +121,7 @@ public sealed class ModEntry : SimpleMod
                  * It is used as the deck's rarity 'shine'
                  * If a playable character uses this deck, the character Name will use this color
                  * If a playable character uses this deck, the character mini panel will use this color */
-                color = new Color("cd6a00"),
+                color = new Color("f4f7f0"),
 
                 /* This color is for the card name in-game
                  * Make sure it has a good contrast against the CardFrame, and take rarity 'shine' into account as well */
@@ -132,7 +132,7 @@ public sealed class ModEntry : SimpleMod
             BorderSprite = ReshiramCCMod_Character_CardFrame.Sprite,
 
             /* Since this deck will be used by our Demo Character, we'll use their name. */
-            Name = AnyLocalizations.Bind(["character", "DemoCharacter", "name"]).Localize,
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod", "name"]).Localize,
         });
 
         /* Let's create some animations, because if you were to boot up this mod from what you have above,
@@ -201,7 +201,7 @@ public sealed class ModEntry : SimpleMod
 
             /* This is the little blurb that appears when you hover over the character in-game.
              * You can make it fluff, use it as a way to tell players about the character's playstyle, or a little bit of both! */
-            Description = AnyLocalizations.Bind(["character", "DemoCharacter", "description"]).Localize,
+            Description = AnyLocalizations.Bind(["character", "ReshiramCCMod", "description"]).Localize,
 
             /* This is the fancy panel that encapsulates your character while in active combat.
              * It's recommended that it follows the same color scheme as the character and deck, for cohesion */
