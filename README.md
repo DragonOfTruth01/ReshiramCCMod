@@ -3,8 +3,8 @@ This README was made using Louis3797's awesome-readme-template
 -->
 <div align="center">
   <h1>Demo Nickel Mod</h1>
-  <img src="assets/characters/demomod_character_neutral_0.png" alt="logo" width="auto" height="auto" />
-  <img src="assets/characters/demomod_character_squint_0.png" alt="logo" width="auto" height="auto" />
+  <img src="assets/characters/ReshiramCCMod_character_neutral_0.png" alt="logo" width="auto" height="auto" />
+  <img src="assets/characters/ReshiramCCMod_character_squint_0.png" alt="logo" width="auto" height="auto" />
   <p>
     A demo mod for Cobalt Core 
   </p>
