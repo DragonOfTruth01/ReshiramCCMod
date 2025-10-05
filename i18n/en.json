@@ -35,9 +35,9 @@
     }
   },
   "status": {
-    "AutododgeLeftNextTurn": {
-      "name": "Autododge Left Next Turn",
-      "description": "At the start of next turn, gain <c=boldPink>{0}</c> <c=status>AUTODODGE LEFT</c>."
+    "Smoldering": {
+      "name": "Smoldering",
+      "description": "After heat is gained, take <c=boldPink>{0}</c> hull damage if <c=ff687d>overheated</c>."
     }
   }
 }

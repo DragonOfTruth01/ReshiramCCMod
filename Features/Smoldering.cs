@@ -1,4 +1,7 @@
-﻿namespace DragonOfTruth01.ReshiramCCMod;
+﻿using HarmonyLib;
+
+namespace DragonOfTruth01.ReshiramCCMod;
+
 internal sealed class SmolderingManager : IStatusLogicHook
 {
     public static ModEntry Instance => ModEntry.Instance;
