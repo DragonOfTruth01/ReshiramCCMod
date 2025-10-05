@@ -20,27 +20,40 @@ internal sealed class StatusManager : IStatusLogicHook
         );
     }
 
+    private class HarmonyRef
+    {
+        public int oldHeatAmt;
+        public int oldFlammableAmt;
+    }
+
     [HarmonyPrefix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
-    private static void AStatus_Begin_Prefix(AStatus __instance, State s, out int __state)
+    private static void AStatus_Begin_Prefix(AStatus __instance, State s, out HarmonyRef __state)
     {
         var ship = GetShip(__instance, s);
-        __state = ship.Get(Status.heat);
+        __state = new HarmonyRef();
+        __state.oldHeatAmt = ship.Get(Status.heat);
+        __state.oldFlammableAmt = ship.Get(ModEntry.Instance.Flammable.Status);
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
-    private static void AStatus_Begin_Postfix(AStatus __instance, State s, Combat c, int __state)
+    private static void AStatus_Begin_Postfix(AStatus __instance, State s, Combat c, HarmonyRef __state)
     {
         var ship = GetShip(__instance, s);
-        var heatDiff = ship.Get(Status.heat) - __state;
 
         // Handle Smoldering (if ship gained heat, check for smoldering damage)
+        var heatDiff = ship.Get(Status.heat) - __state.oldHeatAmt;
+
         if (ship.Get(ModEntry.Instance.Smoldering.Status) > 0 && ship.Get(Status.heat) >= ship.heatTrigger && heatDiff > 0)
         {
             ship.DirectHullDamage(s, c, ship.Get(ModEntry.Instance.Smoldering.Status));
             Audio.Play(Event.Hits_HitHurt);
         }
+
+        // Handle Flammable (if amount changed, temporarily modify our overheat damage)
+        var flammableDiff = ship.Get(ModEntry.Instance.Flammable.Status) - __state.oldFlammableAmt;
+        ship.overheatDamage += flammableDiff;
     }
 
     public bool HandleStatusTurnAutoStep(State state, Combat combat, StatusTurnTriggerTiming timing, Ship ship, Status status, ref int amount, ref StatusTurnAutoStepSetStrategy setStrategy)
@@ -65,6 +78,6 @@ internal sealed class StatusManager : IStatusLogicHook
     [HarmonyPatch(typeof(Ship), "ResetAfterCombat")]
     private static void Ship_ResetAfterCombat_Prefix(Ship __instance)
     {
-        __instance.overheatDamage -= __instance.Get(ModEntry.Instance.Smoldering.Status);
+        __instance.overheatDamage -= __instance.Get(ModEntry.Instance.Flammable.Status);
     }
 }

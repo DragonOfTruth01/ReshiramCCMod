@@ -101,9 +101,11 @@ internal sealed class DemoCardFoxTale : Card, IDemoCard
                         status = ModEntry.Instance.Smoldering.Status,
                         statusAmount = 2
                     },
-                    new ADrawCard()
+                    new AStatus()
                     {
-                        count = 2
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 2,
+                        targetPlayer = true
                     }
                 };
                 break;

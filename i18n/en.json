@@ -37,7 +37,7 @@
   "status": {
     "Smoldering": {
       "name": "Smoldering",
-      "description": "After heat is gained, take <c=boldPink>{0}</c> hull damage if above the <c=ff687d>overheating</c> threshold."
+      "description": "After heat is gained, take <c=boldPink>{0}</c> hull damage if above the <c=ff687d>overheating</c> threshold.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
     },
     "Flammable": {
       "name": "Flammable",
