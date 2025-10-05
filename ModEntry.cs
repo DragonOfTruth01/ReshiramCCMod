@@ -38,9 +38,13 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Squint_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_2 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_3 { get; }
+
     internal IDeckEntry ReshiramCCMod_Deck { get; }
     internal IShipEntry ReshiramCCMod_Ship { get; }
+
     internal IStatusEntry Smoldering { get; }
+    internal IStatusEntry Flammable { get; }
+
     internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
         /* Add more starter cards here if you'd like. */
         typeof(DemoCardFoxTale),
@@ -347,12 +351,27 @@ public sealed class ModEntry : SimpleMod
                 /* We provide the icon as a Sprite type, you can find it in the given file location */
                 icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png")).Sprite,
                 /* We give it a color, this is the border color that surrounds the status icon & number in-game */
-                color = new("b500be"),
+                color = new("8b93af"),
                 /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
                 isGood = false
             },
             Name = AnyLocalizations.Bind(["status", "Smoldering", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Smoldering", "description"]).Localize
+        });
+
+        Flammable = helper.Content.Statuses.RegisterStatus("Flammable", new()
+        {
+            Definition = new()
+            {
+                /* We provide the icon as a Sprite type, you can find it in the given file location */
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png")).Sprite,
+                /* We give it a color, this is the border color that surrounds the status icon & number in-game */
+                color = new("8b93af"),
+                /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
+                isGood = false
+            },
+            Name = AnyLocalizations.Bind(["status", "Flammable", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Flammable", "description"]).Localize
         });
         
         _ = new StatusManager();
