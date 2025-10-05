@@ -18,6 +18,7 @@ public sealed class ModEntry : SimpleMod
 {
     internal static ModEntry Instance { get; private set; } = null!;
     internal IKokoroApi KokoroApi { get; }
+    internal readonly Harmony Harmony;
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
 
@@ -80,6 +81,8 @@ public sealed class ModEntry : SimpleMod
          * We take from Kokoro what we need and put in our own project. Head to ExternalAPI/StatusLogicHook.cs if you're interested in what, exactly, we use.
          * If you're interested in more fancy stuff, make sure to peek at the Kokoro repository found online. */
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
+
+        Harmony = new Harmony(package.Manifest.UniqueName);
 
         /* These localizations lists help us organize our mod's text and messages by language.
          * For general use, prefer AnyLocalizations, as that will provide an easier time to potential localization submods that are made for your mod 
@@ -346,7 +349,7 @@ public sealed class ModEntry : SimpleMod
                 /* We give it a color, this is the border color that surrounds the status icon & number in-game */
                 color = new("b500be"),
                 /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
-                isGood = true
+                isGood = false
             },
             Name = AnyLocalizations.Bind(["status", "Smoldering", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Smoldering", "description"]).Localize

@@ -34,7 +34,7 @@ internal sealed class DemoCardFoxTale : Card, IDemoCard
         CardData data = new CardData()
         {
             /* Give your card some meta data, such as giving it an energy cost, making it exhaustable, and more */
-            cost = 1,
+            cost = 0,
 
             /* if we don't set a card specific 'art' (a 'Spr' type) here, the game will give it the deck's 'DefaultCardArt'
             /* if we don't set a card specific 'description' (a 'string' type) here, the game will attempt to use iconography using the provided CardAction types from GetActions() */
@@ -89,17 +89,17 @@ internal sealed class DemoCardFoxTale : Card, IDemoCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 5),
+                        damage = GetDmg(s, 0),
                         /* AAttacks can have flags indicating some extra effect. In this case, stunEnemy = true will stun the ship part hit. */
                         stunEnemy = true,
                         /* We can also give it our modded statuses, by getting it from our own code */
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 5
                     },
                     new AStatus()
                     {
                         status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new ADrawCard()
                     {
