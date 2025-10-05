@@ -41,7 +41,7 @@
     },
     "Flammable": {
       "name": "Flammable",
-      "description": "Take <c=boldPink>{0}</c> extra damage when overheating."
+      "description": "Take <c=boldPink>{0}</c> extra damage when <c=ff687d>overheating</c>."
     }
   }
 }

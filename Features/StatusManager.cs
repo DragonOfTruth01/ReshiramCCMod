@@ -40,7 +40,6 @@ internal sealed class StatusManager : IStatusLogicHook
         {
             ship.DirectHullDamage(s, c, ship.Get(ModEntry.Instance.Smoldering.Status));
             Audio.Play(Event.Hits_HitHurt);
-
         }
     }
 
