@@ -1,6 +1,7 @@
 ﻿namespace DragonOfTruth01.ReshiramCCMod;
 
 using HarmonyLib;
+using FSPRO;
 
 [HarmonyPatch]
 internal sealed class StatusManager : IStatusLogicHook
@@ -38,6 +39,7 @@ internal sealed class StatusManager : IStatusLogicHook
         if (ship.Get(ModEntry.Instance.Smoldering.Status) > 0 && ship.Get(Status.heat) >= ship.heatTrigger && heatDiff > 0)
         {
             ship.DirectHullDamage(s, c, ship.Get(ModEntry.Instance.Smoldering.Status));
+            Audio.Play(Event.Hits_HitHurt);
 
         }
     }
