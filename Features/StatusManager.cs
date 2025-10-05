@@ -2,10 +2,11 @@
 
 namespace DragonOfTruth01.ReshiramCCMod;
 
-internal sealed class SmolderingManager : IStatusLogicHook
+[HarmonyPatch]
+internal sealed class StatusManager : IStatusLogicHook
 {
     public static ModEntry Instance => ModEntry.Instance;
-    public SmolderingManager()
+    public StatusManager()
     {
         /* We task Kokoro with the job to register our status into the game */
         Instance.KokoroApi.RegisterStatusLogicHook(this, 0);

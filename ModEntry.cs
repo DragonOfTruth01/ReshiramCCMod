@@ -352,6 +352,6 @@ public sealed class ModEntry : SimpleMod
             Description = AnyLocalizations.Bind(["status", "Smoldering", "description"]).Localize
         });
         
-        _ = new SmolderingManager();
+        _ = new StatusManager();
     }
 }
