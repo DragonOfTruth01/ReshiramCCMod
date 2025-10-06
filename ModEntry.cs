@@ -56,7 +56,9 @@ public sealed class ModEntry : SimpleMod
      * However you can be more detailed, or you can be more loose, if that's your style */
     internal static IReadOnlyList<Type> DemoCharacter_CommonCard_Types { get; } = [
         typeof(CardFireFang),
-        typeof(CardWillOWisp)
+        typeof(CardWillOWisp),
+        typeof(CardDragonBreath),
+        typeof(CardPsychic)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
@@ -367,7 +369,7 @@ public sealed class ModEntry : SimpleMod
                 /* We provide the icon as a Sprite type, you can find it in the given file location */
                 icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png")).Sprite,
                 /* We give it a color, this is the border color that surrounds the status icon & number in-game */
-                color = new("8b93af"),
+                color = new("285cc4"),
                 /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
                 isGood = false
             },

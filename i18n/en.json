@@ -31,16 +31,19 @@
     "Fire Fang": {
       "name": "Fire Fang"
     },
+    "Dragon Breath": {
+      "name": "Dragon Breath",
+      "description": {
+        "None": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
+        "A": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=285cc4>flammable</c>.",
+        "B": "Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>."
+      }
+    },
+    "Psychic": {
+      "name": "Psychic"
+    },
     "Will-O-Wisp": {
       "name": "Will-O-Wisp"
-    },
-    "SheepDream": {
-      "name": "Sheep Dream",
-      "description": {
-        "None": "Attack for set amount = 3. On hit, apply 1 <c=status>BOOST</c>.",
-        "A": "Attack for set amount = 4. On hit, apply 1 <c=status>BOOST</c>.",
-        "B": "Attack for set amount = 5. On hit, apply 2 <c=status>BOOST</c>."
-      }
     }
   },
   "status": {
