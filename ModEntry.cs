@@ -55,7 +55,7 @@ public sealed class ModEntry : SimpleMod
      * We recommend having a Starter Cards list, a Common Cards list, an Uncommon Cards list, and a Rare Cards list
      * However you can be more detailed, or you can be more loose, if that's your style */
     internal static IReadOnlyList<Type> DemoCharacter_CommonCard_Types { get; } = [
-
+        typeof(CardFireFang)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
