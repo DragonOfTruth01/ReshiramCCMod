@@ -29,7 +29,7 @@ internal sealed class DemoArtifactBookOfTails : Artifact, IDemoArtifact
         {
             new TTCard
             {
-                card = new CardFlamethrower
+                card = new CardIncinerate
                 {
                     temporaryOverride = true
                 }
@@ -44,7 +44,7 @@ internal sealed class DemoArtifactBookOfTails : Artifact, IDemoArtifact
         c.QueueImmediate([
             new AAddCard
             {
-                card = new CardFlamethrower
+                card = new CardIncinerate
                 {
                     temporaryOverride = true
                 },
