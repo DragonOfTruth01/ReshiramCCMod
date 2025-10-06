@@ -48,7 +48,7 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
         /* Add more starter cards here if you'd like. */
         typeof(CardFlamethrower),
-        typeof(DemoCardSheepDream)
+        typeof(CardDragonFang)
     ];
 
     /* You can create many IReadOnlyList<Type> as a way to organize your content.
