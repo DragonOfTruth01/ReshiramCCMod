@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-/* Like other namespaces, this can be named whatever
- * However it's recommended that you follow the structure defined by ModEntry of <AuthorName>.<ModName> or <AuthorName>.<ModName>.Cards*/
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
 internal sealed class CardDragonClaw : Card, ReshiramCCModCard
 {
-    /* For a bit more info on the Register Method, look at InternalInterfaces.cs and 1. CARDS section in ModEntry */
     public static void Register(IModHelper helper)
     {
         helper.Content.Cards.RegisterCard("Dragon Claw", new()
@@ -33,10 +30,8 @@ internal sealed class CardDragonClaw : Card, ReshiramCCModCard
     }
     public override List<CardAction> GetActions(State s, Combat c)
     {
-        /* The meat of the card, this is where we define what a card does, and some would say the most fun part of modding Cobalt Core happens here! */
         List<CardAction> actions = new();
 
-        /* Since we want to have different actions for each Upgrade, we use a switch that covers the Upgrade paths we've defined */
         switch (upgrade)
         {
             case Upgrade.None:

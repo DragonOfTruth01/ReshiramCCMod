@@ -8,12 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-/* In the Cobalt Core modding community it is common for namespaces to be <Author>.<ModName>
- * This is helpful to know at a glance what mod we're looking at, and who made it */
 namespace DragonOfTruth01.ReshiramCCMod;
 
-/* ModEntry is the base for our mod. Others like to name it Manifest, and some like to name it <ModName>
- * Notice the ': SimpleMod'. This means ModEntry is a subclass (child) of the superclass SimpleMod (parent) from Nickel. This will help us use Nickel's functions more easily! */
 public sealed class ModEntry : SimpleMod
 {
     internal static ModEntry Instance { get; private set; } = null!;
@@ -22,9 +18,6 @@ public sealed class ModEntry : SimpleMod
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
 
-    /* Woah! what's with the block of code right out the gate???
-     * These are our manually declared stuff, isn't it neat?
-     * Let's continue down, and you'll start getting a hang of how we utilize these */
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
@@ -46,7 +39,6 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Flammable { get; }
 
     internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
-        /* Add more starter cards here if you'd like. */
         typeof(CardIncinerate),
         typeof(CardDragonClaw)
     ];
@@ -84,9 +76,7 @@ public sealed class ModEntry : SimpleMod
     {
         Instance = this;
 
-        /* We use Kokoro to handle our statuses. This means Kokoro is a Dependency, and our mod will fail to work without it.
-         * We take from Kokoro what we need and put in our own project. Head to ExternalAPI/StatusLogicHook.cs if you're interested in what, exactly, we use.
-         * If you're interested in more fancy stuff, make sure to peek at the Kokoro repository found online. */
+        // Kokoro is needed to handle statuses
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
 
         Harmony = new Harmony(package.Manifest.UniqueName);
