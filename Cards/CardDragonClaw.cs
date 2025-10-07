@@ -6,7 +6,7 @@ using System.Reflection;
  * However it's recommended that you follow the structure defined by ModEntry of <AuthorName>.<ModName> or <AuthorName>.<ModName>.Cards*/
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardDragonClaw : Card, IDemoCard
+internal sealed class CardDragonClaw : Card, ReshiramCCModCard
 {
     /* For a bit more info on the Register Method, look at InternalInterfaces.cs and 1. CARDS section in ModEntry */
     public static void Register(IModHelper helper)

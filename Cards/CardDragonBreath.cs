@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardDragonBreath : Card, IDemoCard
+internal sealed class CardDragonBreath : Card, ReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {

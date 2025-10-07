@@ -235,14 +235,14 @@ public sealed class ModEntry : SimpleMod
          * Each card in the IEnumerable 'ReshiramCCMod_AllCard_Types' will be asked to run their 'Register' method. Open a card's .cs file, and see what it does 
          * We *can* instead register characts one by one, like what we did with the sprites. If you'd like an example of what that looks like, check out the Randall mod by Arin! */
         foreach (var cardType in ReshiramCCMod_AllCard_Types)
-            AccessTools.DeclaredMethod(cardType, nameof(IDemoCard.Register))?.Invoke(null, [helper]);
+            AccessTools.DeclaredMethod(cardType, nameof(ReshiramCCModCard.Register))?.Invoke(null, [helper]);
 
         /* 2. ARTIFACTS
          * Creating artifacts is pretty similar to creating Cards
          * Take a look at the Artifacts folder for demo artifacts!
          * You may also notice we're using the other interface from InternalInterfaces.cs, IDemoArtifact, to help us out */
         foreach (var artifactType in ReshiramCCMod_AllArtifact_Types)
-            AccessTools.DeclaredMethod(artifactType, nameof(IDemoArtifact.Register))?.Invoke(null, [helper]);
+            AccessTools.DeclaredMethod(artifactType, nameof(ReshiramCCModArtifact.Register))?.Invoke(null, [helper]);
 
         /* 3. SHIPS
          * Creating a ship is much like creating a character
