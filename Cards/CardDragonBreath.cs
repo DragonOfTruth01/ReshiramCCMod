@@ -45,16 +45,16 @@ internal sealed class CardDragonBreath : Card, IDemoCard
                 };
 
                 // Add 1 flammable if this attack would overheat the enemy (current heat + 1)
-                if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
-                {
-                    cardActionList1.Add(
-                        new AStatus()
-                        {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1,
-                        }
-                    );
-                }
+                // if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
+                // {
+                //     cardActionList1.Add(
+                //         new AStatus()
+                //         {
+                //             status = ModEntry.Instance.Flammable.Status,
+                //             statusAmount = 1,
+                //         }
+                //     );
+                // }
 
                 actions = cardActionList1;
                 break;
@@ -69,16 +69,16 @@ internal sealed class CardDragonBreath : Card, IDemoCard
                 };
 
                 // Add 2 flammable if this attack would overheat the enemy (current heat + 1)
-                if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
-                {
-                    cardActionList2.Add(
-                        new AStatus()
-                        {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 2,
-                        }
-                    );
-                }
+                // if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
+                // {
+                //     cardActionList2.Add(
+                //         new AStatus()
+                //         {
+                //             status = ModEntry.Instance.Flammable.Status,
+                //             statusAmount = 2,
+                //         }
+                //     );
+                // }
 
                 actions = cardActionList2;
                 break;
@@ -93,16 +93,16 @@ internal sealed class CardDragonBreath : Card, IDemoCard
                 };
 
                 // Add 1 flammable if this attack would overheat the enemy (current heat + 2)
-                if (((Combat)s.route).otherShip.Get(Status.heat) + 2 >= ((Combat)s.route).otherShip.heatTrigger)
-                {
-                    cardActionList3.Add(
-                        new AStatus()
-                        {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1,
-                        }
-                    );
-                }
+                // if (((Combat)s.route).otherShip.Get(Status.heat) + 2 >= ((Combat)s.route).otherShip.heatTrigger)
+                // {
+                //     cardActionList3.Add(
+                //         new AStatus()
+                //         {
+                //             status = ModEntry.Instance.Flammable.Status,
+                //             statusAmount = 1,
+                //         }
+                //     );
+                // }
 
                 actions = cardActionList3;
                 break;

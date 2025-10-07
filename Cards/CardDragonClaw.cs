@@ -6,12 +6,12 @@ using System.Reflection;
  * However it's recommended that you follow the structure defined by ModEntry of <AuthorName>.<ModName> or <AuthorName>.<ModName>.Cards*/
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardDragonFang : Card, IDemoCard
+internal sealed class CardDragonClaw : Card, IDemoCard
 {
     /* For a bit more info on the Register Method, look at InternalInterfaces.cs and 1. CARDS section in ModEntry */
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Dragon Fang", new()
+        helper.Content.Cards.RegisterCard("Dragon Claw", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
@@ -20,7 +20,7 @@ internal sealed class CardDragonFang : Card, IDemoCard
                 rarity = Rarity.common,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Dragon Fang", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Dragon Claw", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
