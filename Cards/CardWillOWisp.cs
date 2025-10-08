@@ -89,7 +89,7 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };
