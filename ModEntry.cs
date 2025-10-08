@@ -44,6 +44,7 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_CommonCard_Types { get; } = [
         typeof(CardIncinerate),
         typeof(CardDragonClaw),
+        typeof(CardFlameCharge),
         typeof(CardWillOWisp),
         typeof(CardDragonBreath)
         
