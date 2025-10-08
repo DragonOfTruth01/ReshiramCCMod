@@ -28,9 +28,6 @@
     "Dragon Claw": {
       "name": "Dragon Claw"
     },
-    "Fire Fang": {
-      "name": "Fire Fang"
-    },
     "Dragon Breath": {
       "name": "Dragon Breath",
       "description": {
@@ -44,6 +41,9 @@
     },
     "Extrasensory": {
       "name": "Extra-sensory"
+    },
+    "Fire Fang": {
+      "name": "Fire Fang"
     }
   },
   "status": {

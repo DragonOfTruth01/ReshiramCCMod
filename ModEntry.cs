@@ -44,14 +44,14 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_CommonCard_Types { get; } = [
         typeof(CardIncinerate),
         typeof(CardDragonClaw),
-        typeof(CardFireFang),
         typeof(CardWillOWisp),
         typeof(CardDragonBreath)
         
     ];
 
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_UncommonCard_Types { get; } = [
-        typeof(CardExtrasensory)
+        typeof(CardExtrasensory),
+        typeof(CardFireFang)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed

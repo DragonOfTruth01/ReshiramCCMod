@@ -14,7 +14,7 @@ internal sealed class CardFireFang : Card, ReshiramCCModCard
             Meta = new()
             {
                 deck = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
-                rarity = Rarity.common,
+                rarity = Rarity.uncommon,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
             Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Fire Fang", "name"]).Localize
