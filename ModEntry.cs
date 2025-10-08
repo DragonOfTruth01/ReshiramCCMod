@@ -13,7 +13,7 @@ namespace DragonOfTruth01.ReshiramCCMod;
 public sealed class ModEntry : SimpleMod
 {
     internal static ModEntry Instance { get; private set; } = null!;
-    internal IKokoroApi KokoroApi { get; }
+    internal IKokoroApi.IV2 KokoroApi { get; }
     internal readonly Harmony Harmony;
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
@@ -77,7 +77,7 @@ public sealed class ModEntry : SimpleMod
         Instance = this;
 
         // Kokoro is needed to handle statuses
-        KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
+        KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!.V2;
 
         Harmony = new Harmony(package.Manifest.UniqueName);
 
