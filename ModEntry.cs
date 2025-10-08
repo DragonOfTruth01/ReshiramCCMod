@@ -13,7 +13,7 @@ namespace DragonOfTruth01.ReshiramCCMod;
 public sealed class ModEntry : SimpleMod
 {
     internal static ModEntry Instance { get; private set; } = null!;
-    internal IKokoroApi KokoroApi { get; }
+    internal IKokoroApi.IV2 KokoroApi { get; }
     internal readonly Harmony Harmony;
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
@@ -38,15 +38,12 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
 
-    internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
-        typeof(CardIncinerate),
-        typeof(CardDragonClaw)
-    ];
-
     /* You can create many IReadOnlyList<Type> as a way to organize your content.
      * We recommend having a Starter Cards list, a Common Cards list, an Uncommon Cards list, and a Rare Cards list
      * However you can be more detailed, or you can be more loose, if that's your style */
-    internal static IReadOnlyList<Type> DemoCharacter_CommonCard_Types { get; } = [
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_CommonCard_Types { get; } = [
+        typeof(CardIncinerate),
+        typeof(CardDragonClaw),
         typeof(CardFireFang),
         typeof(CardWillOWisp),
         typeof(CardDragonBreath),
@@ -57,8 +54,12 @@ public sealed class ModEntry : SimpleMod
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
     internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
-        => DemoCharacter_StarterCard_Types
-        .Concat(DemoCharacter_CommonCard_Types);
+        = [
+            .. ReshiramCCModCharacter_CommonCard_Types
+        //  .. ReshiramCCModCharacter_UncommonCard_Types,
+        //  .. ReshiramCCModCharacter_RareCard_Types,
+        //     typeof(Whatever_Other_Cards_To_Add)
+        ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
     internal static IReadOnlyList<Type> DemoCharacter_CommonArtifact_Types { get; } = [
@@ -77,7 +78,7 @@ public sealed class ModEntry : SimpleMod
         Instance = this;
 
         // Kokoro is needed to handle statuses
-        KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
+        KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!.V2;
 
         Harmony = new Harmony(package.Manifest.UniqueName);
 
@@ -113,7 +114,7 @@ public sealed class ModEntry : SimpleMod
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
-        ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("DemoDeck", new DeckConfiguration()
+        ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModDeck", new DeckConfiguration()
         {
             Definition = new DeckDef()
             {
@@ -142,11 +143,11 @@ public sealed class ModEntry : SimpleMod
 
         /*Of Note: You may notice we aren't assigning these ICharacterAnimationEntry and ICharacterEntry to any object, unlike stuff above,
         * It's totally fine to assign them if you'd like, but we don't have a reason to so in this mod */
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             /* What we registered above was an IDeckEntry object, but when you register a character animation the Helper will ask for you to provide its Deck 'id'
              * This is simple enough, as you can get it from ReshiramCCMod_Deck */
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
 
             /* The Looptag is the 'name' of the animation. When making shouts and events, and you want your character to show emotions, the LoopTag is what you want
              * In vanilla Cobalt Core, there are 4 'animations' looptags that any character should have: "neutral", "mini", "squint" and "gameover",
@@ -163,9 +164,9 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Neutral_4.Sprite
             }
         });
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "mini",
             Frames = new[]
             {
@@ -173,9 +174,9 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Mini_0.Sprite
             }
         });
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "squint",
             Frames = new[]
             {
@@ -190,14 +191,20 @@ public sealed class ModEntry : SimpleMod
          * Answer: You should be able to use the knowledge you have earned so far to register your own animations! If you'd like, try making the 'gameover' registration code here. You can use whatever sprite you want */
         
         /* Let's continue with the character creation and finally, actually, register the character! */
-        helper.Content.Characters.RegisterCharacter("DemoCharacter", new CharacterConfiguration()
+        helper.Content.Characters.V2.RegisterPlayableCharacter("ReshiramCCMod", new PlayableCharacterConfigurationV2()
         {
             /* Same as animations, we want to provide the appropiate Deck type */
             Deck = ReshiramCCMod_Deck.Deck,
 
             /* The Starter Card Types are, as the name implies, the cards you will start a DemoCharacter run with. 
              * You could provide vanilla cards if you want, but it's way more fun to create your own cards! */
-            StarterCardTypes = DemoCharacter_StarterCard_Types,
+            Starters = new()
+            {
+                cards = [
+                    new CardIncinerate(),
+                    new CardDragonClaw()
+                ]
+            },
 
             /* This is the little blurb that appears when you hover over the character in-game.
              * You can make it fluff, use it as a way to tell players about the character's playstyle, or a little bit of both! */

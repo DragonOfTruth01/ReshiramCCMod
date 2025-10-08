@@ -4,14 +4,14 @@ using HarmonyLib;
 using FSPRO;
 
 [HarmonyPatch]
-internal sealed class StatusManager : IStatusLogicHook
+internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
 {
     public static ModEntry Instance => ModEntry.Instance;
 
     public StatusManager()
     {
         /* We task Kokoro with the job to register our status into the game */
-        Instance.KokoroApi.RegisterStatusLogicHook(this, 0);
+        Instance.KokoroApi.StatusLogic.RegisterHook(this, 0);
 
         Instance.Harmony.Patch(
             original: AccessTools.DeclaredMethod(typeof(AStatus), nameof(AStatus.Begin)),
@@ -56,15 +56,15 @@ internal sealed class StatusManager : IStatusLogicHook
         ship.overheatDamage += flammableDiff;
     }
 
-    public bool HandleStatusTurnAutoStep(State state, Combat combat, StatusTurnTriggerTiming timing, Ship ship, Status status, ref int amount, ref StatusTurnAutoStepSetStrategy setStrategy)
+    public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)
     {
-        if (timing != StatusTurnTriggerTiming.TurnStart)
+        if (args.Timing != IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnStart)
             return false;
 
         // Handle smoldering end-of-turn decrement
-        if (status == Instance.Smoldering.Status && amount > 0)
+        if (args.Status == Instance.Smoldering.Status && args.Amount > 0)
         {
-            amount -= 1;
+            args.Amount -= 1;
         }
         return false;
     }
