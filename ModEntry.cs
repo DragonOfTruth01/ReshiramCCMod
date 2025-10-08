@@ -38,7 +38,7 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
 
-    internal static IReadOnlyList<Type> DemoCharacter_StarterCard_Types { get; } = [
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_StarterCard_Types { get; } = [
         typeof(CardIncinerate),
         typeof(CardDragonClaw)
     ];
@@ -46,7 +46,7 @@ public sealed class ModEntry : SimpleMod
     /* You can create many IReadOnlyList<Type> as a way to organize your content.
      * We recommend having a Starter Cards list, a Common Cards list, an Uncommon Cards list, and a Rare Cards list
      * However you can be more detailed, or you can be more loose, if that's your style */
-    internal static IReadOnlyList<Type> DemoCharacter_CommonCard_Types { get; } = [
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_CommonCard_Types { get; } = [
         typeof(CardFireFang),
         typeof(CardWillOWisp),
         typeof(CardDragonBreath),
@@ -57,8 +57,8 @@ public sealed class ModEntry : SimpleMod
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
     internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
-        => DemoCharacter_StarterCard_Types
-        .Concat(DemoCharacter_CommonCard_Types);
+        => ReshiramCCModCharacter_StarterCard_Types
+        .Concat(ReshiramCCModCharacter_CommonCard_Types);
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
     internal static IReadOnlyList<Type> DemoCharacter_CommonArtifact_Types { get; } = [
@@ -190,14 +190,14 @@ public sealed class ModEntry : SimpleMod
          * Answer: You should be able to use the knowledge you have earned so far to register your own animations! If you'd like, try making the 'gameover' registration code here. You can use whatever sprite you want */
         
         /* Let's continue with the character creation and finally, actually, register the character! */
-        helper.Content.Characters.V2.RegisterPlayableCharacter("DemoCharacter", new PlayableCharacterConfigurationV2()
+        helper.Content.Characters.V2.RegisterPlayableCharacter("ReshiramCCMod", new PlayableCharacterConfigurationV2()
         {
             /* Same as animations, we want to provide the appropiate Deck type */
             Deck = ReshiramCCMod_Deck.Deck,
 
             /* The Starter Card Types are, as the name implies, the cards you will start a DemoCharacter run with. 
              * You could provide vanilla cards if you want, but it's way more fun to create your own cards! */
-            Starters = (StarterDeck)DemoCharacter_StarterCard_Types,
+            Starters = (StarterDeck)ReshiramCCModCharacter_StarterCard_Types,
 
             /* This is the little blurb that appears when you hover over the character in-game.
              * You can make it fluff, use it as a way to tell players about the character's playstyle, or a little bit of both! */
