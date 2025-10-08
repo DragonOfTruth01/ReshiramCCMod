@@ -142,11 +142,11 @@ public sealed class ModEntry : SimpleMod
 
         /*Of Note: You may notice we aren't assigning these ICharacterAnimationEntry and ICharacterEntry to any object, unlike stuff above,
         * It's totally fine to assign them if you'd like, but we don't have a reason to so in this mod */
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             /* What we registered above was an IDeckEntry object, but when you register a character animation the Helper will ask for you to provide its Deck 'id'
              * This is simple enough, as you can get it from ReshiramCCMod_Deck */
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
 
             /* The Looptag is the 'name' of the animation. When making shouts and events, and you want your character to show emotions, the LoopTag is what you want
              * In vanilla Cobalt Core, there are 4 'animations' looptags that any character should have: "neutral", "mini", "squint" and "gameover",
@@ -163,9 +163,9 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Neutral_4.Sprite
             }
         });
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "mini",
             Frames = new[]
             {
@@ -173,9 +173,9 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Mini_0.Sprite
             }
         });
-        helper.Content.Characters.RegisterCharacterAnimation(new CharacterAnimationConfiguration()
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
-            Deck = ReshiramCCMod_Deck.Deck,
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "squint",
             Frames = new[]
             {
@@ -190,14 +190,14 @@ public sealed class ModEntry : SimpleMod
          * Answer: You should be able to use the knowledge you have earned so far to register your own animations! If you'd like, try making the 'gameover' registration code here. You can use whatever sprite you want */
         
         /* Let's continue with the character creation and finally, actually, register the character! */
-        helper.Content.Characters.RegisterCharacter("DemoCharacter", new CharacterConfiguration()
+        helper.Content.Characters.V2.RegisterPlayableCharacter("DemoCharacter", new PlayableCharacterConfigurationV2()
         {
             /* Same as animations, we want to provide the appropiate Deck type */
             Deck = ReshiramCCMod_Deck.Deck,
 
             /* The Starter Card Types are, as the name implies, the cards you will start a DemoCharacter run with. 
              * You could provide vanilla cards if you want, but it's way more fun to create your own cards! */
-            StarterCardTypes = DemoCharacter_StarterCard_Types,
+            Starters = (StarterDeck)DemoCharacter_StarterCard_Types,
 
             /* This is the little blurb that appears when you hover over the character in-game.
              * You can make it fluff, use it as a way to tell players about the character's playstyle, or a little bit of both! */
