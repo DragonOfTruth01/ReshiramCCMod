@@ -4,29 +4,27 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardPsychic : Card, ReshiramCCModCard
+internal sealed class CardLightScreen : Card, ReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Psychic", new()
+        helper.Content.Cards.RegisterCard("Light Screen", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
             {
                 deck = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
-                rarity = Rarity.uncommon,
+                rarity = Rarity.common,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Psychic", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Light Screen", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
     {
         CardData data = new CardData()
         {
-            cost = 2,
-            flippable = true,
-            retain = upgrade == Upgrade.A
+            cost = upgrade == Upgrade.A ? 0 : 1
         };
         return data;
     }
@@ -40,17 +38,14 @@ internal sealed class CardPsychic : Card, ReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.evade,
+                        status = Status.tempShield,
                         statusAmount = 1,
                         targetPlayer = true
                     },
                     new AStatus(){
-                        status = Status.tempShield,
-                        statusAmount = 2,
+                        status = Status.heat,
+                        statusAmount = -1,
                         targetPlayer = true
-                    },
-                    new AMove(){
-                        dir = -1
                     }
                 };
                 break;
@@ -59,17 +54,14 @@ internal sealed class CardPsychic : Card, ReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.evade,
+                        status = Status.tempShield,
                         statusAmount = 1,
                         targetPlayer = true
                     },
                     new AStatus(){
-                        status = Status.tempShield,
-                        statusAmount = 2,
+                        status = Status.heat,
+                        statusAmount = -1,
                         targetPlayer = true
-                    },
-                    new AMove(){
-                        dir = -1
                     }
                 };
                 break;
@@ -78,17 +70,14 @@ internal sealed class CardPsychic : Card, ReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.evade,
-                        statusAmount = 1,
-                        targetPlayer = true
-                    },
-                    new AStatus(){
-                        status = Status.shield,
+                        status = Status.tempShield,
                         statusAmount = 2,
                         targetPlayer = true
                     },
-                    new AMove(){
-                        dir = -1
+                    new AStatus(){
+                        status = Status.heat,
+                        statusAmount = -2,
+                        targetPlayer = true
                     }
                 };
                 break;
