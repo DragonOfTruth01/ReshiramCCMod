@@ -46,8 +46,12 @@ public sealed class ModEntry : SimpleMod
         typeof(CardDragonClaw),
         typeof(CardFireFang),
         typeof(CardWillOWisp),
-        typeof(CardDragonBreath),
-        typeof(CardPsychic)
+        typeof(CardDragonBreath)
+        
+    ];
+
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_UncommonCard_Types { get; } = [
+        typeof(CardExtrasensory)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
@@ -55,8 +59,8 @@ public sealed class ModEntry : SimpleMod
      * If so, you can .Concat(TheUncommonListYouMade) */
     internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
         = [
-            .. ReshiramCCModCharacter_CommonCard_Types
-        //  .. ReshiramCCModCharacter_UncommonCard_Types,
+            .. ReshiramCCModCharacter_CommonCard_Types,
+            .. ReshiramCCModCharacter_UncommonCard_Types
         //  .. ReshiramCCModCharacter_RareCard_Types,
         //     typeof(Whatever_Other_Cards_To_Add)
         ];

@@ -4,11 +4,11 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardPsychic : Card, ReshiramCCModCard
+internal sealed class CardExtrasensory : Card, ReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Psychic", new()
+        helper.Content.Cards.RegisterCard("Extrasensory", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
@@ -17,7 +17,7 @@ internal sealed class CardPsychic : Card, ReshiramCCModCard
                 rarity = Rarity.common,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Psychic", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Extrasensory", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
