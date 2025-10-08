@@ -39,6 +39,9 @@
         "B": "Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>."
       }
     },
+    "Psychic": {
+      "name": "Psychic"
+    },
     "Will-O-Wisp": {
       "name": "Will-O-Wisp"
     },
