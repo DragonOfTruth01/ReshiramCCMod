@@ -113,7 +113,7 @@ public sealed class ModEntry : SimpleMod
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
-        ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("DemoDeck", new DeckConfiguration()
+        ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModDeck", new DeckConfiguration()
         {
             Definition = new DeckDef()
             {
