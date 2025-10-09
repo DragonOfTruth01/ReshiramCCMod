@@ -11,5 +11,5 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Psychic | 2 | Gain 1 evade. Gain 2 temp shield. Enemy is moved one to the left (flippable). | Card gains retain. | Gain 2 real shield instead of temp shield. |
 | Yes | Common | Will-O-Wisp | 0 | Enemy gains 2 heat (outgoing). Gain 1 temp shield. Gain 1 heat. | Enemy instead gains 2 heat twice. Gain 2 heat instead of 1. | Enemy also gains 1 smoldering beforehand. Increase cost to 1. |
 | Yes | Common | Heat Wave | 1 | Enemy gains 1 smoldering and 2 heat (outgoing). Gain 1 heat. | Increase to 2 smoldering. Gain 3 heat instead. | Remove self heat gain. |
-| Yes | Common | Facade | 1 | Attack 2. If this hits an overheated enemy, attack 2 again. | Second attack instead deals 4 damage. | Add pierce to both attacks. |
+| No | Common | Facade | 1 | Attack 2. If this hits an overheated enemy, attack 2 again. | Second attack instead deals 4 damage. | Add pierce to both attacks. |
 | Yes | Common | Light Screen | 1 | Gain 1 temp shield. Reduce heat by 1. | Reduce cost to 0. | Gain 2 temp shield. Reduce heat by 2. |
