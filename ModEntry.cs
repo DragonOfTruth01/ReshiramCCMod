@@ -60,6 +60,7 @@ public sealed class ModEntry : SimpleMod
 
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_UncommonCard_Types { get; } = [
         typeof(CardExtrasensory),
+        typeof(CardHoneClaws),
         typeof(CardFireFang),
         typeof(CardOverheat)
     ];
