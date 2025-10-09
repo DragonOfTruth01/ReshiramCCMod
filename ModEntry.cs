@@ -38,6 +38,13 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
 
+    // NOTE TO SELF ABOUT CARDS:
+    // It would be cool to have them follow these rules:
+    // Fire cards (cards reated to heat) should have red backgrounds (and are associated with the smoldering status)
+    // Dragon cards should have purple backgrounds (and are associated with the flammable status)
+    // Ice cards (kyurem cards) can have light blue backgrounds (and are associated with engine lock)
+    // Other cards could be associated with colors related to the type of the move from pokemon
+
     /* You can create many IReadOnlyList<Type> as a way to organize your content.
      * We recommend having a Starter Cards list, a Common Cards list, an Uncommon Cards list, and a Rare Cards list
      * However you can be more detailed, or you can be more loose, if that's your style */
