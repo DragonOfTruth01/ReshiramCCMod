@@ -24,7 +24,7 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.B ? 1 : 0,
+            cost = upgrade == Upgrade.A ? 1 : 0,
         };
         return data;
     }
@@ -56,28 +56,6 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                 {
                     new AStatus()
                     {
-                        status = Status.heat,
-                        statusAmount = 2
-                    },
-                    new AStatus()
-                    {
-                        status = Status.heat,
-                        statusAmount = 2
-                    },
-                    new AStatus()
-                    {
-                        status = Status.heat,
-                        statusAmount = 2,
-                        targetPlayer = true
-                    }
-                };
-                break;
-
-            case Upgrade.B:
-                actions = new()
-                {
-                    new AStatus()
-                    {
                         status = ModEntry.Instance.Smoldering.Status,
                         statusAmount = 1
                     },
@@ -90,6 +68,28 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                     {
                         status = Status.heat,
                         statusAmount = 1,
+                        targetPlayer = true
+                    }
+                };
+                break;
+
+            case Upgrade.B:
+                actions = new()
+                {
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
