@@ -35,8 +35,8 @@
       "name": "Dragon Breath",
       "description": {
         "None": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
-        "A": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=285cc4>flammable</c>.",
-        "B": "Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>."
+        "A": "Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
+        "B": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=285cc4>flammable</c>."
       }
     },
     "Psychic": {

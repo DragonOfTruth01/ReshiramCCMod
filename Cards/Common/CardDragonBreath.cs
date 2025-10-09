@@ -24,7 +24,7 @@ internal sealed class CardDragonBreath : Card, ReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.A ? 2 : 1,
+            cost = upgrade == Upgrade.B ? 2 : 1,
             description = ModEntry.Instance.Localizations.Localize(["card", "Dragon Breath", "description", upgrade.ToString()])
         };
         return data;
@@ -64,30 +64,6 @@ internal sealed class CardDragonBreath : Card, ReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 1,
-                    }
-                };
-
-                // Add 2 flammable if this attack would overheat the enemy (current heat + 1)
-                // if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
-                // {
-                //     cardActionList2.Add(
-                //         new AStatus()
-                //         {
-                //             status = ModEntry.Instance.Flammable.Status,
-                //             statusAmount = 2,
-                //         }
-                //     );
-                // }
-
-                actions = cardActionList2;
-                break;
-            case Upgrade.B:
-                List<CardAction> cardActionList3 = new List<CardAction>()
-                {
-                    new AStatus()
-                    {
-                        status = Status.heat,
                         statusAmount = 2,
                     }
                 };
@@ -100,6 +76,30 @@ internal sealed class CardDragonBreath : Card, ReshiramCCModCard
                 //         {
                 //             status = ModEntry.Instance.Flammable.Status,
                 //             statusAmount = 1,
+                //         }
+                //     );
+                // }
+
+                actions = cardActionList2;
+                break;
+            case Upgrade.B:
+                List<CardAction> cardActionList3 = new List<CardAction>()
+                {
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                    }
+                };
+
+                // Add 2 flammable if this attack would overheat the enemy (current heat + 1)
+                // if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
+                // {
+                //     cardActionList2.Add(
+                //         new AStatus()
+                //         {
+                //             status = ModEntry.Instance.Flammable.Status,
+                //             statusAmount = 2,
                 //         }
                 //     );
                 // }
