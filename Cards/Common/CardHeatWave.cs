@@ -58,6 +58,20 @@ internal sealed class CardHeatWave : Card, ReshiramCCModCard
                 {
                     new AStatus(){
                         status = ModEntry.Instance.Smoldering.Status,
+                        statusAmount = 1
+                    },
+                    new AStatus(){
+                        status = Status.heat,
+                        statusAmount = 2
+                    }
+                };
+                break;
+
+            case Upgrade.B:
+                actions = new()
+                {
+                    new AStatus(){
+                        status = ModEntry.Instance.Smoldering.Status,
                         statusAmount = 2
                     },
                     new AStatus(){
@@ -68,20 +82,6 @@ internal sealed class CardHeatWave : Card, ReshiramCCModCard
                         status = Status.heat,
                         statusAmount = 3,
                         targetPlayer = true
-                    }
-                };
-                break;
-
-            case Upgrade.B:
-                actions = new()
-                {
-                    new AStatus(){
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
-                    },
-                    new AStatus(){
-                        status = Status.heat,
-                        statusAmount = 2
                     }
                 };
                 break;
