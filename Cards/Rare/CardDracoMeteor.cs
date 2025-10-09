@@ -40,22 +40,19 @@ internal sealed class CardDracoMeteor : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 1
                     },
-                    new AStatus()
+                    new AAttack()
                     {
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 1
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2)
                     },
                     new AStatus()
                     {
@@ -71,22 +68,19 @@ internal sealed class CardDracoMeteor : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 1
                     },
-                    new AStatus()
+                    new AAttack()
                     {
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 2
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2)
                     },
                     new AStatus()
                     {
@@ -102,22 +96,19 @@ internal sealed class CardDracoMeteor : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 1)
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 1
                     },
-                    new AStatus()
+                    new AAttack()
                     {
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 1
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2)
                     },
                     new AStatus()
                     {
