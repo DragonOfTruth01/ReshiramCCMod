@@ -18,7 +18,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Extrasensory (*consider adding retain?*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 1 heat.
 | No | Uncommon | Sunny Day | 2 | Change field effect to solar flare. Exhaust. | Also gain 1 energy next turn. | Enemy ship also gains 2 heat. |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 2 heat and 1 flammable. | Reduce cost to 0. | Instead gain 1 powerdrive. Gain 3 heat and 1 flammable. Card gains exhaust. |
-| No | Uncommon | Solar Beam (*change cost to 1 maybe?*) | 2 | Deal 1 damage for each heat on the enemy. Exhaust. | Increase dmage by heat on self. | Change cost to 3. Do not exhaust. |
+| No | Uncommon | Solar Beam (*change cost to 1 maybe?*) | 1 | Deal 1 damage for each heat on the enemy. Exhaust. | Increase damage by heat on self. | Change cost to 2. Do not exhaust. |
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
 | No | Uncommon | Imprison | 2 | Cancel all enemy's non-attack actions (outgoing). | Reduce cost to 1. | Cancel all enemy actions. End your turn. |
 | Yes | Uncommon | Overheat | 1 | Enemy gains 3 heat and 1 flammable (ougoing). Gain 3 heat. | Reduce self heat gain to 2. | Enemy also gains 1 smoldering beforehand. |
