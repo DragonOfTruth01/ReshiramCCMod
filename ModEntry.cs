@@ -60,7 +60,8 @@ public sealed class ModEntry : SimpleMod
 
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_UncommonCard_Types { get; } = [
         typeof(CardExtrasensory),
-        typeof(CardFireFang)
+        typeof(CardFireFang),
+        typeof(CardOverheat)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
