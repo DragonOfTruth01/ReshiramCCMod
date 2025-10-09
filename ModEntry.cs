@@ -64,14 +64,18 @@ public sealed class ModEntry : SimpleMod
         typeof(CardOverheat)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_RareCard_Types { get; } = [
+        typeof(CardFusionFlare)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
     internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
         = [
             .. ReshiramCCModCharacter_CommonCard_Types,
-            .. ReshiramCCModCharacter_UncommonCard_Types
-        //  .. ReshiramCCModCharacter_RareCard_Types,
+            .. ReshiramCCModCharacter_UncommonCard_Types,
+            .. ReshiramCCModCharacter_RareCard_Types
         //     typeof(Whatever_Other_Cards_To_Add)
         ];
 
