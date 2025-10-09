@@ -22,3 +22,5 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
 | No | Uncommon | Imprison | 2 | Cancel all enemy's non-attack actions (outgoing). | Reduce cost to 1. | Cancel all enemy actions. End your turn. |
 | Yes | Uncommon | Overheat | 1 | Enemy gains 3 heat and 1 flammable (ougoing). Gain 3 heat. | Reduce self heat gain to 2. | Enemy also gains 1 smoldering beforehand. |
+||||||||
+| Yes | Rare | Fusion Flare (*buff A upgrade to 3 heat?*) | 2 | Attack 2. Enemy gains 2 smoldering. Gain 1 heat. | Aslo apply 2 heat (outgoing). Increase self heat gain to 2. | Remove self heat gain. |
