@@ -40,8 +40,8 @@ public sealed class ModEntry : SimpleMod
 
     // NOTE TO SELF ABOUT CARDS:
     // It would be cool to have them follow these rules:
-    // Fire cards (cards reated to heat) should have red backgrounds (and are associated with the smoldering status)
-    // Dragon cards should have purple backgrounds (and are associated with the flammable status)
+    // Fire cards (cards reated to heat) should have red backgrounds (and are usually associated with the smoldering status)
+    // Dragon cards should have purple backgrounds (and are usually associated with the flammable status)
     // Ice cards (kyurem cards) can have light blue backgrounds (and are associated with engine lock)
     // Other cards could be associated with colors related to the type of the move from pokemon
 
