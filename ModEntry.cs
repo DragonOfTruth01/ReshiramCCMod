@@ -55,6 +55,7 @@ public sealed class ModEntry : SimpleMod
         typeof(CardDragonBreath),
         typeof(CardPsychic),
         typeof(CardWillOWisp),
+        typeof(CardHeatWave),
         typeof(CardLightScreen)
     ];
 
