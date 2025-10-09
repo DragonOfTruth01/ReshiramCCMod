@@ -14,7 +14,7 @@ internal sealed class CardPsychic : Card, ReshiramCCModCard
             Meta = new()
             {
                 deck = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
-                rarity = Rarity.uncommon,
+                rarity = Rarity.common,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
             Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Psychic", "name"]).Localize
