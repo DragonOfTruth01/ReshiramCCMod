@@ -4,11 +4,11 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardFusionFlare : Card, ReshiramCCModCard
+internal sealed class CardBlueFlare : Card, ReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Fusion Flare", new()
+        helper.Content.Cards.RegisterCard("Blue Flare", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
@@ -17,14 +17,15 @@ internal sealed class CardFusionFlare : Card, ReshiramCCModCard
                 rarity = Rarity.rare,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Fusion Flare", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Blue Flare", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
     {
         CardData data = new CardData()
         {
-            cost = 2,
+            cost = upgrade == Upgrade.A ? 3 : 4,
+            exhaust = upgrade != Upgrade.B
         };
         return data;
     }
@@ -39,15 +40,17 @@ internal sealed class CardFusionFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 2
+                        damage = GetDmg(s, 3)
                     },
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 1,
-                        targetPlayer = true
+                        statusAmount = 3
+                    },
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 2
                     }
                 };
                 break;
@@ -57,20 +60,17 @@ internal sealed class CardFusionFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 2
+                        damage = GetDmg(s, 3)
                     },
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 2
+                        statusAmount = 3
                     },
                     new AStatus()
                     {
-                        status = Status.heat,
-                        statusAmount = 2,
-                        targetPlayer = true
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 2
                     }
                 };
                 break;
@@ -80,9 +80,17 @@ internal sealed class CardFusionFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 5),
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 2
+                        damage = GetDmg(s, 3)
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 3
+                    },
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 1
                     }
                 };
                 break;
