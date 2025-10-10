@@ -24,8 +24,8 @@ internal sealed class CardHoneClaws : Card, ReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.B ? 0 : 1,
-            exhaust = upgrade == Upgrade.A
+            cost = upgrade == Upgrade.A ? 0 : 1,
+            exhaust = upgrade == Upgrade.B
         };
         return data;
     }
@@ -64,14 +64,14 @@ internal sealed class CardHoneClaws : Card, ReshiramCCModCard
                 {
                     new AStatus
                     {
-                        status = Status.powerdrive,
-                        statusAmount = 1,
+                        status = Status.overdrive,
+                        statusAmount = 2,
                         targetPlayer = true
                     },
                     new AStatus
                     {
                         status = Status.heat,
-                        statusAmount = 3,
+                        statusAmount = 2,
                         targetPlayer = true
                     },
                     new AStatus
@@ -88,14 +88,14 @@ internal sealed class CardHoneClaws : Card, ReshiramCCModCard
                 {
                     new AStatus
                     {
-                        status = Status.overdrive,
-                        statusAmount = 2,
+                        status = Status.powerdrive,
+                        statusAmount = 1,
                         targetPlayer = true
                     },
                     new AStatus
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new AStatus
