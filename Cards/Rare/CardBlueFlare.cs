@@ -64,9 +64,9 @@ internal sealed class CardBlueFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 8),
+                        damage = GetDmg(s, 7),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 3
+                        statusAmount = 4
                     }
                 };
                 break;
