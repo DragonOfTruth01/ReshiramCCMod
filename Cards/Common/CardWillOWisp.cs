@@ -44,6 +44,12 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                     },
                     new AStatus()
                     {
+                        status = Status.tempShield,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    },
+                    new AStatus()
+                    {
                         status = Status.heat,
                         statusAmount = 1,
                         targetPlayer = true
@@ -66,6 +72,12 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                     },
                     new AStatus()
                     {
+                        status = Status.tempShield,
+                        statusAmount = 2,
+                        targetPlayer = true
+                    },
+                    new AStatus()
+                    {
                         status = Status.heat,
                         statusAmount = 1,
                         targetPlayer = true
@@ -85,6 +97,12 @@ internal sealed class CardWillOWisp : Card, ReshiramCCModCard
                     {
                         status = Status.heat,
                         statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.shield,
+                        statusAmount = 1,
+                        targetPlayer = true
                     },
                     new AStatus()
                     {
