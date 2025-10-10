@@ -12,12 +12,6 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
     {
         /* We task Kokoro with the job to register our status into the game */
         Instance.KokoroApi.StatusLogic.RegisterHook(this, 0);
-
-        Instance.Harmony.Patch(
-            original: AccessTools.DeclaredMethod(typeof(AStatus), nameof(AStatus.Begin)),
-            prefix: new HarmonyMethod(GetType(), nameof(AStatus_Begin_Prefix)),
-            postfix: new HarmonyMethod(GetType(), nameof(AStatus_Begin_Postfix))
-        );
     }
 
     private class HarmonyRef

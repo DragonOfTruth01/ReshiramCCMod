@@ -103,7 +103,12 @@ public sealed class ModEntry : SimpleMod
         // Kokoro is needed to handle statuses
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!.V2;
 
-        Harmony = new Harmony(package.Manifest.UniqueName);
+        Harmony = new Harmony("DragonOfTruth01.ReshiramCCMod");
+
+        // This can be done in place of all Instance.Harmony.Patch() calls in class constructors.
+        // However, this will case your IDE/text editor to think the function is unused (since 
+        // the patch hasn't been given visibility via constructor). This is expected behavior.
+        Harmony.PatchAll();
 
         /* These localizations lists help us organize our mod's text and messages by language.
          * For general use, prefer AnyLocalizations, as that will provide an easier time to potential localization submods that are made for your mod 
