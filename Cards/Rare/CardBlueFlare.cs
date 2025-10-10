@@ -24,8 +24,8 @@ internal sealed class CardBlueFlare : Card, ReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.A ? 3 : 4,
-            exhaust = upgrade != Upgrade.B
+            cost = upgrade == Upgrade.A ? 2 : (upgrade == Upgrade.B ? 4 : 3),
+            exhaust = true
         };
         return data;
     }
@@ -40,18 +40,10 @@ internal sealed class CardBlueFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3)
-                    },
-                    new AStatus()
-                    {
-                        status = Status.heat,
+                        damage = GetDmg(s, 3),
+                        status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 3
                     },
-                    new AStatus()
-                    {
-                        status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 2
-                    }
                 };
                 break;
 
@@ -60,17 +52,9 @@ internal sealed class CardBlueFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3)
-                    },
-                    new AStatus()
-                    {
-                        status = Status.heat,
-                        statusAmount = 3
-                    },
-                    new AStatus()
-                    {
+                        damage = GetDmg(s, 3),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 2
+                        statusAmount = 3
                     }
                 };
                 break;
@@ -80,17 +64,9 @@ internal sealed class CardBlueFlare : Card, ReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3)
-                    },
-                    new AStatus()
-                    {
-                        status = Status.heat,
-                        statusAmount = 3
-                    },
-                    new AStatus()
-                    {
+                        damage = GetDmg(s, 8),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1
+                        statusAmount = 3
                     }
                 };
                 break;
