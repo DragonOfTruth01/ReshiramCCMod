@@ -1,6 +1,6 @@
 # Status Reference
 
-This document acts as a reference for that statuses that are introduced in this mod.
+This document acts as a reference for the statuses that are introduced in this mod.
 
 | Done? | Name | Decreases | Effect |
 |:-:|:-:|:-:|:-:|
