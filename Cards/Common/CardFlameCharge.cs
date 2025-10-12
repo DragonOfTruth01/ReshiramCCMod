@@ -25,6 +25,7 @@ internal sealed class CardFlameCharge : Card, ReshiramCCModCard
         CardData data = new CardData()
         {
             cost = upgrade == Upgrade.B ? 1 : 0,
+            recycle = true
         };
         return data;
     }
