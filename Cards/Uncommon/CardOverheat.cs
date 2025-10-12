@@ -37,6 +37,10 @@ internal sealed class CardOverheat : Card, ReshiramCCModCard
             case Upgrade.None:
                 actions = new()
                 {
+                    new AStatus(){
+                        status = ModEntry.Instance.Smoldering.Status,
+                        statusAmount = 1
+                    },
                     new AStatus()
                     {
                         status = Status.heat,
@@ -59,6 +63,10 @@ internal sealed class CardOverheat : Card, ReshiramCCModCard
             case Upgrade.A:
                 actions = new()
                 {
+                    new AStatus(){
+                        status = ModEntry.Instance.Smoldering.Status,
+                        statusAmount = 1
+                    },
                     new AStatus()
                     {
                         status = Status.heat,
@@ -88,12 +96,12 @@ internal sealed class CardOverheat : Card, ReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 3
+                        statusAmount = 4
                     },
                     new AStatus
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                     },
                     new AStatus
                     {
