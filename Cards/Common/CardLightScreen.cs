@@ -24,7 +24,8 @@ internal sealed class CardLightScreen : Card, ReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.A ? 0 : 1
+            cost = upgrade == Upgrade.A ? 0 : 1,
+            retain = upgrade == Upgrade.B
         };
         return data;
     }
@@ -71,12 +72,12 @@ internal sealed class CardLightScreen : Card, ReshiramCCModCard
                 {
                     new AStatus(){
                         status = Status.tempShield,
-                        statusAmount = 2,
+                        statusAmount = 1,
                         targetPlayer = true
                     },
                     new AStatus(){
                         status = Status.heat,
-                        statusAmount = -2,
+                        statusAmount = -1,
                         targetPlayer = true
                     }
                 };
