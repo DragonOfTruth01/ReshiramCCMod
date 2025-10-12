@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
-internal sealed class DemoArtifactCounting : Artifact, ReshiramCCModArtifact
+internal sealed class DemoArtifactCounting : Artifact, IReshiramCCModArtifact
 {
     public int counter = 0;
     public static void Register(IModHelper helper)
