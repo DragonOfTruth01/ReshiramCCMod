@@ -6,6 +6,8 @@ namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
 internal sealed class CardDragonBreath : Card, ReshiramCCModCard
 {
+    private static IKokoroApi.IV2.IConditionalApi Conditional => ModEntry.Instance.KokoroApi.Conditional;
+
     public static void Register(IModHelper helper)
     {
         helper.Content.Cards.RegisterCard("Dragon Breath", new()
@@ -32,6 +34,7 @@ internal sealed class CardDragonBreath : Card, ReshiramCCModCard
     public override List<CardAction> GetActions(State s, Combat c)
     {
         List<CardAction> actions = new();
+
         switch (upgrade)
         {
             case Upgrade.None:
@@ -44,17 +47,25 @@ internal sealed class CardDragonBreath : Card, ReshiramCCModCard
                     }
                 };
 
-                // Add 1 flammable if this attack would overheat the enemy (current heat + 1)
-                // if (((Combat)s.route).otherShip.Get(Status.heat) + 1 >= ((Combat)s.route).otherShip.heatTrigger)
-                // {
-                //     cardActionList1.Add(
-                //         new AStatus()
-                //         {
-                //             status = ModEntry.Instance.Flammable.Status,
-                //             statusAmount = 1,
-                //         }
-                //     );
-                // }
+                // Check if other ship is at or above the overheat threshold
+                // If the other ship is null, we will crash, so do a check first
+                if (c.otherShip != null) {
+                    cardActionList1.Add(
+                        Conditional.MakeAction(
+                            Conditional.Equation(
+                                Conditional.Constant(c.otherShip.Get(Status.heat)),
+                                IKokoroApi.IV2.IConditionalApi.EquationOperator.GreaterThanOrEqual,
+                                Conditional.Constant(c.otherShip.heatTrigger),
+                                IKokoroApi.IV2.IConditionalApi.EquationStyle.EnemyPossession
+                            ).SetShowOperator(false),
+                            new AStatus()
+                            {
+                                status = ModEntry.Instance.Flammable.Status,
+                                statusAmount = 1
+                            }
+                        ).AsCardAction
+                    );
+                }
 
                 actions = cardActionList1;
                 break;
