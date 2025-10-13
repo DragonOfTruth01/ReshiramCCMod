@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardFlameCharge : Card, ReshiramCCModCard
+internal sealed class CardFlameCharge : Card, IReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {
@@ -25,6 +25,7 @@ internal sealed class CardFlameCharge : Card, ReshiramCCModCard
         CardData data = new CardData()
         {
             cost = upgrade == Upgrade.B ? 1 : 0,
+            recycle = true
         };
         return data;
     }

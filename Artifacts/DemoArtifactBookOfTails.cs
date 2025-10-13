@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
-internal sealed class DemoArtifactBookOfTails : Artifact, ReshiramCCModArtifact
+internal sealed class DemoArtifactBookOfTails : Artifact, IReshiramCCModArtifact
 {
     public static void Register(IModHelper helper)
     {

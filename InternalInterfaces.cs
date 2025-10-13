@@ -2,12 +2,12 @@
 
 namespace DragonOfTruth01.ReshiramCCMod;
 
-internal interface ReshiramCCModCard
+internal interface IReshiramCCModCard
 {
     static abstract void Register(IModHelper helper);
 }
 
-internal interface ReshiramCCModArtifact
+internal interface IReshiramCCModArtifact
 {
     static abstract void Register(IModHelper helper);
 }
