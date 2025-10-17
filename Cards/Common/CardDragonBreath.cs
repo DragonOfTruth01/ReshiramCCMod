@@ -49,7 +49,8 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
 
                 // Check if other ship is at or above the overheat threshold
                 // If the other ship is null, we will crash, so do a check first
-                if (c.otherShip != null) {
+                if (c.otherShip != null)
+                {
                     cardActionList1.Add(
                         Conditional.MakeAction(
                             Conditional.Equation(
@@ -119,5 +120,15 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 break;
         }
         return actions;
+    }
+    
+    private sealed class EnemyOverheatCondition : IKokoroApi.IV2.IConditionalApi.IBoolExpression
+    {
+        public required bool isEnemyOverheating;
+
+        public bool GetValue(State state, Combat combat)
+        {
+            
+        }
     }
 }
