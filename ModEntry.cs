@@ -20,17 +20,23 @@ public sealed class ModEntry : SimpleMod
 
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_0 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_2 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_3 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_4 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Mini_0 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Squint_0 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_2 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_3 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
 
     internal IDeckEntry ReshiramCCMod_Deck { get; }
     internal IShipEntry ReshiramCCMod_Ship { get; }
@@ -128,17 +134,23 @@ public sealed class ModEntry : SimpleMod
          * Of note: GetRelativeFile is case sensitive. Double check you've written the file names correctly */
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
+
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
+
         ReshiramCCMod_Character_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_0.png"));
         ReshiramCCMod_Character_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_1.png"));
         ReshiramCCMod_Character_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_2.png"));
         ReshiramCCMod_Character_Neutral_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_3.png"));
         ReshiramCCMod_Character_Neutral_4 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_neutral_4.png"));
+
         ReshiramCCMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_mini_0.png"));
+
         ReshiramCCMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_0.png"));
         ReshiramCCMod_Character_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_1.png"));
         ReshiramCCMod_Character_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_2.png"));
         ReshiramCCMod_Character_Squint_3 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_squint_3.png"));
+
+        ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
