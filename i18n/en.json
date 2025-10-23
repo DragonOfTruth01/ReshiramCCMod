@@ -32,12 +32,7 @@
       "name": "Flame Charge"
     },
     "Dragon Breath": {
-      "name": "Dragon Breath",
-      "description": {
-        "None": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
-        "A": "Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
-        "B": "Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=285cc4>flammable</c>."
-      }
+      "name": "Dragon Breath"
     },
     "Psychic": {
       "name": "Psychic"
@@ -84,6 +79,12 @@
     "Flammable": {
       "name": "Flammable",
       "description": "Take <c=boldPink>{0}</c> extra damage when <c=ff687d>overheating</c>."
+    }
+  },
+  "condition": {
+    "isEnemyOverheating" : {
+      "title" : "Enemy Is Overheating",
+      "description" : "the enemy is overheating"
     }
   }
 }
