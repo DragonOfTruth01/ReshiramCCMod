@@ -24,9 +24,11 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
     }
     public override CardData GetData(State state)
     {
+        object damageString = "<c=redd>" + GetDmg(state, upgrade == Upgrade.B ? 1 : 0) + "</c>";
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.B ? 2 : 1
+            cost = upgrade == Upgrade.B ? 2 : 1,
+            description = ModEntry.Instance.Localizations.Localize(["card", "Dragon Breath", "description", upgrade.ToString()], new { damageString })
         };
         return data;
     }
