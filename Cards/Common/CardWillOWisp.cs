@@ -24,7 +24,8 @@ internal sealed class CardWillOWisp : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = upgrade == Upgrade.A ? 1 : 0,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardWillOWispBG.Sprite,
+            cost = upgrade == Upgrade.A ? 1 : 0
         };
         return data;
     }
