@@ -6,19 +6,11 @@
     }
   },
   "artifact": {
-    "BookOfTails": {
-      "name": "BOOK OF TAILS",
-      "description": "At start of turn, add a <c=cardtrait>temp</c> <c=card>Fox Tale</c> to your hand."
-    },
-    "Counting": {
-      "name": "COUNTING",
-      "description": "At start of turn, count sheeps. Once you counted 7 sheep, gain 1 <c=status>ENERGY</c> and start counting again."
-    }
-  },
-  "ship": {
-    "DemoShip": {
-      "name": "DemoShip",
-      "description": "This is a demo ship.\n <c=boldPink>Isn't this cool?</c>"
+    "common": {
+      "Flame Orb": {
+      "name": "Flame Orb",
+      "description": "At start of combat, enemy gains 1 <c=285cc4>flammable</c>."
+      }
     }
   },
   "card": {

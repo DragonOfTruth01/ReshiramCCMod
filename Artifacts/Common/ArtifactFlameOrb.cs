@@ -6,11 +6,11 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
-internal sealed class DemoArtifactBookOfTails : Artifact, IReshiramCCModArtifact
+internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
 {
     public static void Register(IModHelper helper)
     {
-        helper.Content.Artifacts.RegisterArtifact("BookOfTails", new()
+        helper.Content.Artifacts.RegisterArtifact("Flame Orb", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
@@ -18,9 +18,9 @@ internal sealed class DemoArtifactBookOfTails : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/bookoftails.png")).Sprite,
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "BookOfTails", "name"]).Localize,
-            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "BookOfTails", "description"]).Localize
+            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/flameorb.png")).Sprite,
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Flame Orb", "name"]).Localize,
+            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Flame Orb", "description"]).Localize
         });
     }
 

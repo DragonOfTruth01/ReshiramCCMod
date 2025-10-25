@@ -39,7 +39,6 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
 
     internal IDeckEntry ReshiramCCMod_Deck { get; }
-    internal IShipEntry ReshiramCCMod_Ship { get; }
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
@@ -91,15 +90,15 @@ public sealed class ModEntry : SimpleMod
         ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
-    internal static IReadOnlyList<Type> DemoCharacter_CommonArtifact_Types { get; } = [
-        typeof(DemoArtifactBookOfTails)
+    internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
+        typeof(ArtifactFlameOrb)
     ];
-    internal static IReadOnlyList<Type> DemoShip_Artifact_Types { get; } = [
-        typeof(DemoArtifactCounting)
+    internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
+
     ];
     internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
-        => DemoCharacter_CommonArtifact_Types
-        .Concat(DemoShip_Artifact_Types);
+        => ReshiramCCMod_CommonArtifact_Types
+        .Concat(ReshiramCCMod_BossArtifact_Types);
 
 
     public ModEntry(IPluginPackage<IModManifest> package, IModHelper helper, ILogger logger) : base(package, helper, logger)
@@ -280,107 +279,6 @@ public sealed class ModEntry : SimpleMod
          * You may also notice we're using the other interface from InternalInterfaces.cs, IDemoArtifact, to help us out */
         foreach (var artifactType in ReshiramCCMod_AllArtifact_Types)
             AccessTools.DeclaredMethod(artifactType, nameof(IReshiramCCModArtifact.Register))?.Invoke(null, [helper]);
-
-        /* 3. SHIPS
-         * Creating a ship is much like creating a character
-         * You will need some assets for the ship parts
-         * You can add ship-exclusive cards and artifacts too */
-
-        /* Let's start with registering the ship parts, so we don't have to do it while making the ship proper
-         * You may notice these assets are copies of the vanilla parts. Don't worry, you can get wild with your own designs! */
-        var demoShipPartWing = helper.Content.Ships.RegisterPart("DemoPart.Wing", new PartConfiguration()
-        {
-            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/demowing.png")).Sprite
-        });
-        var demoShipPartCannon = helper.Content.Ships.RegisterPart("DemoPart.Cannon", new PartConfiguration()
-        {
-            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/democannon.png")).Sprite
-        });
-        var demoShipPartMissiles = helper.Content.Ships.RegisterPart("DemoPart.Missiles", new PartConfiguration()
-        {
-            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/demomissiles.png")).Sprite
-        });
-        var demoShipPartCockpit = helper.Content.Ships.RegisterPart("DemoPart.Cockpit", new PartConfiguration()
-        {
-            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/democockpit.png")).Sprite
-        });
-        var demoShipSpriteChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/ships/demochassis.png")).Sprite;
-
-        /* With the parts and sprites done, we can now create our Ship a bit more easily */
-        ReshiramCCMod_Ship = helper.Content.Ships.RegisterShip("DemoShip", new ShipConfiguration()
-        {
-            Ship = new StarterShip()
-            {
-                ship = new Ship()
-                {
-                    /* This is how much hull the ship will start a run with. We recommend matching hullMax */
-                    hull = 12,
-                    hullMax = 12,
-                    shieldMaxBase = 4,
-                    parts =
-                    {
-                        /* This is the order in which the ship parts will be arranged in-game, from left to right. Part1 -> Part2 -> Part3 */
-                        new Part
-                        {
-                            type = PType.wing,
-                            skin = demoShipPartWing.UniqueName
-                        },
-                        new Part
-                        {
-                            type = PType.cannon,
-                            skin = demoShipPartCannon.UniqueName,
-                            damageModifier = PDamMod.armor
-                        },
-                        new Part
-                        {
-                            type = PType.missiles,
-                            skin = demoShipPartMissiles.UniqueName,
-                            damageModifier = PDamMod.weak
-                        },
-                        new Part
-                        {
-                            type = PType.cockpit,
-                            skin = demoShipPartCockpit.UniqueName
-                        },
-                        new Part
-                        {
-                            type = PType.wing,
-                            skin = demoShipPartWing.UniqueName,
-                            flip = true
-                        }
-                    }
-                },
-
-                /* These are cards and artifacts the ship will start a run with. The recommended card amount is 4, and the recommended artifact amount is 2 to 3 */
-                cards =
-                {
-                    new CannonColorless(),
-                    new DodgeColorless()
-                    {
-                        upgrade = Upgrade.A,
-                    },
-                    new DodgeColorless()
-                    {
-                        upgrade = Upgrade.B,
-                    },
-                    new BasicShieldColorless(),
-                },
-                artifacts =
-                {
-                    new ShieldPrep(),
-                    new DemoArtifactCounting()
-                }
-            },
-            ExclusiveArtifactTypes = new HashSet<Type>()
-            {
-                /* If you make some artifacts that you want only this ship to encounter in a run, here is where you place them */
-                typeof(DemoArtifactCounting)
-            },
-
-            UnderChassisSprite = demoShipSpriteChassis,
-            Name = AnyLocalizations.Bind(["ship", "DemoShip", "name"]).Localize,
-            Description = AnyLocalizations.Bind(["ship", "DemoShip", "description"]).Localize
-        });
 
         /* 4. STATUSES
          * You might, now, with all this code behind our backs, start recognizing patterns in the way we can register stuff. */
