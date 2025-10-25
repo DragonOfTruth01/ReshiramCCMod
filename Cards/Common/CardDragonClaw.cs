@@ -24,7 +24,8 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = 2,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonClawBG.Sprite,
+            cost = 2
         };
         return data;
     }

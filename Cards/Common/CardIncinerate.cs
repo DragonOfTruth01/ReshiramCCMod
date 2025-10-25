@@ -24,8 +24,8 @@ internal sealed class CardIncinerate : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = 1,
-
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardIncinerateBG.Sprite,
+            cost = 1
         };
         return data;
     }
