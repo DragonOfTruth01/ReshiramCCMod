@@ -18,9 +18,9 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/flameorb.png")).Sprite,
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Flame Orb", "name"]).Localize,
-            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Flame Orb", "description"]).Localize
+            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/flameOrb.png")).Sprite,
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Flame Orb", "name"]).Localize,
+            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Flame Orb", "description"]).Localize
         });
     }
 
