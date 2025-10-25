@@ -27,6 +27,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
         object damageString = "<c=redd>" + GetDmg(state, upgrade == Upgrade.B ? 1 : 0) + "</c>";
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonBreathBG.Sprite,
             cost = upgrade == Upgrade.B ? 2 : 1,
             description = ModEntry.Instance.Localizations.Localize(["card", "Dragon Breath", "description", upgrade.ToString()], new { damageString })
         };
