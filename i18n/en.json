@@ -9,7 +9,7 @@
     "common": {
       "Flame Orb": {
       "name": "Flame Orb",
-      "description": "At start of combat, enemy gains 1 <c=285cc4>flammable</c>."
+      "description": "At start of combat, enemy gains 1 <c=status>flammable</c>."
       }
     }
   },

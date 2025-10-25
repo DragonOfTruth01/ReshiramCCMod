@@ -24,31 +24,13 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
         });
     }
 
-    public override List<Tooltip>? GetExtraTooltips()
-        => new List<Tooltip>
-        {
-            new TTCard
-            {
-                card = new CardIncinerate
-                {
-                    temporaryOverride = true
-                }
-            }
-        }
-        .ToList();
-
-    public override void OnTurnStart(State s, Combat c)
+    public override void OnCombatStart(State s, Combat c)
     {
-        if (!c.isPlayerTurn)
-            return;
-        c.QueueImmediate([
-            new AAddCard
+        c.Queue([
+            new AStatus
             {
-                card = new CardIncinerate
-                {
-                    temporaryOverride = true
-                },
-                destination = CardDestination.Hand
+                status = ModEntry.Instance.Flammable.Status,
+                statusAmount = 1
             }
         ]);
     }
