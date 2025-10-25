@@ -95,7 +95,7 @@ public sealed class ModEntry : SimpleMod
         typeof(ArtifactFlameOrb)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
-
+        typeof(ArtifactFireGem)
     ];
     internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
         => ReshiramCCMod_CommonArtifact_Types

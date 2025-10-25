@@ -58,19 +58,19 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
 
             //Then, apply this relic's effects
             c.Queue([
-            new AStatus
-            {
-                status = Status.overdrive,
-                statusAmount = 1,
-                targetPlayer = true
-            },
-            new AStatus
-            {
-                status = Status.heat,
-                statusAmount = 1,
-                targetPlayer = true
-            }
-        ]);
+                new AStatus
+                {
+                    status = Status.overdrive,
+                    statusAmount = 1,
+                    targetPlayer = true
+                },
+                new AStatus
+                {
+                    status = Status.heat,
+                    statusAmount = 1,
+                    targetPlayer = true
+                }
+            ]);
         }
     }
 
