@@ -24,6 +24,7 @@ internal sealed class CardPsychic : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardPsychicBG.Sprite,
             cost = 2,
             flippable = true,
             retain = upgrade == Upgrade.A
