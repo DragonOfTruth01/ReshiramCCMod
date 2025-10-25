@@ -7,9 +7,13 @@
   },
   "artifact": {
     "common": {
+      "Heat Rock": {
+      "name": "Heat Rock",
+      "description": "At start of combat, enemy gains 1 <c=285cc4>flammable</c>."
+      },
       "Flame Orb": {
       "name": "Flame Orb",
-      "description": "At start of combat, enemy gains 1 <c=status>flammable</c>."
+      "description": "The first time you gain <c=ff687d>heat</c> each turn, gain 1 <c=status>overdrive</c> and one more <c=ff687d>heat</c>."
       }
     }
   },

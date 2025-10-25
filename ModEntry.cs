@@ -91,6 +91,7 @@ public sealed class ModEntry : SimpleMod
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
     internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
+        typeof(ArtifactHeatRock),
         typeof(ArtifactFlameOrb)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
