@@ -32,7 +32,7 @@ This mod has added:
 <img src="README_assets/infographics/Reshi_B.png" alt="screenshot" width="auto" height="auto" />
 
 <!-- Screenshots -->
-### Screenshots
+# Screenshots
 
 <img src="README_assets/screenshots/gameplay_screenshot.png" alt="screenshot" width="auto" height="auto" />
 <img src="README_assets/screenshots/card_reward.png" alt="screenshot" width="auto" height="auto" />
