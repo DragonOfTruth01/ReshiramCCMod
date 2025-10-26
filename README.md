@@ -15,7 +15,7 @@ This README was made using Louis3797's awesome-readme-template
 This mod has added:
 
 - <b>1/1</b> Characters
-- <b>1/1</b> Cards
+- <b>16/24</b> Cards
   - <b>8/9</b> common
   - <b>4/8</b> uncommon
   - <b>4/5</b> rare
@@ -25,11 +25,10 @@ This mod has added:
   - <b>1/2</b> boss
 - <b>2/3</b> Statuses
 
-
 <!-- Screenshots -->
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="assets/readme/screenshots/newrunoptions.png" alt="screenshot" width="auto" height="auto" />
-  <img src="assets/readme/screenshots/cardexample.png" alt="screenshot" width="auto" height="auto" />
+  <img src="assets/readme/screenshots/gameplay_screenshot.png" alt="screenshot" width="auto" height="auto" />
+  <img src="assets/readme/screenshots/card_reward.png" alt="screenshot" width="auto" height="auto" />
 </div>
