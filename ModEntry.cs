@@ -32,6 +32,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardLightScreenBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardExtrasensoryBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardHoneClawsBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardFireFangBG { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
 
@@ -158,6 +159,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardLightScreenBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardLightScreenBG.png"));
         ReshiramCCMod_Character_CardExtrasensoryBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardExtrasensoryBG.png"));
         ReshiramCCMod_Character_CardHoneClawsBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardHoneClawsBG.png"));
+        ReshiramCCMod_Character_CardFireFangBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardFireFangBG.png"));
 
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
 

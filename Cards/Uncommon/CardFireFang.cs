@@ -24,7 +24,8 @@ internal sealed class CardFireFang : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            cost = 1,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardFireFangBG.Sprite,
+            cost = 1
         };
         return data;
     }
