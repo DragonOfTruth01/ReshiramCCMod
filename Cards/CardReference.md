@@ -15,7 +15,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Light Screen | 1 | Gain 1 temp shield. Reduce heat by 1. | Reduce cost to 0. | Add retain. |
 ||||||||
 | No | Uncommon | Dragon Pulse (*buff this card, maybe add heat?*) | 2 | Attack 2. If enemy is overheated, they also gain 1 flammable. | Increase attack to 3. | Add pierce to attack. |
-| Yes | Uncommon | Extrasensory (*consider adding retain?*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 1 heat.
+| Yes | Uncommon | Extrasensory (*consider adding heat? for balance*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 1 heat.
 | No | Uncommon | Sunny Day | 2 | Change field effect to solar flare. Exhaust. | Enemy ship also gains 2 heat. | Remove exhaust. If solar flare is already active, apply 2 flammable. |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 2 heat and 1 flammable. | Reduce cost to 0. | Instead gain 1 powerdrive. Gain 3 heat and 1 flammable. Card gains exhaust. |
 | No | Uncommon | Solar Beam | 1 | Deal 1 damage for each heat on the enemy. Exhaust. | Increase damage by heat on self. | Change cost to 2. Do not exhaust. |
