@@ -27,8 +27,8 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
         });
     }
 
-    static int counter = 0;
-    static readonly int artifactTriggerAmt = 5;
+    int counter = 0;
+    readonly int artifactTriggerAmt = 5;
 
     private class HarmonyRef
     {
@@ -45,42 +45,63 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
     [HarmonyPatch(typeof(AStatus), "Begin")]
     private static void AStatus_Begin_Prefix(AStatus __instance, State s, out HarmonyRef __state)
     {
-        var ship = GetShip(__instance, s);
-        __state = new HarmonyRef();
-        __state.oldHeatAmt = ship.Get(Status.heat);
-        __state.ct = counter;
+        var artifact = s.EnumerateAllArtifacts().OfType<ArtifactFireGem>().FirstOrDefault();
+
+        // If we have the artifact, populate our __state with meaningful values
+        if (artifact != null)
+        {
+            var ship = GetShip(__instance, s);
+            __state = new HarmonyRef();
+            __state.oldHeatAmt = ship.Get(Status.heat);
+            __state.ct = artifact.counter;
+        }
+        // If we don't have an instance of the artifact, we dont' care what we assign it
+        // (Don't worry, we're not going to use __state in the postfix anyway)
+        else
+        {
+            __state = new HarmonyRef();
+        }
+        
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
     private static void AStatus_Begin_Postfix(AStatus __instance, State s, Combat c, HarmonyRef __state)
     {
-        var ship = GetShip(__instance, s);
+        // Only do this postfix if we have the artifact
+        var artifact = s.EnumerateAllArtifacts().OfType<ArtifactFireGem>().FirstOrDefault();
 
-        // Check if either ship gained heat
-        var heatDiff = ship.Get(Status.heat) - __state.oldHeatAmt;
-
-        // If a ship did gain heat, increment the artifact counter
-        if (heatDiff > 0)
+        if (artifact != null)
         {
-            ++__state.ct;
+            var ship = GetShip(__instance, s);
+
+            // Check if either ship gained heat
+            var heatDiff = ship.Get(Status.heat) - __state.oldHeatAmt;
+
+            // If a ship did gain heat, increment the artifact counter
+            if (heatDiff > 0)
+            {
+                ++__state.ct;
+            }
+
+            // If the artifact counter is at the trigger threshold, reset it and trigger the effect
+            if (__state.ct >= artifact.artifactTriggerAmt)
+            {
+                c.Queue([
+                    new AEnergy
+                    {
+                        changeAmount = 1,
+                    }
+                ]);
+
+                __state.ct = 0;
+            }
+
+            // Finally, propagate the state value to the relic's static value
+            artifact.counter = __state.ct;
         }
 
-        // If the artifact counter is at the trigger threshold, reset it and trigger the effect
-        if (__state.ct >= artifactTriggerAmt)
-        {
-            c.Queue([
-                new AEnergy
-                {
-                    changeAmount = 1,
-                }
-            ]);
-
-            __state.ct = 0;
-        }
-
-        // Finally, propagate the state value to the relic's static value
-        counter = __state.ct;
+        
     }
 
     private static Ship GetShip(AStatus instance, State s)
