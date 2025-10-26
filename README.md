@@ -25,10 +25,14 @@ This mod has added:
   - <b>1/2</b> boss
 - <b>2/3</b> Statuses
 
-<!-- Screenshots -->
-### :camera: Screenshots
+# Content Infographics
 
-<div align="center"> 
-  <img src="assets/readme/screenshots/gameplay_screenshot.png" alt="screenshot" width="auto" height="auto" />
-  <img src="assets/readme/screenshots/card_reward.png" alt="screenshot" width="auto" height="auto" />
-</div>
+<img src="README_assets/infographics/Reshi_Normal.png" alt="screenshot" width="auto" height="auto" />
+<img src="README_assets/infographics/Reshi_A.png" alt="screenshot" width="auto" height="auto" />
+<img src="README_assets/infographics/Reshi_B.png" alt="screenshot" width="auto" height="auto" />
+
+<!-- Screenshots -->
+### Screenshots
+
+<img src="README_assets/screenshots/gameplay_screenshot.png" alt="screenshot" width="auto" height="auto" />
+<img src="README_assets/screenshots/card_reward.png" alt="screenshot" width="auto" height="auto" />

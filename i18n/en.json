@@ -8,17 +8,17 @@
   "artifact": {
     "boss": {
       "Fire Gem": {
-        "name": "Fire Gem",
+        "name": "FIRE GEM",
         "description": "Every 5th time you or the enemy gains <c=ff687d>heat</c>, gain 1 <c=status>energy</c>."
       }
     },
     "common": {
       "Heat Rock": {
-        "name": "Heat Rock",
+        "name": "HEAT ROCK",
         "description": "At start of combat, enemy gains 1 <c=285cc4>flammable</c>."
       },
       "Flame Orb": {
-        "name": "Flame Orb",
+        "name": "FLAME ORB",
         "description": "The first time you gain <c=ff687d>heat</c> each turn, gain 1 <c=status>overdrive</c> and one more <c=ff687d>heat</c>."
       }
     }
