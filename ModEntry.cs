@@ -262,9 +262,16 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Squint_3.Sprite,
             }
         });
-
-        /* Wait, so if we want 'gameover', why doesn't this demo come with the registration for it?
-         * Answer: You should be able to use the knowledge you have earned so far to register your own animations! If you'd like, try making the 'gameover' registration code here. You can use whatever sprite you want */
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_Squint_0.Sprite,
+            }
+        });
         
         /* Let's continue with the character creation and finally, actually, register the character! */
         helper.Content.Characters.V2.RegisterPlayableCharacter("ReshiramCCMod", new PlayableCharacterConfigurationV2()

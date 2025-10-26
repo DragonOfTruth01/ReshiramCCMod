@@ -27,7 +27,7 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
         });
     }
 
-    static bool hasTriggeredThisTurn = false;
+    bool hasTriggeredThisTurn = false;
 
     private class HarmonyRef
     {
@@ -39,38 +39,56 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
     [HarmonyPatch(typeof(AStatus), "Begin")]
     private static void AStatus_Begin_Prefix(AStatus __instance, State s, out HarmonyRef __state)
     {
-        __state = new HarmonyRef();
-        __state.oldHeatAmt = s.ship.Get(Status.heat);
-        __state.triggered = hasTriggeredThisTurn;
+        var artifact = s.EnumerateAllArtifacts().OfType<ArtifactFlameOrb>().FirstOrDefault();
+
+        // If we have the artifact, populate our __state with meaningful values
+        if (artifact != null)
+        {
+            __state = new HarmonyRef();
+            __state.oldHeatAmt = s.ship.Get(Status.heat);
+            __state.triggered = artifact.hasTriggeredThisTurn;
+        }
+        // If we don't have an instance of the artifact, we dont' care what we assign it
+        // (Don't worry, we're not going to use __state in the postfix anyway)
+        else
+        {
+            __state = new HarmonyRef();
+        }
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
     private static void AStatus_Begin_Postfix(AStatus __instance, State s, Combat c, HarmonyRef __state)
     {
-        var heatDiff = s.ship.Get(Status.heat) - __state.oldHeatAmt;
+        // Only do this postfix if we have the artifact
+        var artifact = s.EnumerateAllArtifacts().OfType<ArtifactFlameOrb>().FirstOrDefault();
 
-        // If the player ship has more heat, and this is the first time heat is gained this turn...
-        if (heatDiff > 0 && !__state.triggered)
+        if (artifact != null)
         {
-            // First set that we triggered the relic for this turn, to prevent recursion
-            hasTriggeredThisTurn = true;
+            var heatDiff = s.ship.Get(Status.heat) - __state.oldHeatAmt;
 
-            //Then, apply this relic's effects
-            c.Queue([
-                new AStatus
-                {
-                    status = Status.overdrive,
-                    statusAmount = 1,
-                    targetPlayer = true
-                },
-                new AStatus
-                {
-                    status = Status.heat,
-                    statusAmount = 1,
-                    targetPlayer = true
-                }
-            ]);
+            // If the player ship has more heat, and this is the first time heat is gained this turn...
+            if (heatDiff > 0 && !__state.triggered)
+            {
+                // First set that we triggered the relic for this turn, to prevent recursion
+                artifact.hasTriggeredThisTurn = true;
+
+                //Then, apply this relic's effects
+                c.Queue([
+                    new AStatus
+                    {
+                        status = Status.overdrive,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    },
+                    new AStatus
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    }
+                ]);
+            }
         }
     }
 
