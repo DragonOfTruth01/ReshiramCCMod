@@ -24,6 +24,7 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardDracoMeteorBG.Sprite,
             cost = upgrade == Upgrade.B ? 2 : 3,
             exhaust = true
         };
