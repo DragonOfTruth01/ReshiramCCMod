@@ -1,8 +1,8 @@
 {
   "UniqueName": "DragonOfTruth01.ReshiramCCMod",
-  "Version": "0.0.0",
+  "Version": "0.1.1",
   "Author": "DragonOfTruth01",
-  "Description": "2 cards, 2 artifacts, 1 ship, 1 status. Use to learn!",
+  "Description": "A legendary dragon that represents truth. Its cards utilize heat alongside other debuffs to set enemy ships ablaze.",
   "RequiredApiVersion": "0.6.0",
   "EntryPointAssembly": "ReshiramCCMod.dll",
   "Dependencies": [
