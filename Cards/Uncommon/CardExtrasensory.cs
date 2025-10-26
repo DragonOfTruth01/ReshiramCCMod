@@ -24,6 +24,7 @@ internal sealed class CardExtrasensory : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardExtrasensoryBG.Sprite,
             cost = 1,
             flippable = true
         };
