@@ -24,6 +24,7 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardBlueFlareBG.Sprite,
             cost = upgrade == Upgrade.A ? 2 : (upgrade == Upgrade.B ? 4 : 3),
             exhaust = true
         };
