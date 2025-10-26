@@ -268,7 +268,7 @@ public sealed class ModEntry : SimpleMod
             LoopTag = "gameover",
             Frames = new[]
             {
-                // The squint prite is okay to use here...
+                // The squint sprite is okay to use here...
                 ReshiramCCMod_Character_Squint_0.Sprite,
             }
         });
