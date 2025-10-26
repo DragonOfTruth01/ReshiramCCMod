@@ -24,6 +24,7 @@ internal sealed class CardHoneClaws : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardHoneClawsBG.Sprite,
             cost = upgrade == Upgrade.A ? 0 : 1,
             exhaust = upgrade == Upgrade.B
         };
