@@ -26,7 +26,7 @@ internal sealed class CardHoneClaws : Card, IReshiramCCModCard
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardHoneClawsBG.Sprite,
             cost = upgrade == Upgrade.A ? 0 : 1,
-            exhaust = upgrade == Upgrade.B
+            exhaust = true
         };
         return data;
     }
@@ -48,7 +48,7 @@ internal sealed class CardHoneClaws : Card, IReshiramCCModCard
                     new AStatus
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new AStatus
@@ -72,7 +72,7 @@ internal sealed class CardHoneClaws : Card, IReshiramCCModCard
                     new AStatus
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new AStatus
