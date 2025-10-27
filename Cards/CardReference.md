@@ -24,7 +24,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
 | Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 2 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 3 smoldering. Increase self heat gain to 3. |
-| Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 7 and flammable to 4. Increase cost to 4. |
+| Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 5 and flammable to 4. Increase cost to 4. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 1 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Enemy gains 2 heat and 2 flammable instead. | Reduce energy cost to 2. |
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 1 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 temp shield. |
 | No | Rare | Substitute (*make this something else?*) | 2 | Gain 1 perfect shield. End your turn. Exhaust. | Remove end turn. | Gain 3 shield. Increase cost to 3. |
