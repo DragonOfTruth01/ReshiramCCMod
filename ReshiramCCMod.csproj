@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>DragonOfTruth01.ReshiramCCMod</RootNamespace>
-		<Version>0.1.2</Version>
+		<Version>0.1.3</Version>
 		<IsNickelMod>True</IsNickelMod>
 		<IncludedModProjectPaths>i18n;assets</IncludedModProjectPaths>
 		<LangVersion>12.0</LangVersion>
