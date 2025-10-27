@@ -25,7 +25,7 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardOverheatBG.Sprite,
-            cost = 1
+            cost = 2
         };
         return data;
     }
