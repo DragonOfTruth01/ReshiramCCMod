@@ -77,7 +77,7 @@ internal sealed class CardHeatWave : Card, IReshiramCCModCard
                     },
                     new AStatus(){
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AStatus(){
                         status = Status.heat,
