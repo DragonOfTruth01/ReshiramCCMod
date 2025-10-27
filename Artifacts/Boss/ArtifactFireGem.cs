@@ -19,7 +19,7 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
             Meta = new()
             {
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
-                pools = [ArtifactPool.Common]
+                pools = [ArtifactPool.Boss]
             },
             Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/fireGem.png")).Sprite,
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "boss", "Fire Gem", "name"]).Localize,
