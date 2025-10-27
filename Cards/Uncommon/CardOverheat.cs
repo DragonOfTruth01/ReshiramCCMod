@@ -25,7 +25,8 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardOverheatBG.Sprite,
-            cost = 1
+            cost = 1,
+            exhaust = true
         };
         return data;
     }
@@ -50,12 +51,18 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                     new AStatus
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                     },
                     new AStatus
                     {
                         status = Status.heat,
                         statusAmount = 3,
+                        targetPlayer = true
+                    },
+                    new AStatus
+                    {
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };
@@ -76,12 +83,18 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                     new AStatus
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                     },
                     new AStatus
                     {
                         status = Status.heat,
                         statusAmount = 2,
+                        targetPlayer = true
+                    },
+                    new AStatus
+                    {
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };
@@ -92,12 +105,12 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                 {
                     new AStatus(){
                         status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 4
+                        statusAmount = 3
                     },
                     new AStatus
                     {
@@ -108,6 +121,12 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                     {
                         status = Status.heat,
                         statusAmount = 3,
+                        targetPlayer = true
+                    },
+                    new AStatus
+                    {
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };

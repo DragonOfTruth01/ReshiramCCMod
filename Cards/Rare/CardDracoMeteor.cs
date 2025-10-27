@@ -25,7 +25,7 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardDracoMeteorBG.Sprite,
-            cost = upgrade == Upgrade.B ? 2 : 3,
+            cost = 3,
             exhaust = true
         };
         return data;
@@ -110,12 +110,6 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                     new AAttack()
                     {
                         damage = GetDmg(s, 3)
-                    },
-                    new AStatus()
-                    {
-                        status = Status.energyLessNextTurn,
-                        statusAmount = 1,
-                        targetPlayer = true
                     }
                 };
                 break;

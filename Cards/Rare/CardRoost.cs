@@ -53,7 +53,7 @@ internal sealed class CardRoost : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
@@ -76,7 +76,7 @@ internal sealed class CardRoost : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
@@ -92,7 +92,7 @@ internal sealed class CardRoost : Card, IReshiramCCModCard
                     },
                     new AStatus()
                     {
-                        status = Status.tempShield,
+                        status = Status.shield,
                         statusAmount = 2,
                         targetPlayer = true
                     },
@@ -105,7 +105,7 @@ internal sealed class CardRoost : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
