@@ -26,7 +26,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 1 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 2 smoldering. Increase self heat gain to 3. |
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 5 and flammable to 4. Increase cost to 4. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 1 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Enemy gains 2 heat and 2 flammable instead. | Reduce energy cost to 2. |
-| Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 1 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 temp shield. |
+| Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 shield. |
 | No | Rare | Substitute (*make this something else?*) | 2 | Gain 1 perfect shield. End your turn. Exhaust. | Remove end turn. | Gain 3 shield. Increase cost to 3. |
 ||||||||
 | No | Other | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
