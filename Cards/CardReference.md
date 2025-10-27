@@ -21,7 +21,7 @@ This document acts as a reference for which cards are part of this mod.
 | No | Uncommon | Solar Beam | 1 | Deal 1 damage for each heat on the enemy. Exhaust. | Increase damage by heat on self. | Change cost to 2. Do not exhaust. |
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
 | No | Uncommon | Imprison | 2 | Cancel all enemy's non-attack actions (outgoing). | Reduce cost to 1. | Cancel all enemy actions. End your turn. |
-| Yes | Uncommon | Overheat | 2 | Enemy gains 1 smoldering, 3 heat, and 1 flammable (ougoing). Gain 3 heat. | Reduce self heat gain to 2. | Increase heat to 4 and flammable to 2. |
+| Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
 | Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 2 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 3 smoldering. Increase self heat gain to 3. |
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 7 and flammable to 4. Increase cost to 4. |
