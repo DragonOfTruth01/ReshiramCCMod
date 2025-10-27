@@ -25,7 +25,7 @@ internal sealed class CardHeatWave : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardHeatWaveBG.Sprite,
-            cost = 1
+            cost = upgrade == Upgrade.B ? 2 : 1
         };
         return data;
     }
