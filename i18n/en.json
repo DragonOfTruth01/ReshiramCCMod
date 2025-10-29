@@ -34,12 +34,7 @@
       "name": "Flame Charge"
     },
     "Dragon Breath": {
-      "name": "Dragon Breath",
-      "description": {
-        "None": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=status>flammable</c>.",
-        "A": "Attack for <c=redd>{{damageString}}</c>. Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=status>flammable</c>.",
-        "B": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=status>flammable</c>."
-      }
+      "name": "Dragon Breath"
     },
     "Psychic": {
       "name": "Psychic"

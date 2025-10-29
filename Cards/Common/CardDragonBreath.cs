@@ -28,8 +28,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonBreathBG.Sprite,
-            cost = upgrade == Upgrade.B ? 2 : 1,
-            description = ModEntry.Instance.Localizations.Localize(["card", "Dragon Breath", "description", upgrade.ToString()], new { damageString })
+            cost = upgrade == Upgrade.B ? 2 : 1
         };
         return data;
     }
@@ -54,16 +53,18 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 // If the other ship is null, we will crash, so do a check first
                 if (c.otherShip != null)
                 {
-                    cardActionList1.Add(
-                        Conditional.MakeAction(
-                            new EnemyOverheatCondition(),
-                            new AStatus()
-                            {
-                                status = ModEntry.Instance.Flammable.Status,
-                                statusAmount = 1
-                            }
-                        ).AsCardAction
+                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
+                        new EnemyOverheatCondition(),
+                        new AStatus()
+                        {
+                            status = ModEntry.Instance.Flammable.Status,
+                            statusAmount = 1
+                        }
                     );
+
+                    act.SetFadeUnsatisfied(false);
+
+                    cardActionList1.Add(act.AsCardAction);
                 }
 
                 actions = cardActionList1;
@@ -84,16 +85,18 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 // If the other ship is null, we will crash, so do a check first
                 if (c.otherShip != null)
                 {
-                    cardActionList2.Add(
-                        Conditional.MakeAction(
-                            new EnemyOverheatCondition(),
-                            new AStatus()
-                            {
-                                status = ModEntry.Instance.Flammable.Status,
-                                statusAmount = 1
-                            }
-                        ).AsCardAction
+                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
+                        new EnemyOverheatCondition(),
+                        new AStatus()
+                        {
+                            status = ModEntry.Instance.Flammable.Status,
+                            statusAmount = 1
+                        }
                     );
+
+                    act.SetFadeUnsatisfied(false);
+
+                    cardActionList2.Add(act.AsCardAction);
                 }
 
                 actions = cardActionList2;
@@ -114,16 +117,18 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 // If the other ship is null, we will crash, so do a check first
                 if (c.otherShip != null)
                 {
-                    cardActionList3.Add(
-                        Conditional.MakeAction(
-                            new EnemyOverheatCondition(),
-                            new AStatus()
-                            {
-                                status = ModEntry.Instance.Flammable.Status,
-                                statusAmount = 2
-                            }
-                        ).AsCardAction
+                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
+                        new EnemyOverheatCondition(),
+                        new AStatus()
+                        {
+                            status = ModEntry.Instance.Flammable.Status,
+                            statusAmount = 2
+                        }
                     );
+
+                    act.SetFadeUnsatisfied(false);
+
+                    cardActionList3.Add(act.AsCardAction);
                 }
 
                 actions = cardActionList3;
@@ -158,7 +163,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
 					ModEntry.Instance.ReshiramCCMod_Icon_EnemyOverheat.Sprite,
 					position.x,
 					position.y,
-					color: isDisabled ? Colors.disabledIconTint : Colors.white
+					color: Colors.white
 				);
 			position.x += 8;
 		}
