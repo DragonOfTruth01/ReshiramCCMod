@@ -15,7 +15,7 @@
     "common": {
       "Heat Rock": {
         "name": "HEAT ROCK",
-        "description": "At start of combat, enemy gains 1 <c=285cc4>flammable</c>."
+        "description": "At start of combat, enemy gains 1 <c=status>flammable</c>."
       },
       "Flame Orb": {
         "name": "FLAME ORB",
@@ -36,9 +36,9 @@
     "Dragon Breath": {
       "name": "Dragon Breath",
       "description": {
-        "None": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
-        "A": "Attack for <c=redd>{{damageString}}</c>. Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=285cc4>flammable</c>.",
-        "B": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=285cc4>flammable</c>."
+        "None": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=status>flammable</c>.",
+        "A": "Attack for <c=redd>{{damageString}}</c>. Apply 2 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 1 <c=status>flammable</c>.",
+        "B": "Attack for <c=redd>{{damageString}}</c>. Apply 1 <c=ff687d>heat</c>. If enemy is <c=ff687d>overheating</c>, apply 2 <c=status>flammable</c>."
       }
     },
     "Psychic": {
