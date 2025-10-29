@@ -80,17 +80,17 @@
   },
   "status": {
     "Smoldering": {
-      "name": "Smoldering",
+      "name": "SMOLDERING",
       "description": "After heat is inflicted, take <c=boldPink>{0}</c> hull damage if above the <c=ff687d>overheating</c> threshold.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
     },
     "Flammable": {
-      "name": "Flammable",
+      "name": "FLAMMABLE",
       "description": "Take <c=boldPink>{0}</c> extra damage when <c=ff687d>overheating</c>."
     }
   },
   "condition": {
     "isEnemyOverheating" : {
-      "title" : "Enemy Is Overheating",
+      "title" : "ENEMY IS OVERHEATING",
       "description" : "the enemy is overheating"
     }
   }
