@@ -79,6 +79,7 @@ public sealed class ModEntry : SimpleMod
         typeof(CardPsychic),
         typeof(CardWillOWisp),
         typeof(CardHeatWave),
+        typeof(CardFacade),
         typeof(CardLightScreen)
     ];
 

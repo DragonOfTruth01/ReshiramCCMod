@@ -4,13 +4,13 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardDragonBreath : Card, IReshiramCCModCard
+internal sealed class CardFacade : Card, IReshiramCCModCard
 {
     private static IKokoroApi.IV2.IConditionalApi Conditional => ModEntry.Instance.KokoroApi.Conditional;
 
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Dragon Breath", new()
+        helper.Content.Cards.RegisterCard("Facade", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
@@ -19,15 +19,15 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 rarity = Rarity.common,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Dragon Breath", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Facade", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonBreathBG.Sprite,
-            cost = upgrade == Upgrade.B ? 2 : 1
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            cost = 1
         };
         return data;
     }
@@ -42,9 +42,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
-                        status = Status.heat,
-                        statusAmount = 1,
+                        damage = GetDmg(s, 1)
                     }
                 };
 
@@ -54,10 +52,9 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
                         new EnemyOverheatCondition(),
-                        new AStatus()
+                        new AAttack()
                         {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1
+                            damage = GetDmg(s, 2)
                         }
                     );
 
@@ -74,7 +71,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 2,
                     }
@@ -86,10 +83,9 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
                         new EnemyOverheatCondition(),
-                        new AStatus()
+                        new AAttack()
                         {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1
+                            damage = GetDmg(s, 2)
                         }
                     );
 
@@ -106,9 +102,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1),
-                        status = Status.heat,
-                        statusAmount = 1,
+                        damage = GetDmg(s, 1)
                     }
                 };
 
@@ -118,10 +112,10 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
                         new EnemyOverheatCondition(),
-                        new AStatus()
+                        new AAttack()
                         {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 2
+                            damage = GetDmg(s, 3),
+                            piercing = true
                         }
                     );
 
