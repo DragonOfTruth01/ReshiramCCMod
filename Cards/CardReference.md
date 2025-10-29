@@ -29,5 +29,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 shield. |
 | No | Rare | Substitute (*make this something else?*) | 2 | Gain 1 perfect shield. End your turn. Exhaust. | Remove end turn. | Gain 3 shield. Increase cost to 3. |
 ||||||||
-| No | Other | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
-| No | Other | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 engine lock. | Increase attack to 2 x 2. | Both attacks pierce. Shift right 1 between each attack. |
+| No | Other (Kyurem) | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
+| No | Other (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 engine lock. | Increase attack to 2 x 2. | Both attacks pierce. Shift right 1 between each attack. |
+| No | Other (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage and heat equal to its cost. | Instead choose a card to exhaust. | Damage and heat equal to its cost + 1. |
+| No | Other (Victini) | V-Create | 2 | Apply 1 smoldering (outgoing). Deal 3 piercing damage and 3 heat. Gain 1 engine lock. Exhaust. | Increase to 5 piercing damage. | Increase to 3 smoldering. Increase engine lock gain to 2. |
