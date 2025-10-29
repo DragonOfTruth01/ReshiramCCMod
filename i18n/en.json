@@ -2,14 +2,14 @@
   "character": {
     "ReshiramCCMod": {
       "name": "Reshiram",
-      "description": "<c=f4f7f0>RESHIRAM</c>\nA legendary dragon that represents truth. Its cards utilize <c=ff687d>HEAT</c> alongside <c=boldPink>other debuffs</c> to set enemy ships ablaze."
+      "description": "<c=f4f7f0>RESHIRAM</c>\nA legendary dragon that represents truth. Its cards utilize <c=ff687d>heat</c> alongside <c=boldPink>other debuffs</c> to set enemy ships ablaze."
     }
   },
   "artifact": {
     "boss": {
       "Fire Gem": {
         "name": "FIRE GEM",
-        "description": "Every 5th time you or the enemy gains <c=ff687d>heat</c>, gain 1 <c=status>ENERGY</c>."
+        "description": "Every 5th time you or the enemy gains <c=status>heat</c>, gain 1 <c=status>ENERGY</c>."
       }
     },
     "common": {
@@ -19,7 +19,7 @@
       },
       "Flame Orb": {
         "name": "FLAME ORB",
-        "description": "The first time you gain <c=ff687d>heat</c> each turn, gain 1 <c=status>OVERDRIVE</c> and one more <c=ff687d>heat</c>."
+        "description": "The first time you gain <c=status>heat</c> each turn, gain 1 <c=status>OVERDRIVE</c> and one more <c=status>heat</c>."
       }
     }
   },
