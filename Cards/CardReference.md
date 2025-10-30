@@ -14,7 +14,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Facade | 1 | Attack 1. If enemy is overheated, attack again for 2. | Add 2 heat to first attack. | Second attack deals 3 and pierces. |
 | Yes | Common | Light Screen | 1 | Gain 1 temp shield. Reduce heat by 1. | Reduce cost to 0. | Add retain. |
 ||||||||
-| No | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and 1 flammable, and stun. If not, attack for 3 and 1 flammable. | Only do the first action. | Apply 2 flammable instead. |
+| Yes | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and stun. If not, attack for 3. Apply 1 flammable (outgoing). | Only do the first action. | Apply 2 flammable instead. |
 | Yes | Uncommon | Extrasensory (*consider adding heat? for balance*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 2 heat.
 | No | Uncommon | Sunny Day | 1 | Change field effect to solar flare. Exhaust. | Also gain 1 serenity. | Remove exhaust. If solar flare is already active, apply 1 heat and 1 flammable (outgoing). |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 3 heat and 1 flammable. Exhaust. | Reduce cost to 0. | Instead gain 1 powerdrive. |

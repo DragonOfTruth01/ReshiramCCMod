@@ -51,6 +51,9 @@
     "Light Screen": {
       "name": "Light Screen"
     },
+    "Dragon Pulse": {
+      "name": "Dragon Pulse"
+    },
     "Extrasensory": {
       "name": "Extra-sensory"
     },
@@ -90,6 +93,10 @@
     "isEnemyOverheating" : {
       "title" : "ENEMY IS OVERHEATING",
       "description" : "the enemy is overheating"
+    },
+    "isEnemyNotOverheating" : {
+      "title" : "ENEMY IS NOT OVERHEATING",
+      "description" : "the enemy is not overheating"
     }
   }
 }
