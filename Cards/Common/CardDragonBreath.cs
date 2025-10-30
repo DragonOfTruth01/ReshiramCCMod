@@ -53,7 +53,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(false),
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
@@ -85,7 +85,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(false),
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
@@ -117,7 +117,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(false),
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,

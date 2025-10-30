@@ -5,6 +5,13 @@ namespace DragonOfTruth01.ReshiramCCMod;
 
 public sealed class EnemyOverheatCondition : IKokoroApi.IV2.IConditionalApi.IBoolExpression
 {
+    private bool conditionalFade;
+
+    public EnemyOverheatCondition(bool cf)
+    {
+        conditionalFade = cf;
+    }
+
     public bool GetValue(State state, Combat combat)
     {
         if (combat.otherShip != null)
@@ -29,7 +36,7 @@ public sealed class EnemyOverheatCondition : IKokoroApi.IV2.IConditionalApi.IBoo
                 ModEntry.Instance.ReshiramCCMod_Icon_EnemyOverheat.Sprite,
                 position.x,
                 position.y,
-                color: Colors.white
+                color: conditionalFade && isDisabled ? Colors.disabledIconTint : Colors.white
             );
         position.x += 8;
     }

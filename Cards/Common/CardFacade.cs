@@ -51,14 +51,14 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(true),
                         new AAttack()
                         {
                             damage = GetDmg(s, 2)
                         }
                     );
 
-                    act.SetFadeUnsatisfied(false);
+                    act.SetFadeUnsatisfied(true);
 
                     cardActionList1.Add(act.AsCardAction);
                 }
@@ -82,14 +82,14 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(true),
                         new AAttack()
                         {
                             damage = GetDmg(s, 2)
                         }
                     );
 
-                    act.SetFadeUnsatisfied(false);
+                    act.SetFadeUnsatisfied(true);
 
                     cardActionList2.Add(act.AsCardAction);
                 }
@@ -111,7 +111,7 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(),
+                        new EnemyOverheatCondition(true),
                         new AAttack()
                         {
                             damage = GetDmg(s, 3),
@@ -119,7 +119,7 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                         }
                     );
 
-                    act.SetFadeUnsatisfied(false);
+                    act.SetFadeUnsatisfied(true);
 
                     cardActionList3.Add(act.AsCardAction);
                 }
