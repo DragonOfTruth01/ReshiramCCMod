@@ -14,20 +14,20 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Facade | 1 | Attack 1. If enemy is overheated, attack again for 2. | Add 2 heat to first attack. | Second attack deals 3 and pierces. |
 | Yes | Common | Light Screen | 1 | Gain 1 temp shield. Reduce heat by 1. | Reduce cost to 0. | Add retain. |
 ||||||||
-| No | Uncommon | Dragon Pulse (*buff this card, maybe add heat?*) | 2 | Attack 2. If enemy is overheated, they also gain 1 flammable. | Increase attack to 3. | Add pierce to attack. |
+| No | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and 1 flammable, and stun. If not, attack for 3 and 1 flammable. | Only do the first action. | Apply 2 flammable instead. |
 | Yes | Uncommon | Extrasensory (*consider adding heat? for balance*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 2 heat.
-| No | Uncommon | Sunny Day | 2 | Change field effect to solar flare. Exhaust. | Enemy ship also gains 2 heat. | Remove exhaust. If solar flare is already active, apply 2 flammable. |
+| No | Uncommon | Sunny Day | 1 | Change field effect to solar flare. Exhaust. | Also gain 1 serenity. | Remove exhaust. If solar flare is already active, apply 1 heat and 1 flammable (outgoing). |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 3 heat and 1 flammable. Exhaust. | Reduce cost to 0. | Instead gain 1 powerdrive. |
-| No | Uncommon | Solar Beam | 1 | Deal 1 damage for each heat on the enemy. Exhaust. | Increase damage by heat on self. | Change cost to 2. Do not exhaust. |
+| No | Uncommon | Solar Beam | 2 | Deal piercing damage equal to your heat + enemy heat. Exhaust. | Card gains retain. | You and the enemy gain 1 heat before the attack. |
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
-| No | Uncommon | Imprison | 2 | Cancel all enemy's non-attack actions (outgoing). | Reduce cost to 1. | Cancel all enemy actions. End your turn. |
+| No | Uncommon | Imprison | 2 | Cancel all enemy's non-attack actions (outgoing). Gain 1 energy next turn. | Also gain 1 evade. | Also draw 1 card next turn. |
 | Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat and 1 flammable. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
 | Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 1 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 2 smoldering. Increase self heat gain to 3. |
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 5 and flammable to 4. Increase cost to 4. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 1 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Enemy gains 2 heat and 2 flammable instead. | Remove next turn energy loss. |
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 shield. |
-| No | Rare | Substitute (*make this something else?*) | 2 | Gain 1 perfect shield. End your turn. Exhaust. | Remove end turn. | Gain 3 shield. Increase cost to 3. |
+| No | Rare | Outrage | 1 | Discard a card at random. Deal 2 piercing damage. If enemy is overheated, apply 1 flammable. Recycle. | No longer discard a card. | Deal 3 piercing damage. Gain 1 heat. |
 ||||||||
 | No | Other (Kyurem) | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
 | No | Other (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 engine lock. | Increase attack to 2 x 2. | Both attacks pierce. Shift right 1 between each attack. |
