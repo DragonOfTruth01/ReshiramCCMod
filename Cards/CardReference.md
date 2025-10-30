@@ -16,7 +16,7 @@ This document acts as a reference for which cards are part of this mod.
 ||||||||
 | Yes | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and stun. If not, attack for 3. Apply 1 flammable (outgoing). | Only do the first action. | Apply 2 flammable instead. |
 | Yes | Uncommon | Extrasensory (*consider adding heat? for balance*) | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 2 heat.
-| No | Uncommon | Sunny Day | 1 | Change field effect to solar flare. Exhaust. | Also gain 1 serenity. | Remove exhaust. If solar flare is already active, apply 1 heat and 1 flammable (outgoing). |
+| No | Uncommon | Sunny Day | 1 | Change field effect to solar flare. Exhaust. | Also gain 1 serenity. | Remove exhaust. If solar flare is already active, apply 2 flammable (outgoing). |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 3 heat and 1 flammable. Exhaust. | Reduce cost to 0. | Instead gain 1 powerdrive. |
 | No | Uncommon | Solar Beam | 2 | Deal piercing damage equal to your heat + enemy heat. Exhaust. | Card gains retain. | You and the enemy gain 1 heat before the attack. |
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |

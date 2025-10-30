@@ -57,6 +57,14 @@
     "Extrasensory": {
       "name": "Extra-sensory"
     },
+    "Sunny Day": {
+      "name": "Sunny Day",
+      "description": {
+        "None": "Change field effect to <c=boldPink>Solar Flare</c>.",
+        "A": "Change field effect to <c=boldPink>Solar Flare</c>. Gain 1 <c=status>serenity</c>.",
+        "B": "Change field effect to <c=boldPink>Solar Flare</c>. If already present, apply 2 <c=status>flammable</c>."
+      }
+    },
     "Hone Claws": {
       "name": "Hone Claws"
     },
