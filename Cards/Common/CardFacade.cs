@@ -27,10 +27,25 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
-            cost = 1
+            cost = upgrade == Upgrade.A ? 0 : 1,
+            retain = upgrade == Upgrade.B
         };
         return data;
     }
+
+    private int getHeatAmt(State s)
+    {
+        int heatAmt = 0;
+
+        if (s.route is Combat)
+        {
+            heatAmt = s.ship.Get(Status.heat);
+        }
+
+        return heatAmt;
+        
+    }
+
     public override List<CardAction> GetActions(State s, Combat c)
     {
         List<CardAction> actions = new();
@@ -40,29 +55,17 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
             case Upgrade.None:
                 List<CardAction> cardActionList1 = new List<CardAction>()
                 {
+                    new AVariableHint
+                    {
+                        status = Status.heat
+                    },
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1)
+                        damage = GetDmg(s, getHeatAmt(s)),
+                        piercing = true,
+                        xHint = 1
                     }
                 };
-
-                // Check if other ship is at or above the overheat threshold
-                // If the other ship is null, we will crash, so do a check first
-                if (c.otherShip != null)
-                {
-                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(false),
-                        new AAttack()
-                        {
-                            damage = GetDmg(s, 2),
-                            piercing = true
-                        }
-                    );
-
-                    act.SetFadeUnsatisfied(false);
-
-                    cardActionList1.Add(act.AsCardAction);
-                }
 
                 actions = cardActionList1;
                 break;
@@ -70,31 +73,17 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
             case Upgrade.A:
                 List<CardAction> cardActionList2 = new List<CardAction>()
                 {
+                    new AVariableHint
+                    {
+                        status = Status.heat
+                    },
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1),
-                        status = Status.heat,
-                        statusAmount = 2,
+                        damage = GetDmg(s, getHeatAmt(s)),
+                        piercing = true,
+                        xHint = 1
                     }
                 };
-
-                // Check if other ship is at or above the overheat threshold
-                // If the other ship is null, we will crash, so do a check first
-                if (c.otherShip != null)
-                {
-                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(false),
-                        new AAttack()
-                        {
-                            damage = GetDmg(s, 2),
-                            piercing = true
-                        }
-                    );
-
-                    act.SetFadeUnsatisfied(false);
-
-                    cardActionList2.Add(act.AsCardAction);
-                }
 
                 actions = cardActionList2;
                 break;
@@ -102,30 +91,17 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
             case Upgrade.B:
                 List<CardAction> cardActionList3 = new List<CardAction>()
                 {
+                    new AVariableHint
+                    {
+                        status = Status.heat
+                    },
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1),
-                        piercing = true
+                        damage = GetDmg(s, getHeatAmt(s)),
+                        piercing = true,
+                        xHint = 1
                     }
                 };
-
-                // Check if other ship is at or above the overheat threshold
-                // If the other ship is null, we will crash, so do a check first
-                if (c.otherShip != null)
-                {
-                    IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(false),
-                        new AAttack()
-                        {
-                            damage = GetDmg(s, 3),
-                            piercing = true
-                        }
-                    );
-
-                    act.SetFadeUnsatisfied(false);
-
-                    cardActionList3.Add(act.AsCardAction);
-                }
 
                 actions = cardActionList3;
                 break;
