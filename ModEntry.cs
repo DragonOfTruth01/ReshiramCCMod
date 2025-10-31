@@ -101,7 +101,8 @@ public sealed class ModEntry : SimpleMod
         typeof(CardFusionFlare),
         typeof(CardBlueFlare),
         typeof(CardDracoMeteor),
-        typeof(CardRoost)
+        typeof(CardRoost),
+        typeof(CardOutrage)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed

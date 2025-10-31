@@ -106,6 +106,9 @@
     },
     "Roost": {
       "name": "Roost"
+    },
+    "Outrage": {
+      "name": "Outrage"
     }
   },
   "status": {
