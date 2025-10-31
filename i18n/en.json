@@ -5,6 +5,12 @@
       "description": "<c=f4f7f0>RESHIRAM</c>\nA legendary dragon that represents truth. Its cards utilize <c=ff687d>heat</c> alongside <c=boldPink>other debuffs</c> to set enemy ships ablaze."
     }
   },
+  "action": {
+    "Solar Flare": {
+      "name": "SUMMON SOLAR FLARE",
+      "description": "Changes the current field effect to <c=status>SOLAR FLARE</c>."
+    }
+  },
   "artifact": {
     "boss": {
       "Fire Gem": {
@@ -60,9 +66,9 @@
     "Sunny Day": {
       "name": "Sunny Day",
       "description": {
-        "None": "Change field effect to <c=boldPink>Solar Flare</c>.",
-        "A": "Change field effect to <c=boldPink>Solar Flare</c>. Gain 1 <c=status>serenity</c>.",
-        "B": "Change field effect to <c=boldPink>Solar Flare</c>. If already present, apply 2 <c=status>flammable</c>."
+        "None": "Summon a <c=status>Solar Flare</c>.",
+        "A": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>serenity</c>.",
+        "B": "Summon a <c=status>Solar Flare</c>. If already present, apply 2 <c=status>flammable</c>."
       }
     },
     "Hone Claws": {
@@ -105,6 +111,10 @@
     "isEnemyNotOverheating" : {
       "title" : "ENEMY IS NOT OVERHEATING",
       "description" : "the enemy is not overheating"
+    },
+    "isSolarFlareActive" : {
+      "title" : "SOLAR FLARE IS ACTIVE",
+      "description" : "a solar flare is active"
     }
   }
 }
