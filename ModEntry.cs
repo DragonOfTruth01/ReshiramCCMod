@@ -90,6 +90,7 @@ public sealed class ModEntry : SimpleMod
         typeof(CardExtrasensory),
         typeof(CardSunnyDay),
         typeof(CardHoneClaws),
+        typeof(CardSolarBeam),
         typeof(CardFireFang),
         typeof(CardOverheat)
     ];

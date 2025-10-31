@@ -74,6 +74,14 @@
     "Hone Claws": {
       "name": "Hone Claws"
     },
+    "Solar Beam": {
+      "name": "Solar Beam",
+      "description": {
+        "None": "Deal 1 <c=keyword>pierce</c> damage per <c=status>heat</c> on each ship{{damageString}}.",
+        "A": "Deal 1 <c=keyword>pierce</c> damage per <c=status>heat</c> on each ship{{damageString}}.",
+        "B": "Both ships gain 1 <c=status>heat</c>. Deal 1 <c=keyword>pierce</c> damage per <c=status>heat</c> on each ship{{damageString}}."
+      }
+    },
     "Fire Fang": {
       "name": "Fire Fang"
     },
