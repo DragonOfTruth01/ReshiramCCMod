@@ -28,7 +28,7 @@ public sealed class ASolarFlare : CardAction
 
     public override List<Tooltip> GetTooltips(State s)
         => [
-            new GlossaryTooltip($"action.{ModEntry.Instance.Package.Manifest.UniqueName}::HarvestAttack")
+            new GlossaryTooltip($"action.{ModEntry.Instance.Package.Manifest.UniqueName}::Solar Flare")
             {
                 Icon = ModEntry.Instance.ReshiramCCMod_Icon_SolarFlareActive.Sprite,
                 TitleColor = Colors.action,
