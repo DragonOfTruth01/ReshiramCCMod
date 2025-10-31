@@ -11,7 +11,7 @@
       "description": "Changes the current field effect to <c=status>SOLAR FLARE</c>."
     },
     "Non-Attack Stun":{
-      "name": "NON-ATTACK STUN",
+      "name": "     NON-ATTACK STUN",
       "description": "Cancel intents on the enemy ship that are not attacks."
     }
   },
