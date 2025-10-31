@@ -27,7 +27,8 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 3 flammable (outgoing). Exhaust. | Reduce cost to 2. | Increase damage to 5 and flammable to 4. Increase cost to 4. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 1 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Enemy gains 2 heat and 2 flammable instead. | Remove next turn energy loss. |
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Reduce cost to 1. | Also gain 2 shield. |
-| No | Rare | Outrage | 1 | Discard a card at random. Deal 2 piercing damage. If enemy is overheated, apply 1 flammable. Recycle. | No longer discard a card. | Deal 3 piercing damage. Gain 1 heat. |
+| No | Rare | Outrage | 1 | Deal 2 piercing damage and 1 heat. Discard a card at random. Infinite. | Also reduce heat by 1. | Increase damage to 3 and heat to 2. Gain 1 heat. |
+| No | Rare | Safeguard | 0 | Gain 1 safeguard. Retain. Exhaust. | Also gain 1 serenity. | Gain 2 heat. Increase safeguard gain to 2. |
 ||||||||
 | No | Other (Kyurem) | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
 | No | Other (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 engine lock. | Increase attack to 2 x 2. | Both attacks pierce. Shift right 1 between each attack. |
