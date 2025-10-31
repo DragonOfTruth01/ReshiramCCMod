@@ -26,7 +26,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonPulseBG.Sprite,
             cost = 2
         };
         return data;
