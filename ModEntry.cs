@@ -57,6 +57,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyNotOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_SolarFlareActive { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
 
     internal IDeckEntry ReshiramCCMod_Deck { get; }
 
@@ -92,6 +93,7 @@ public sealed class ModEntry : SimpleMod
         typeof(CardHoneClaws),
         typeof(CardSolarBeam),
         typeof(CardFireFang),
+        typeof(CardImprison),
         typeof(CardOverheat)
     ];
 
@@ -195,6 +197,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
         ReshiramCCMod_Icon_SolarFlareActive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/solarFlareActive.png"));
+        ReshiramCCMod_Icon_NonAttackStun = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/nonAttackStun.png"));
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */

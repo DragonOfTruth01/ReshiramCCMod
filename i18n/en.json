@@ -9,6 +9,10 @@
     "Solar Flare": {
       "name": "SUMMON SOLAR FLARE",
       "description": "Changes the current field effect to <c=status>SOLAR FLARE</c>."
+    },
+    "Non-Attack Stun":{
+      "name": "NON-ATTACK STUN",
+      "description": "Cancel intents on the enemy ship that are not attacks."
     }
   },
   "artifact": {
@@ -84,6 +88,9 @@
     },
     "Fire Fang": {
       "name": "Fire Fang"
+    },
+    "Imprison": {
+      "name": "Imprison"
     },
     "Overheat": {
       "name": "Overheat"
