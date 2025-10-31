@@ -1,10 +1,12 @@
 using Nickel;
 using FSPRO;
 using System.Collections.Generic;
+using HarmonyLib;
 
 namespace DragonOfTruth01.ReshiramCCMod;
 
-public sealed class ANonAttackStun : CardAction
+[HarmonyPatch]
+public sealed class ANonAttackStun : DynamicWidthCardAction
 {
     public bool targetPlayer;
 
@@ -12,7 +14,7 @@ public sealed class ANonAttackStun : CardAction
     {
         Ship ship = (targetPlayer ? s.ship : c.otherShip);
 
-        if(ship != null)
+        if (ship != null)
         {
             bool playSfx = false;
 
@@ -37,9 +39,9 @@ public sealed class ANonAttackStun : CardAction
             {
                 Audio.Play(Event.Status_Stun);
             }
-        }        
+        }
     }
-    
+
     public override Icon? GetIcon(State s)
     {
         return new Icon(ModEntry.Instance.ReshiramCCMod_Icon_NonAttackStun.Sprite, number: null, color: Colors.textMain, flipY: false);
