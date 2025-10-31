@@ -62,7 +62,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 3)
+                            damage = GetDmg(s, 2)
                         }
                     );
 
@@ -127,7 +127,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 3)
+                            damage = GetDmg(s, 2)
                         }
                     );
 
