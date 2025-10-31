@@ -28,6 +28,13 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
         __state = new HarmonyRef();
         __state.oldHeatAmt = ship.Get(Status.heat);
         __state.oldFlammableAmt = ship.Get(ModEntry.Instance.Flammable.Status);
+
+        // Set heat gain to 0 if the ship has safeguard
+        if( __instance.status == Status.heat && __instance.statusAmount > 0
+            && ship.Get(ModEntry.Instance.Safeguard.Status) > 0)
+        {
+            __instance.statusAmount = 0;
+        }
     }
 
     [HarmonyPostfix]
@@ -55,8 +62,10 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
         if (args.Timing != IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnStart)
             return false;
 
-        // Handle smoldering end-of-turn decrement
-        if (args.Status == Instance.Smoldering.Status && args.Amount > 0)
+        // Handle end-of-turn decrements for smoldering and safeguard
+        if ( ( args.Status == Instance.Smoldering.Status
+                  || args.Status == Instance.Safeguard.Status )
+               && args.Amount > 0)
         {
             args.Amount -= 1;
         }

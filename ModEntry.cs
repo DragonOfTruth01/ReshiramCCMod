@@ -63,6 +63,7 @@ public sealed class ModEntry : SimpleMod
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
+    internal IStatusEntry Safeguard { get; }
 
     // NOTE TO SELF ABOUT CARDS:
     // It would be cool to have them follow these rules:
@@ -102,7 +103,8 @@ public sealed class ModEntry : SimpleMod
         typeof(CardBlueFlare),
         typeof(CardDracoMeteor),
         typeof(CardRoost),
-        typeof(CardOutrage)
+        typeof(CardOutrage),
+        typeof(CardSafeguard)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
@@ -342,11 +344,8 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                /* We provide the icon as a Sprite type, you can find it in the given file location */
                 icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png")).Sprite,
-                /* We give it a color, this is the border color that surrounds the status icon & number in-game */
                 color = new("8b93af"),
-                /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
                 isGood = false
             },
             Name = AnyLocalizations.Bind(["status", "Smoldering", "name"]).Localize,
@@ -357,15 +356,24 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                /* We provide the icon as a Sprite type, you can find it in the given file location */
                 icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png")).Sprite,
-                /* We give it a color, this is the border color that surrounds the status icon & number in-game */
                 color = new("285cc4"),
-                /* We define if it's isGood = true or isGood = false. This will dictate if the number will be either blue or red */
                 isGood = false
             },
             Name = AnyLocalizations.Bind(["status", "Flammable", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Flammable", "description"]).Localize
+        });
+
+        Safeguard = helper.Content.Statuses.RegisterStatus("Safeguard", new()
+        {
+            Definition = new()
+            {
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png")).Sprite,
+                color = new("249fde"),
+                isGood = true
+            },
+            Name = AnyLocalizations.Bind(["status", "Safeguard", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Safeguard", "description"]).Localize
         });
         
         _ = new StatusManager();
