@@ -26,7 +26,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardSunnyDayBG.Sprite,
             description = ModEntry.Instance.Localizations.Localize(["card", "Sunny Day", "description", upgrade.ToString()]),
             cost = 1,
             exhaust = upgrade != Upgrade.B
