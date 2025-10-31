@@ -59,14 +59,14 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                     cardActionList1.Add(act.AsCardAction);
 
                     act = Conditional.MakeAction(
-                        new EnemyNotOverheatCondition(true),
+                        new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
                             damage = GetDmg(s, 3)
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList1.Add(act.AsCardAction);
 
@@ -110,7 +110,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(true),
+                        new EnemyOverheatCondition(false),
                         new AAttack()
                         {
                             damage = GetDmg(s, 3),
@@ -119,19 +119,19 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList3.Add(act.AsCardAction);
 
                     act = Conditional.MakeAction(
-                        new EnemyNotOverheatCondition(true),
+                        new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
                             damage = GetDmg(s, 3)
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList3.Add(act.AsCardAction);
 

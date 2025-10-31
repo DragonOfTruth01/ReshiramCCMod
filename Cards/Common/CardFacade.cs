@@ -51,14 +51,15 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(true),
+                        new EnemyOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 2)
+                            damage = GetDmg(s, 2),
+                            piercing = true
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList1.Add(act.AsCardAction);
                 }
@@ -82,14 +83,15 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(true),
+                        new EnemyOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 2)
+                            damage = GetDmg(s, 2),
+                            piercing = true
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList2.Add(act.AsCardAction);
                 }
@@ -102,7 +104,8 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1)
+                        damage = GetDmg(s, 1),
+                        piercing = true
                     }
                 };
 
@@ -111,7 +114,7 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                 if (c.otherShip != null)
                 {
                     IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new EnemyOverheatCondition(true),
+                        new EnemyOverheatCondition(false),
                         new AAttack()
                         {
                             damage = GetDmg(s, 3),
@@ -119,7 +122,7 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
                         }
                     );
 
-                    act.SetFadeUnsatisfied(true);
+                    act.SetFadeUnsatisfied(false);
 
                     cardActionList3.Add(act.AsCardAction);
                 }
