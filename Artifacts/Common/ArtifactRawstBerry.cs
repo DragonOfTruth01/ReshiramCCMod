@@ -80,6 +80,8 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
                         targetPlayer = true
                     }
                 ]);
+
+                artifact.Pulse();
             }
         }
     }

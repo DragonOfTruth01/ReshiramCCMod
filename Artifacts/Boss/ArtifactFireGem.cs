@@ -94,6 +94,8 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
                     }
                 ]);
 
+                artifact.Pulse();
+
                 __state.ct = 0;
             }
 

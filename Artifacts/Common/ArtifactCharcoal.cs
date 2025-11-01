@@ -47,6 +47,8 @@ internal sealed class ArtifactCharcoal : Artifact, IReshiramCCModArtifact
                 }
             ]);
 
+            Pulse();
+
             counter = 0;
         }
         

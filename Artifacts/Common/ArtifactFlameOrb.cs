@@ -88,6 +88,8 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
                         targetPlayer = true
                     }
                 ]);
+
+                artifact.Pulse();
             }
         }
     }

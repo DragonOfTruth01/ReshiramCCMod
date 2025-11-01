@@ -33,5 +33,7 @@ internal sealed class ArtifactHeatRock : Artifact, IReshiramCCModArtifact
                 statusAmount = 1
             }
         ]);
+
+        Pulse();
     }
 }
