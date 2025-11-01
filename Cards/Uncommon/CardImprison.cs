@@ -26,7 +26,7 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardImprisonBG.Sprite,
             cost = 1
         };
         return data;

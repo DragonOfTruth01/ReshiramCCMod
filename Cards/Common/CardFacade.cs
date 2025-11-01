@@ -26,7 +26,7 @@ internal sealed class CardFacade : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardFacadeBG.Sprite,
             cost = upgrade == Upgrade.A ? 0 : 1,
             retain = upgrade == Upgrade.B
         };

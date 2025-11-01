@@ -29,15 +29,24 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardPsychicBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardWillOWispBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardHeatWaveBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardFacadeBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardLightScreenBG { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_CardDragonPulseBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardExtrasensoryBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardSunnyDayBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardHoneClawsBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardSolarBeamBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFireFangBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardImprisonBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardOverheatBG { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_CardFusionFlareBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardBlueFlareBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardDracoMeteorBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardRoostBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardOutrageBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardSafeguardBG { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
 
@@ -172,15 +181,24 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardPsychicBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardPsychicBG.png"));
         ReshiramCCMod_Character_CardWillOWispBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardWillOWispBG.png"));
         ReshiramCCMod_Character_CardHeatWaveBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardHeatWaveBG.png"));
+        ReshiramCCMod_Character_CardFacadeBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardFacadeBG.png"));
         ReshiramCCMod_Character_CardLightScreenBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardLightScreenBG.png"));
+
+        ReshiramCCMod_Character_CardDragonPulseBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardDragonPulseBG.png"));
         ReshiramCCMod_Character_CardExtrasensoryBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardExtrasensoryBG.png"));
+        ReshiramCCMod_Character_CardSunnyDayBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardSunnyDayBG.png"));
         ReshiramCCMod_Character_CardHoneClawsBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardHoneClawsBG.png"));
+        ReshiramCCMod_Character_CardSolarBeamBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardSolarBeamBG.png"));
         ReshiramCCMod_Character_CardFireFangBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardFireFangBG.png"));
+        ReshiramCCMod_Character_CardImprisonBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardImprisonBG.png"));
         ReshiramCCMod_Character_CardOverheatBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardOverheatBG.png"));
+
         ReshiramCCMod_Character_CardFusionFlareBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardFusionFlareBG.png"));
         ReshiramCCMod_Character_CardBlueFlareBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardBlueFlareBG.png"));
         ReshiramCCMod_Character_CardDracoMeteorBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardDracoMeteorBG.png"));
         ReshiramCCMod_Character_CardRoostBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardRoostBG.png"));
+        ReshiramCCMod_Character_CardOutrageBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardOutrageBG.png"));
+        ReshiramCCMod_Character_CardSafeguardBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardSafeguardBG.png"));
 
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
 

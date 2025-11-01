@@ -24,7 +24,7 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardBackground.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_CardOutrageBG.Sprite,
             cost = 1,
             infinite = true
         };
