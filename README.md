@@ -14,16 +14,16 @@ This README was made using Louis3797's awesome-readme-template
 
 This mod has added:
 
-- <b>1/1</b> Characters
-- <b>16/24</b> Cards
-  - <b>8/9</b> common
-  - <b>4/8</b> uncommon
-  - <b>4/5</b> rare
-  - <b>0/2</b> other (potentially 2 more planned...)
+- <b>1</b> Character
+- <b>23/27</b> Cards
+  - <b>9</b> common
+  - <b>8</b> uncommon
+  - <b>6</b> rare
+  - <b>0/4</b> other
 - <b>3/7</b> Artifacts
   - <b>2/5</b> common
   - <b>1/2</b> boss
-- <b>2/3</b> Statuses
+- <b>2/4</b> Statuses
 
 # Content Infographics
 
