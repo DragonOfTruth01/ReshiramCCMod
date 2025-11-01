@@ -128,7 +128,8 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
         typeof(ArtifactHeatRock),
         typeof(ArtifactFlameOrb),
-        typeof(ArtifactCharcoal)
+        typeof(ArtifactCharcoal),
+        typeof(ArtifactRawstBerry)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
         typeof(ArtifactFireGem)

@@ -34,6 +34,10 @@
       "Charcoal": {
         "name": "CHARCOAL",
         "description": "Every 3 turns, enemy gains 1 <c=status>SMOLDERING."
+      },
+      "Rawst Berry": {
+        "name": "RAWST BERRY",
+        "description": "The first time each turn you reach the <c=ff687d>overheating</c> threshold, reduce your heat to 1 below the threshold."
       }
     }
   },
