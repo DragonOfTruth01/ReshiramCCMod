@@ -101,13 +101,13 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
 
     public override Spr GetSprite()
     {
-        if (hasTriggeredThisTurn)
+        if (!hasTriggeredThisTurn)
         {
             return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite;
         }
         else
         {
-            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite;
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb_Disabled.Sprite;
         }
     }
 }
