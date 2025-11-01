@@ -36,4 +36,9 @@ internal sealed class ArtifactHeatRock : Artifact, IReshiramCCModArtifact
 
         Pulse();
     }
+
+    public override Spr GetSprite()
+    {
+        return ModEntry.Instance.ReshiramCCMod_Character_ArtifactHeatRock.Sprite;
+    }
 }

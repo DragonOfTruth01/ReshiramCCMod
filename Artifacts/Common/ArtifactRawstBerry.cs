@@ -90,4 +90,16 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
     {
         hasTriggeredThisTurn = false;
     }
+
+    public override Spr GetSprite()
+    {
+        if (hasTriggeredThisTurn)
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactRawstBerry.Sprite;
+        }
+        else
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactRawstBerry.Sprite;
+        }
+    }
 }

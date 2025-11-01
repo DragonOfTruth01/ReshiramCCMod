@@ -110,4 +110,9 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
     {
         return instance.targetPlayer ? s.ship : ((Combat)s.route).otherShip;
     }
+
+    public override Spr GetSprite()
+    {
+        return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFireGem.Sprite;
+    }
 }

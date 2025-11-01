@@ -51,6 +51,10 @@ internal sealed class ArtifactCharcoal : Artifact, IReshiramCCModArtifact
 
             counter = 0;
         }
-        
+    }
+    
+    public override Spr GetSprite()
+    {
+        return ModEntry.Instance.ReshiramCCMod_Character_ArtifactCharcoal.Sprite;
     }
 }

@@ -48,6 +48,14 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardOutrageBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardSafeguardBG { get; }
 
+    // Artifact Arts
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactHeatRock { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactFlameOrb { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactCharcoal { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactRawstBerry { get; }
+    
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactFireGem { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_0 { get; }
@@ -198,6 +206,13 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardRoostBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardRoostBG.png"));
         ReshiramCCMod_Character_CardOutrageBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardOutrageBG.png"));
         ReshiramCCMod_Character_CardSafeguardBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardSafeguardBG.png"));
+
+        // Artifact Arts
+        ReshiramCCMod_Character_ArtifactHeatRock = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png"));
+        ReshiramCCMod_Character_ArtifactFlameOrb = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/flameOrb.png"));
+        ReshiramCCMod_Character_ArtifactCharcoal = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/charcoal.png"));
+        ReshiramCCMod_Character_ArtifactRawstBerry = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/rawstBerry.png"));
+        ReshiramCCMod_Character_ArtifactFireGem = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/fireGem.png"));
 
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
 

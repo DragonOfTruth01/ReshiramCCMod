@@ -21,7 +21,7 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/common/flameOrb.png")).Sprite,
+            Sprite = ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite,
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Flame Orb", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Flame Orb", "description"]).Localize
         });
@@ -97,5 +97,17 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
     public override void OnTurnStart(State s, Combat c)
     {
         hasTriggeredThisTurn = false;
+    }
+
+    public override Spr GetSprite()
+    {
+        if (hasTriggeredThisTurn)
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite;
+        }
+        else
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite;
+        }
     }
 }
