@@ -30,7 +30,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Outrage | 1 | Deal 2 piercing damage and 1 heat. Discard a card at random. Infinite. | Also reduce heat by 1. | Increase damage to 3. Gain 1 heat. |
 | Yes | Rare | Safeguard | 0 | Gain 1 safeguard. Retain. Exhaust. | Also gain 1 serenity. | Gain 2 heat. Increase safeguard gain to 2. |
 ||||||||
-| No | Other (Kyurem) | Glaciate | 1 | Attack 1. Enemy gains 1 engine lock. | Increase attack to 2. | Increase cost to 2. Increase enemy engine lock gain to 2. |
-| No | Other (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 engine lock. | Increase attack to 2 x 2. | Both attacks pierce. Shift right 1 between each attack. |
-| No | Other (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage and heat equal to its cost. | Instead choose a card to exhaust. | Damage and heat equal to its cost + 1. |
-| No | Other (Victini) | V-Create | 2 | Apply 1 smoldering (outgoing). Deal 3 piercing damage and 3 heat. Gain 1 engine lock. Exhaust. | Increase to 5 piercing damage. | Increase to 3 smoldering. Increase engine lock gain to 2. |
+| No | Uncommon (Kyurem) | Glaciate | 1 | Attack 2. Enemy gains 1 frozen. | Increase attack to 3. | Increase cost to 2. Increase enemy frozen to 2. Exhaust. |
+| No | Rare (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 2 heat and 1 frozen. | Increase damage to 2 x 2. | Shift left 1 between attacks. |
+| No | Uncommon (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage equal to its cost, applying 1 smoldering. | Instead choose a card to exhaust. | Damage and heat equal to its cost + 1. |
+| No | Rare (Victini) | V-Create | 2 | Apply 2 smoldering (outgoing). Attack 2 and apply 3 heat. Exhaust. | Increase to 4 damage. | Increase cost to 3. Apply 3 smoldering. |
