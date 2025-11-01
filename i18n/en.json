@@ -25,7 +25,7 @@
     "common": {
       "Heat Rock": {
         "name": "HEAT ROCK",
-        "description": "At start of combat, enemy gains 1 <c=status>FLAMMABLE</c>."
+        "description": "At start of combat, enemy gains 2 <c=status>FLAMMABLE</c>."
       },
       "Flame Orb": {
         "name": "FLAME ORB",
