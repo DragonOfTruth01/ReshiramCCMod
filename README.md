@@ -20,8 +20,8 @@ This mod has added:
   - <b>8</b> uncommon
   - <b>6</b> rare
   - <b>0/4</b> other
-- <b>3/7</b> Artifacts
-  - <b>2/5</b> common
+- <b>5/7</b> Artifacts
+  - <b>4/5</b> common
   - <b>1/2</b> boss
 - <b>4/6</b> Statuses
 
