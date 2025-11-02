@@ -99,6 +99,11 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
         hasTriggeredThisTurn = false;
     }
 
+    public override void OnCombatEnd(State state)
+    {
+        hasTriggeredThisTurn = false;
+    }
+
     public override Spr GetSprite()
     {
         if (!hasTriggeredThisTurn)
