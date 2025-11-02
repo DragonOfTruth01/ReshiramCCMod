@@ -280,6 +280,11 @@ public sealed class ModEntry : SimpleMod
             /* The game doesn't use frames properly when there are only 2 or 3 frames. If you want a proper animation, avoid only adding 2 or 3 frames to it */
             Frames = new[]
             {
+                // ThE GaMe DoEsNt UsE fRaMeS pRoPeRlY wHeN tHeRe ArE oNlY 2 oR 3 fRaMeS
+                // get looped idiot
+                ReshiramCCMod_Character_Neutral_0.Sprite,
+                ReshiramCCMod_Character_Neutral_1.Sprite,
+                ReshiramCCMod_Character_Neutral_2.Sprite,
                 ReshiramCCMod_Character_Neutral_0.Sprite,
                 ReshiramCCMod_Character_Neutral_1.Sprite,
                 ReshiramCCMod_Character_Neutral_2.Sprite
@@ -301,6 +306,9 @@ public sealed class ModEntry : SimpleMod
             LoopTag = "squint",
             Frames = new[]
             {
+                ReshiramCCMod_Character_Squint_0.Sprite,
+                ReshiramCCMod_Character_Squint_1.Sprite,
+                ReshiramCCMod_Character_Squint_2.Sprite,
                 ReshiramCCMod_Character_Squint_0.Sprite,
                 ReshiramCCMod_Character_Squint_1.Sprite,
                 ReshiramCCMod_Character_Squint_2.Sprite
