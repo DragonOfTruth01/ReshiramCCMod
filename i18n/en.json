@@ -80,7 +80,7 @@
       "description": {
         "None": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>Heat Resist</c>.",
         "A": "Summon a <c=status>Solar Flare</c>. Gain 2 <c=status>Heat Resist</c>.",
-        "B": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>Heat Resist</c>."
+        "B": "Summon a <c=status>Solar Flare</c>, or apply 1 <c=status>flammable</c>. Gain 1 <c=status>heat resist</c>."
       }
     },
     "Hone Claws": {

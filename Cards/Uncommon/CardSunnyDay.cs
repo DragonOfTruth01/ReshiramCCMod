@@ -28,7 +28,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardSunnyDayBG.Sprite,
             description = ModEntry.Instance.Localizations.Localize(["card", "Sunny Day", "description", upgrade.ToString()]),
-            cost = 2,
+            cost = 1,
             exhaust = upgrade != Upgrade.B
         };
         return data;
@@ -66,16 +66,27 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                 break;
 
             case Upgrade.B:
-                actions = new List<CardAction>()
-                {
-                    new ASolarFlare(),
-                    new AStatus()
-                    {
-                        status = ModEntry.Instance.HeatResist.Status,
-                        statusAmount = 1,
-                        targetPlayer = true
-                    }
-                };
+                actions = new List<CardAction>();
+
+                IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
+                        new SolarFlareCondition(),
+                        new AStatus()
+                        {
+                            status = ModEntry.Instance.Flammable.Status,
+                            statusAmount = 1
+                        }
+                    );
+
+                actions.Add(act.AsCardAction);
+
+                actions.Add(new ASolarFlare());
+
+                actions.Add(new AStatus()
+                            {
+                                status = ModEntry.Instance.HeatResist.Status,
+                                statusAmount = 1,
+                                targetPlayer = true
+                            });
                 break;
         }
         return actions;
