@@ -28,7 +28,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardSunnyDayBG.Sprite,
             description = ModEntry.Instance.Localizations.Localize(["card", "Sunny Day", "description", upgrade.ToString()]),
-            cost = 1,
+            cost = 2,
             exhaust = upgrade != Upgrade.B
         };
         return data;
@@ -42,7 +42,13 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
             case Upgrade.None:
                 actions = new List<CardAction>()
                 {
-                    new ASolarFlare()
+                    new ASolarFlare(),
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.HeatResist.Status,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    }
                 };
                 break;
 
@@ -52,28 +58,24 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                     new ASolarFlare(),
                     new AStatus()
                     {
-                        status = Status.serenity,
-                        statusAmount = 1,
+                        status = ModEntry.Instance.HeatResist.Status,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
                 break;
 
             case Upgrade.B:
-                actions = new List<CardAction>();
-
-                IKokoroApi.IV2.IConditionalApi.IConditionalAction act = Conditional.MakeAction(
-                        new SolarFlareCondition(),
-                        new AStatus()
-                        {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 2
-                        }
-                    );
-
-                actions.Add(act.AsCardAction);
-
-                actions.Add(new ASolarFlare());
+                actions = new List<CardAction>()
+                {
+                    new ASolarFlare(),
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.HeatResist.Status,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    }
+                };
                 break;
         }
         return actions;

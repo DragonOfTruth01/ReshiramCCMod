@@ -18,6 +18,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
     {
         public int oldHeatAmt;
         public int oldFlammableAmt;
+        public int oldHeatResistAmt;
     }
 
     [HarmonyPrefix]
@@ -28,6 +29,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
         __state = new HarmonyRef();
         __state.oldHeatAmt = ship.Get(Status.heat);
         __state.oldFlammableAmt = ship.Get(ModEntry.Instance.Flammable.Status);
+        __state.oldHeatResistAmt = ship.Get(ModEntry.Instance.HeatResist.Status);
 
         // Set heat gain to 0 if the ship has safeguard
         if( __instance.status == Status.heat && __instance.statusAmount > 0
@@ -55,6 +57,10 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
         // Handle Flammable (if amount changed, temporarily modify our overheat damage)
         var flammableDiff = ship.Get(ModEntry.Instance.Flammable.Status) - __state.oldFlammableAmt;
         ship.overheatDamage += flammableDiff;
+
+        // Handle Heat Resist (if amount changed, temporarily modify our overheat threshold)
+        var heatResistDiff = ship.Get(ModEntry.Instance.HeatResist.Status) - __state.oldHeatResistAmt;
+        ship.heatTrigger += heatResistDiff;
     }
 
     public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)
@@ -82,5 +88,6 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
     private static void Ship_ResetAfterCombat_Prefix(Ship __instance)
     {
         __instance.overheatDamage -= __instance.Get(ModEntry.Instance.Flammable.Status);
+        __instance.heatTrigger -= __instance.Get(ModEntry.Instance.HeatResist.Status);
     }
 }

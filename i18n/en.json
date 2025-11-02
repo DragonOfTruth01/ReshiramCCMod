@@ -78,9 +78,9 @@
     "Sunny Day": {
       "name": "Sunny Day",
       "description": {
-        "None": "Summon a <c=status>Solar Flare</c>.",
-        "A": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>serenity</c>.",
-        "B": "Summon a <c=status>Solar Flare</c>. If already present, apply 2 <c=status>flammable</c>."
+        "None": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>Heat Resist</c>.",
+        "A": "Summon a <c=status>Solar Flare</c>. Gain 2 <c=status>Heat Resist</c>.",
+        "B": "Summon a <c=status>Solar Flare</c>. Gain 1 <c=status>Heat Resist</c>."
       }
     },
     "Hone Claws": {
@@ -134,6 +134,10 @@
     "Safeguard": {
       "name": "SAFEGUARD",
       "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
+    },
+    "Heat Resist": {
+      "name": "HEAT RESIST",
+      "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
     }
   },
   "condition": {

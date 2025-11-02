@@ -23,7 +23,7 @@ This mod has added:
 - <b>3/7</b> Artifacts
   - <b>2/5</b> common
   - <b>1/2</b> boss
-- <b>3/5</b> Statuses
+- <b>4/6</b> Statuses
 
 # Content Infographics
 
