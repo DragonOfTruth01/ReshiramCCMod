@@ -27,7 +27,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
         });
     }
 
-    bool hasTriggeredThisTurn = false;
+    bool hasTriggeredThisCombat = false;
 
     private class HarmonyRef
     {
@@ -44,7 +44,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
         if (artifact != null)
         {
             __state = new HarmonyRef();
-            __state.triggered = artifact.hasTriggeredThisTurn;
+            __state.triggered = artifact.hasTriggeredThisCombat;
         }
         // If we don't have an instance of the artifact, we dont' care what we assign it
         // (Don't worry, we're not going to use __state in the postfix anyway)
@@ -67,7 +67,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
             if (s.ship.Get(Status.heat) >= s.ship.heatTrigger && !__state.triggered)
             {
                 // First set that we triggered the relic for this turn, to prevent recursion
-                artifact.hasTriggeredThisTurn = true;
+                artifact.hasTriggeredThisCombat = true;
 
                 //Then, apply this relic's effects
                 int heatMod = s.ship.heatTrigger - s.ship.Get(Status.heat) - 1;
@@ -86,14 +86,14 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
         }
     }
 
-    public override void OnTurnStart(State s, Combat c)
+    public override void OnCombatEnd(State state)
     {
-        hasTriggeredThisTurn = false;
+        hasTriggeredThisCombat = false;
     }
 
     public override Spr GetSprite()
     {
-        if (!hasTriggeredThisTurn)
+        if (!hasTriggeredThisCombat)
         {
             return ModEntry.Instance.ReshiramCCMod_Character_ArtifactRawstBerry.Sprite;
         }
