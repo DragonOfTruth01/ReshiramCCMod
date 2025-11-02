@@ -64,7 +64,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
         if (artifact != null)
         {
             // If the player ship has more heat, and this is the first time heat is gained this turn...
-            if (s.ship.Get(Status.heat) > s.ship.heatTrigger && !__state.triggered)
+            if (s.ship.Get(Status.heat) >= s.ship.heatTrigger && !__state.triggered)
             {
                 // First set that we triggered the relic for this turn, to prevent recursion
                 artifact.hasTriggeredThisTurn = true;
@@ -72,7 +72,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
                 //Then, apply this relic's effects
                 int heatMod = s.ship.heatTrigger - s.ship.Get(Status.heat) - 1;
 
-                c.Queue([
+                c.QueueImmediate([
                     new AStatus
                     {
                         status = Status.heat,
