@@ -18,6 +18,16 @@ public sealed class ModEntry : SimpleMod
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
 
+    internal enum CharacterVariant
+    {
+        Reshiram,
+        ReshiVictini,
+        WKyurem,
+        WKyuremVictini
+    }
+
+    internal CharacterVariant currCharVariant;
+
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
@@ -178,6 +188,10 @@ public sealed class ModEntry : SimpleMod
         Localizations = new MissingPlaceholderLocalizationProvider<IReadOnlyList<string>>(
             new CurrentLocaleOrEnglishLocalizationProvider<IReadOnlyList<string>>(AnyLocalizations)
         );
+
+        // When loading the mod, always default to the regular Reshiram variant
+        // This may have to change when loading a run - maybe by doing a relic check
+        currCharVariant = CharacterVariant.Reshiram;
 
         /* Assigning our ISpriteEntry objects manually. This is the easiest way to do it when starting out!
          * Of note: GetRelativeFile is case sensitive. Double check you've written the file names correctly */
