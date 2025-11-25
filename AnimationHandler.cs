@@ -18,8 +18,8 @@ public sealed class AnimationHandler
         // Only do the following for the Reshiram character
         if (__instance.type == ModEntry.Instance.ReshiramCCMod_Deck.Deck.Key())
         {
-            // Perform different animations, depending on our current animation variant
-            getTag(animTag);
+            // Change the animation to whatever we'd like to display
+            animTag = getTag(animTag);
         }
     }
 
