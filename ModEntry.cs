@@ -258,9 +258,9 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_1.png"));
         ReshiramCCMod_Character_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_2.png"));
 
-        ReshiramCCMod_Character_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_reshi_victini_squint_0.png"));
-        ReshiramCCMod_Character_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_reshi_victini_squint_1.png"));
-        ReshiramCCMod_Character_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_reshi_victini_squint_2.png"));
+        ReshiramCCMod_Character_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_0.png"));
+        ReshiramCCMod_Character_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_1.png"));
+        ReshiramCCMod_Character_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_2.png"));
 
         ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
