@@ -25,7 +25,8 @@ internal sealed class CardRoost : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardRoostBG.Sprite,
-            cost = upgrade == Upgrade.A ? 1 : 2,
+            cost = 2,
+            retain = upgrade == Upgrade.A,
             exhaust = true
         };
         return data;
