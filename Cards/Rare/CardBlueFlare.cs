@@ -40,9 +40,9 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3),
+                        damage = GetDmg(s, 4),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 3
+                        statusAmount = 4
                     },
                 };
                 break;
@@ -52,9 +52,9 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3),
+                        damage = GetDmg(s, 4),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 3
+                        statusAmount = 4
                     }
                 };
                 break;
@@ -64,9 +64,9 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 5),
+                        damage = GetDmg(s, 6),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 4
+                        statusAmount = 5
                     }
                 };
                 break;
