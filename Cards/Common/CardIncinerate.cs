@@ -40,7 +40,7 @@ internal sealed class CardIncinerate : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 3
                     }
@@ -57,7 +57,7 @@ internal sealed class CardIncinerate : Card, IReshiramCCModCard
                     },
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 3
                     }
@@ -69,13 +69,13 @@ internal sealed class CardIncinerate : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 2
                     },
                     new AAttack()
                     {
-                        damage = GetDmg(s, 0),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 2
                     }
