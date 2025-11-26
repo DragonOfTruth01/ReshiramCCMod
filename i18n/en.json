@@ -125,7 +125,12 @@
       "name": "Safeguard"
     },
     "Searing Shot": {
-      "name": "Searing Shot"
+      "name": "Searing Shot",
+      "description": {
+        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal damage + heat equal to its cost + 1.",
+        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal damage + heat equal to its cost + 2.",
+        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal damage + heat equal to its cost + 1."
+      }
     }
   },
   "status": {

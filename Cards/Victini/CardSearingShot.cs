@@ -25,6 +25,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardFireFangBG.Sprite,
+            description = ModEntry.Instance.Localizations.Localize(["card", "Searing Shot", "description", upgrade.ToString()]),
             cost = 1
         };
         return data;

@@ -32,5 +32,5 @@ This document acts as a reference for which cards are part of this mod.
 ||||||||
 | No | Uncommon (Kyurem) | Glaciate | 1 | Attack 2. Enemy gains 1 frozen. | Increase attack to 3. | Increase cost to 2. Increase enemy frozen to 2. Exhaust. |
 | No | Rare (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 3 heat and 1 frozen. | Increase damage to 2 x 2. | Shift left 1 between attacks. |
-| No | Uncommon (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage and apply heat equal to its cost. | Instead choose a card to exhaust. | Apply 1 smoldering before the attack. |
+| No | Uncommon (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage and apply heat equal to its cost + 1. | Damage + heat equal to its cost + 2. | Instead choose a card to exhaust. |
 | No | Rare (Victini) | V-Create | 2 | Exhaust the leftmost and rightmost cards in your hand. Attack 3 and apply 2 smoldering. Exhaust. | Also apply 3 heat. | Increase cost to 3. Apply 3 smoldering. |
