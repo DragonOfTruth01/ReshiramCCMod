@@ -40,13 +40,13 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1),
+                        damage = GetDmg(s, 1)
                     },
                     new AAttack()
                     {
                         damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     }
                 };
                 break;
@@ -56,13 +56,13 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 2)
                     },
                     new AAttack()
                     {
                         damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     }
                 };
                 break;
@@ -70,6 +70,11 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
             case Upgrade.B:
                 actions = new()
                 {
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.Smoldering.Status,
+                        statusAmount = 1
+                    },
                     new AAttack()
                     {
                         damage = GetDmg(s, 1),
@@ -80,7 +85,7 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     }
                 };
                 break;
