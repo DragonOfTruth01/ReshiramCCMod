@@ -31,6 +31,9 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardBackground { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
+
     // Custom Card Arts
     internal ISpriteEntry ReshiramCCMod_Character_CardIncinerateBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardDragonClawBG { get; }
@@ -95,6 +98,8 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
 
     internal IDeckEntry ReshiramCCMod_Deck { get; }
+
+    internal IDeckEntry ReshiramCCMod_Victini_Deck { get; }
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
@@ -206,6 +211,9 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
+        ReshiramCCMod_Character_Victini_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_victini_cardbackground.png"));
+        ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
+
         // Custom Card Arts
         ReshiramCCMod_Character_CardIncinerateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardIncinerateBG.png"));
         ReshiramCCMod_Character_CardDragonClawBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardDragonClawBG.png"));
@@ -291,6 +299,23 @@ public sealed class ModEntry : SimpleMod
             /* Since this deck will be used by our Demo Character, we'll use their name. */
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod", "name"]).Localize,
         });
+
+        ReshiramCCMod_Victini_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModVictiniDeck", new DeckConfiguration()
+        {
+            Definition = new DeckDef()
+            {
+                color = new Color("de543d"),
+
+                titleColor = new Color("000000")
+            },
+
+            DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
+            BorderSprite = ReshiramCCMod_Character_Victini_CardFrame.Sprite,
+
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Victini", "name"]).Localize,
+        });
+
+        // Register NPC Decks
 
         /* Let's create some animations, because if you were to boot up this mod from what you have above,
          * DemoCharacter would be a blank void inside a box, we haven't added their sprites yet! 
