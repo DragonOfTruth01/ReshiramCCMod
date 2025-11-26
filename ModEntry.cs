@@ -309,7 +309,7 @@ public sealed class ModEntry : SimpleMod
             {
                 color = new Color("de543d"),
 
-                titleColor = new Color("ffffff")
+                titleColor = new Color("202020")
             },
 
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
