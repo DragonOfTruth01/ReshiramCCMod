@@ -49,7 +49,8 @@ internal sealed class ArtifactLibertyPass : Artifact, IReshiramCCModArtifact
             new TTCard
             {
                 card = new CardVCreate()
-            }
+            },
+            new TTGlossary("cardtrait.exhaust")
         };
     }
 
