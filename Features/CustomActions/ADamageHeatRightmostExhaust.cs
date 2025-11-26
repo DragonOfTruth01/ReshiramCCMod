@@ -9,7 +9,7 @@ public sealed class ADamageHeatRightmostExhaust : CardAction
 
     public override void Begin(G g, State s, Combat c)
     {
-        // Get the rightmost card in the hand
+        // Exhaust the rightmost card in the hand
         if(c.hand.Count > 0 && c.hand[c.hand.Count - 1] != null)
         {
             Card card = c.hand[c.hand.Count - 1];

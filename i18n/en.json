@@ -130,9 +130,17 @@
     "Searing Shot": {
       "name": "Searing Shot",
       "description": {
-        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal dmg + heat equal to <c=boldPink>its cost + 1</c>.",
-        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal dmg + heat equal to <c=boldPink>its cost + 2</c>.",
-        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal dmg + heat equal to <c=boldPink>its cost + 1</c>."
+        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 1</c>.",
+        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 2</c>.",
+        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 1</c>."
+      }
+    },
+    "V-Create": {
+      "name": "V-Create",
+      "description": {
+        "None": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>.",
+        "A": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>. Apply 3 <c=status>heat</c>.",
+        "B": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 3 <c=status>smoldering</c>."
       }
     }
   },
