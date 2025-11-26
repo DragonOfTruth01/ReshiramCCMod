@@ -23,23 +23,6 @@ public sealed class AnimationHandler
         }
     }
 
-    public class AnimationContainer
-    {
-        public string neutralTag;
-        public string miniTag;
-        public string squintTag;
-        public string gameoverTag;
-
-        public AnimationContainer()
-        {
-            neutralTag = "neutral";
-            miniTag = "mini";
-            squintTag = "squint";
-            gameoverTag = "gameover";
-        }
-
-    }
-
     private static Dictionary<string, string> defaultAnim = new Dictionary<string, string>();
     private static Dictionary<string, string> victiniAnim = new Dictionary<string, string>();
     private static Dictionary<string, string> wKyuremAnim = new Dictionary<string, string>();
