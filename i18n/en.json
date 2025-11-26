@@ -44,6 +44,10 @@
       "Rawst Berry": {
         "name": "RAWST BERRY",
         "description": "The first time each combat you reach the <c=ff687d>overheating</c> threshold, reduce your heat to 1 below the threshold."
+      },
+      "Liberty Pass": {
+        "name": "LIBERTY PASS",
+        "description": "Add <c=card>Searing Shot</c> and <c=card>V-Create</c> to your deck."
       }
     }
   },
