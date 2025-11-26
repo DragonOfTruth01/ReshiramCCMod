@@ -148,16 +148,19 @@ public sealed class ModEntry : SimpleMod
         typeof(CardSafeguard)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_VictiniCard_Types { get; } = [
+        typeof(CardSearingShot)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
-    internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
-        = [
-            .. ReshiramCCModCharacter_CommonCard_Types,
-            .. ReshiramCCModCharacter_UncommonCard_Types,
-            .. ReshiramCCModCharacter_RareCard_Types
-        //     typeof(Whatever_Other_Cards_To_Add)
-        ];
+    internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types = [
+        .. ReshiramCCModCharacter_CommonCard_Types,
+        .. ReshiramCCModCharacter_UncommonCard_Types,
+        .. ReshiramCCModCharacter_RareCard_Types,
+        .. ReshiramCCModCharacter_VictiniCard_Types
+    ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
     internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
@@ -306,7 +309,7 @@ public sealed class ModEntry : SimpleMod
             {
                 color = new Color("de543d"),
 
-                titleColor = new Color("000000")
+                titleColor = new Color("ffffff")
             },
 
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
