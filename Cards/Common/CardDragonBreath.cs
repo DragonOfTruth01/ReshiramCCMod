@@ -27,7 +27,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonBreathBG.Sprite,
-            cost = upgrade == Upgrade.B ? 2 : 1
+            cost = 1
         };
         return data;
     }
@@ -57,7 +57,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1
+                            statusAmount = 2
                         }
                     );
 
@@ -89,7 +89,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1
+                            statusAmount = 2
                         }
                     );
 
@@ -108,7 +108,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = Status.heat,
-                        statusAmount = 1,
+                        statusAmount = 3,
                     }
                 };
 
@@ -129,6 +129,15 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
 
                     cardActionList3.Add(act.AsCardAction);
                 }
+
+                cardActionList3.Add(
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    }
+                );
 
                 actions = cardActionList3;
                 break;
