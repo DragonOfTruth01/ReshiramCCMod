@@ -39,17 +39,9 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
             case Upgrade.None:
                 actions = new()
                 {
-                    new AAttack()
+                    new ADamageHeatRightmostExhaust()
                     {
-                        damage = GetDmg(s, 1),
-                        status = Status.heat,
-                        statusAmount = 1
-                    },
-                    new AStatus
-                    {
-                        status = Status.heat,
-                        statusAmount = -1,
-                        targetPlayer = true
+                        damageHeatMod = 1
                     }
                 };
                 break;
@@ -57,17 +49,9 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
             case Upgrade.A:
                 actions = new()
                 {
-                    new AAttack()
+                    new ADamageHeatRightmostExhaust()
                     {
-                        damage = GetDmg(s, 1),
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
-                    },
-                    new AStatus
-                    {
-                        status = Status.heat,
-                        statusAmount = -1,
-                        targetPlayer = true
+                        damageHeatMod = 2
                     }
                 };
                 break;
@@ -75,18 +59,10 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
             case Upgrade.B:
                 actions = new()
                 {
-                    new AAttack()
+                    new ACardSelect()
                     {
-                        damage = GetDmg(s, 3),
-                        piercing = true,
-                        status = Status.heat,
-                        statusAmount = 1
-                    },
-                    new AStatus
-                    {
-                        status = Status.heat,
-                        statusAmount = 1,
-                        targetPlayer = true
+                        browseAction = new ChooseCardInYourHandToSearingShot(){ damageHeatMod = 1 },
+                        browseSource = CardBrowse.Source.Hand
                     }
                 };
                 break;

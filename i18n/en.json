@@ -16,6 +16,9 @@
     "Non-Attack Stun":{
       "name": "     NON-ATTACK STUN",
       "description": "Cancel intents on the enemy ship that are not attacks."
+    },
+    "SearingShotChooseExhaust":{
+      "SelectText": "Choose a card in your hand to exhaust for Searing Shot."
     }
   },
   "artifact": {
@@ -127,9 +130,9 @@
     "Searing Shot": {
       "name": "Searing Shot",
       "description": {
-        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal damage + heat equal to its cost + 1.",
-        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal damage + heat equal to its cost + 2.",
-        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal damage + heat equal to its cost + 1."
+        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal dmg + heat equal to <c=boldPink>its cost + 1</c>.",
+        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal dmg + heat equal to <c=boldPink>its cost + 2</c>.",
+        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal dmg + heat equal to <c=boldPink>its cost + 1</c>."
       }
     }
   },
