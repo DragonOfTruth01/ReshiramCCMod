@@ -27,7 +27,7 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
         });
     }
 
-    bool hasTriggeredThisTurn = false;
+    public bool hasTriggeredThisTurn = false;
 
     private class HarmonyRef
     {

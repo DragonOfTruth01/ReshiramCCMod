@@ -27,8 +27,8 @@ internal sealed class ArtifactCharcoal : Artifact, IReshiramCCModArtifact
         });
     }
 
-    int counter = 0;
-    readonly int artifactTriggerAmt = 3;
+    public int counter = 0;
+    public readonly int artifactTriggerAmt = 3;
 
     public override int? GetDisplayNumber(State s)
     {

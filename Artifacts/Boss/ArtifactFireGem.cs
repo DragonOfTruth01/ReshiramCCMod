@@ -27,8 +27,8 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
         });
     }
 
-    int counter = 0;
-    readonly int artifactTriggerAmt = 5;
+    public int counter = 0;
+    public readonly int artifactTriggerAmt = 5;
 
     private class HarmonyRef
     {

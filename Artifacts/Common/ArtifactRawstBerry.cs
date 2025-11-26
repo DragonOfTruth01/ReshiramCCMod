@@ -27,7 +27,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
         });
     }
 
-    bool hasTriggeredThisCombat = false;
+    public bool hasTriggeredThisCombat = false;
 
     private class HarmonyRef
     {
