@@ -15,8 +15,10 @@ public sealed class AnimationHandler
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(Character), "DrawFace")]
-    private static void DrawFace_Prefix(Character __instance, ref string animTag, bool mini = false)
+    private static void DrawFace_Prefix(G g, Character __instance, ref string animTag, bool mini = false)
     {
+        UpdateCharacterVariant(g.state);
+
         // Only do the following for the Reshiram character
         if (__instance.type == ModEntry.Instance.ReshiramCCMod_Deck.Deck.Key())
         {
