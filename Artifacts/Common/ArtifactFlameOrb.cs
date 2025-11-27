@@ -80,12 +80,6 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
                         status = Status.overdrive,
                         statusAmount = 1,
                         targetPlayer = true
-                    },
-                    new AStatus
-                    {
-                        status = Status.heat,
-                        statusAmount = 1,
-                        targetPlayer = true
                     }
                 ]);
 

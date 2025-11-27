@@ -29,7 +29,7 @@
       },
       "Flame Orb": {
         "name": "FLAME ORB",
-        "description": "The first time you gain <c=status>heat</c> each turn, gain 1 <c=status>OVERDRIVE</c> and one more <c=status>heat</c>."
+        "description": "The first time you gain <c=status>heat</c> each turn, gain 1 <c=status>OVERDRIVE</c>."
       },
       "Charcoal": {
         "name": "CHARCOAL",
