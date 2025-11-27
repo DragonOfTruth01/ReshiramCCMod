@@ -425,6 +425,17 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Squint_0.Sprite,
             }
         });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_victini",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_Victini_Squint_0.Sprite,
+            }
+        });
         
         /* Let's continue with the character creation and finally, actually, register the character! */
         helper.Content.Characters.V2.RegisterPlayableCharacter("ReshiramCCMod", new PlayableCharacterConfigurationV2()

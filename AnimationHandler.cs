@@ -44,7 +44,7 @@ public sealed class AnimationHandler
         victiniAnim["neutral"]  = "neutral_victini";
         victiniAnim["mini"]     = "mini";
         victiniAnim["squint"]   = "squint_victini";
-        victiniAnim["gameover"] = "gameover";
+        victiniAnim["gameover"] = "gameover_victini";
 
         // Populate white kyurem animations
         wKyuremAnim["neutral"]  = "neutral";
