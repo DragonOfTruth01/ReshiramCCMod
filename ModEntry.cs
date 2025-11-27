@@ -62,6 +62,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardSafeguardBG { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardVCreateBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardSearingShotBG { get; }
 
     // Artifact Arts
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactHeatRock { get; }
@@ -250,6 +251,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardSafeguardBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardSafeguardBG.png"));
 
         ReshiramCCMod_Character_Victini_CardVCreateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardVCreateBG.png"));
+        ReshiramCCMod_Character_Victini_CardSearingShotBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardSearingShotBG.png"));
 
         // Artifact Arts
         ReshiramCCMod_Character_ArtifactHeatRock = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png"));
