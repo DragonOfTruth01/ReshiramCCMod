@@ -29,7 +29,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
 
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_CardFireFangBG.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_Victini_CardVCreateBG.Sprite,
             description = ModEntry.Instance.Localizations.Localize(["card", "V-Create", "description", upgrade.ToString()], new { damageString }),
             cost = upgrade == Upgrade.B ? 3 : 2,
             exhaust = true
