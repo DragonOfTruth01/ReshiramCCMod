@@ -26,6 +26,8 @@ internal sealed class ArtifactLibertyPass : Artifact, IReshiramCCModArtifact
 
     public override void OnReceiveArtifact(State state)
     {
+        AnimationHandler.UpdateCharacterVariant(state);
+
         state.GetCurrentQueue().Add(new AAddCard
         {
             amount = 1,
@@ -36,6 +38,16 @@ internal sealed class ArtifactLibertyPass : Artifact, IReshiramCCModArtifact
             amount = 1,
             card = new CardVCreate()
         });
+    }
+
+    public override void OnRemoveArtifact(State state)
+    {
+        AnimationHandler.UpdateCharacterVariant(state);
+    }
+
+    public override void OnCombatStart(State state, Combat combat)
+    {
+        AnimationHandler.UpdateCharacterVariant(state);
     }
 
     public override List<Tooltip>? GetExtraTooltips()

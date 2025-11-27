@@ -2,7 +2,9 @@ using Nickel;
 using HarmonyLib;
 using System.Runtime.CompilerServices;
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using DragonOfTruth01.ReshiramCCMod.Artifacts;
 
 namespace DragonOfTruth01.ReshiramCCMod;
 
@@ -73,6 +75,28 @@ public sealed class AnimationHandler
 
             default:
                 return defaultAnim[originalTag];
+        }
+    }
+
+    public static void UpdateCharacterVariant(State s)
+    {
+        // Check for artifacts
+        var libertyPass = s.EnumerateAllArtifacts().OfType<ArtifactLibertyPass>().FirstOrDefault();
+        bool hasLibertyPass = false;
+
+        if (libertyPass != null)
+        {
+            hasLibertyPass = true;
+        }
+
+        // Apply the correct character variant
+        if (hasLibertyPass)
+        {
+            ModEntry.Instance.currCharVariant = ModEntry.CharacterVariant.ReshiVictini;
+        }
+        else
+        {
+            ModEntry.Instance.currCharVariant = ModEntry.CharacterVariant.Reshiram;
         }
     }
 }
