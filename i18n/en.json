@@ -3,6 +3,9 @@
     "ReshiramCCMod": {
       "name": "Reshiram",
       "description": "<c=f4f7f0>RESHIRAM</c>\nA legendary dragon that represents truth. Its cards utilize <c=ff687d>heat</c> alongside <c=boldPink>other debuffs</c> to set enemy ships ablaze."
+    },
+    "ReshiramCCMod_Victini": {
+      "name": "Victini"
     }
   },
   "action": {
@@ -13,6 +16,9 @@
     "Non-Attack Stun":{
       "name": "     NON-ATTACK STUN",
       "description": "Cancel intents on the enemy ship that are not attacks."
+    },
+    "SearingShotChooseExhaust":{
+      "SelectText": "Choose a card in your hand to exhaust for Searing Shot."
     }
   },
   "artifact": {
@@ -38,6 +44,10 @@
       "Rawst Berry": {
         "name": "RAWST BERRY",
         "description": "The first time each combat you reach the <c=ff687d>overheating</c> threshold, reduce your heat to 1 below the threshold."
+      },
+      "Liberty Pass": {
+        "name": "LIBERTY PASS",
+        "description": "Add <c=card>Searing Shot</c> and <c=card>V-Create</c> to your deck."
       }
     }
   },
@@ -120,6 +130,22 @@
     },
     "Safeguard": {
       "name": "Safeguard"
+    },
+    "Searing Shot": {
+      "name": "Searing Shot",
+      "description": {
+        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 1</c>.",
+        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 2</c>.",
+        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal <c=cardtrait>dmg</c> + <c=status>heat</c> equal to <c=boldPink>its cost + 1</c>."
+      }
+    },
+    "V-Create": {
+      "name": "V-Create",
+      "description": {
+        "None": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>.",
+        "A": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>. Apply 3 <c=status>heat</c>.",
+        "B": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 3 <c=status>smoldering</c>."
+      }
     }
   },
   "status": {

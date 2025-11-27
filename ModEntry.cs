@@ -18,8 +18,21 @@ public sealed class ModEntry : SimpleMod
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
 
+    internal enum CharacterVariant
+    {
+        Reshiram,
+        ReshiVictini,
+        WKyurem,
+        WKyuremVictini
+    }
+
+    internal CharacterVariant currCharVariant;
+
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardBackground { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
 
     // Custom Card Arts
     internal ISpriteEntry ReshiramCCMod_Character_CardIncinerateBG { get; }
@@ -48,6 +61,9 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardOutrageBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardSafeguardBG { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardVCreateBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardSearingShotBG { get; }
+
     // Artifact Arts
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactHeatRock { get; }
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactFlameOrb { get; }
@@ -55,6 +71,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactCharcoal { get; }
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactRawstBerry { get; }
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactRawstBerry_Disabled { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactLibertyPass { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactFireGem { get; }
 
@@ -64,11 +81,19 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Neutral_2 { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_2 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Mini_0 { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Squint_0 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Squint_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_2 { get; }
 
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyNotOverheat { get; }
@@ -77,6 +102,8 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
 
     internal IDeckEntry ReshiramCCMod_Deck { get; }
+
+    internal IDeckEntry ReshiramCCMod_Victini_Deck { get; }
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
@@ -125,23 +152,28 @@ public sealed class ModEntry : SimpleMod
         typeof(CardSafeguard)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_VictiniCard_Types { get; } = [
+        typeof(CardSearingShot),
+        typeof(CardVCreate)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
-    internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types
-        = [
-            .. ReshiramCCModCharacter_CommonCard_Types,
-            .. ReshiramCCModCharacter_UncommonCard_Types,
-            .. ReshiramCCModCharacter_RareCard_Types
-        //     typeof(Whatever_Other_Cards_To_Add)
-        ];
+    internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types = [
+        .. ReshiramCCModCharacter_CommonCard_Types,
+        .. ReshiramCCModCharacter_UncommonCard_Types,
+        .. ReshiramCCModCharacter_RareCard_Types,
+        .. ReshiramCCModCharacter_VictiniCard_Types
+    ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
     internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
         typeof(ArtifactHeatRock),
         typeof(ArtifactFlameOrb),
         typeof(ArtifactCharcoal),
-        typeof(ArtifactRawstBerry)
+        typeof(ArtifactRawstBerry),
+        typeof(ArtifactLibertyPass)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
         typeof(ArtifactFireGem)
@@ -179,10 +211,17 @@ public sealed class ModEntry : SimpleMod
             new CurrentLocaleOrEnglishLocalizationProvider<IReadOnlyList<string>>(AnyLocalizations)
         );
 
+        // When loading the mod, always default to the regular Reshiram variant
+        // This may have to change when loading a run - maybe by doing a relic check
+        currCharVariant = CharacterVariant.Reshiram;
+
         /* Assigning our ISpriteEntry objects manually. This is the easiest way to do it when starting out!
          * Of note: GetRelativeFile is case sensitive. Double check you've written the file names correctly */
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
+
+        ReshiramCCMod_Character_Victini_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_victini_cardbackground.png"));
+        ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
 
         // Custom Card Arts
         ReshiramCCMod_Character_CardIncinerateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardIncinerateBG.png"));
@@ -211,6 +250,9 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardOutrageBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardOutrageBG.png"));
         ReshiramCCMod_Character_CardSafeguardBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/rare/ReshiramCCMod_CardSafeguardBG.png"));
 
+        ReshiramCCMod_Character_Victini_CardVCreateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardVCreateBG.png"));
+        ReshiramCCMod_Character_Victini_CardSearingShotBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardSearingShotBG.png"));
+
         // Artifact Arts
         ReshiramCCMod_Character_ArtifactHeatRock = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png"));
         ReshiramCCMod_Character_ArtifactFlameOrb = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/flameOrb.png"));
@@ -218,6 +260,8 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_ArtifactCharcoal = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/charcoal.png"));
         ReshiramCCMod_Character_ArtifactRawstBerry = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/rawstBerry.png"));
         ReshiramCCMod_Character_ArtifactRawstBerry_Disabled = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/rawstBerry_disabled.png"));
+        ReshiramCCMod_Character_ArtifactLibertyPass = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/libertyPass.png"));
+
         ReshiramCCMod_Character_ArtifactFireGem = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/fireGem.png"));
 
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
@@ -226,11 +270,19 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_neutral_1.png"));
         ReshiramCCMod_Character_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_neutral_2.png"));
 
+        ReshiramCCMod_Character_Victini_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_0.png"));
+        ReshiramCCMod_Character_Victini_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_1.png"));
+        ReshiramCCMod_Character_Victini_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_2.png"));
+
         ReshiramCCMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_mini_0.png"));
 
         ReshiramCCMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_0.png"));
         ReshiramCCMod_Character_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_1.png"));
         ReshiramCCMod_Character_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_2.png"));
+
+        ReshiramCCMod_Character_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_0.png"));
+        ReshiramCCMod_Character_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_1.png"));
+        ReshiramCCMod_Character_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_2.png"));
 
         ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
@@ -261,6 +313,23 @@ public sealed class ModEntry : SimpleMod
             /* Since this deck will be used by our Demo Character, we'll use their name. */
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod", "name"]).Localize,
         });
+
+        ReshiramCCMod_Victini_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModVictiniDeck", new DeckConfiguration()
+        {
+            Definition = new DeckDef()
+            {
+                color = new Color("de543d"),
+
+                titleColor = new Color("202020")
+            },
+
+            DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
+            BorderSprite = ReshiramCCMod_Character_Victini_CardFrame.Sprite,
+
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Victini", "name"]).Localize,
+        });
+
+        // Register NPC Decks
 
         /* Let's create some animations, because if you were to boot up this mod from what you have above,
          * DemoCharacter would be a blank void inside a box, we haven't added their sprites yet! 
@@ -293,6 +362,24 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Neutral_2.Sprite
             }
         });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+
+            LoopTag = "neutral_victini",
+
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_Victini_Neutral_2.Sprite,
+                ReshiramCCMod_Character_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_Victini_Neutral_2.Sprite
+            }
+        });
+
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
@@ -303,6 +390,7 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Mini_0.Sprite
             }
         });
+
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
@@ -317,6 +405,22 @@ public sealed class ModEntry : SimpleMod
                 ReshiramCCMod_Character_Squint_2.Sprite
             }
         });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "squint_victini",
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_Victini_Squint_2.Sprite,
+                ReshiramCCMod_Character_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_Victini_Squint_2.Sprite
+            }
+        });
+
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
@@ -325,6 +429,17 @@ public sealed class ModEntry : SimpleMod
             {
                 // The squint sprite is okay to use here...
                 ReshiramCCMod_Character_Squint_0.Sprite,
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_victini",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_Victini_Squint_0.Sprite,
             }
         });
         
