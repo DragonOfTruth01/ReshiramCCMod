@@ -73,7 +73,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 1
+                            statusAmount = 2
                         }
                     );
 
