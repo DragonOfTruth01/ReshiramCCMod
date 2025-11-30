@@ -70,22 +70,23 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
             case Upgrade.B:
                 actions = new()
                 {
-                    new AStatus()
-                    {
-                        status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
-                    },
                     new AAttack()
                     {
                         damage = GetDmg(s, 1),
                         status = Status.heat,
-                        statusAmount = 2
+                        statusAmount = 3
                     },
                     new AAttack()
                     {
                         damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
                     }
                 };
                 break;
