@@ -43,7 +43,7 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AAttack()
                     {
@@ -71,7 +71,7 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = Status.heat,
-                        statusAmount = 2
+                        statusAmount = 3
                     },
                     new AAttack()
                     {
@@ -99,7 +99,7 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AAttack()
                     {
