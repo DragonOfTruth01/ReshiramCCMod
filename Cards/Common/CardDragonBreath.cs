@@ -106,7 +106,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = Status.heat,
                         statusAmount = 3,
                     }
