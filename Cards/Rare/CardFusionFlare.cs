@@ -88,7 +88,7 @@ internal sealed class CardFusionFlare : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 2
+                        statusAmount = 3
                     },
                     new AStatus()
                     {
