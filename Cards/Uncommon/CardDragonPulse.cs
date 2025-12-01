@@ -141,7 +141,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 2
+                            statusAmount = 3
                         }
                     );
 
