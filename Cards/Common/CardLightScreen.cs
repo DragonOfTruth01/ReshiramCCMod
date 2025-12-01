@@ -25,8 +25,7 @@ internal sealed class CardLightScreen : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardLightScreenBG.Sprite,
-            cost = upgrade == Upgrade.A ? 0 : 1,
-            retain = upgrade == Upgrade.B
+            cost = upgrade == Upgrade.A ? 0 : 1
         };
         return data;
     }
@@ -78,7 +77,7 @@ internal sealed class CardLightScreen : Card, IReshiramCCModCard
                     },
                     new AStatus(){
                         status = Status.heat,
-                        statusAmount = -1,
+                        statusAmount = -2,
                         targetPlayer = true
                     }
                 };
