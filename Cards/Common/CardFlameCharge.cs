@@ -25,7 +25,7 @@ internal sealed class CardFlameCharge : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardFlameChargeBG.Sprite,
-            cost = upgrade == Upgrade.B ? 1 : 0
+            cost = 0
         };
         return data;
     }
