@@ -25,7 +25,8 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardBlueFlareBG.Sprite,
-            cost = upgrade == Upgrade.A ? 2 : (upgrade == Upgrade.B ? 4 : 3)
+            cost = upgrade == Upgrade.A ? 2 : 3,
+            exhaust = upgrade == Upgrade.B
         };
         return data;
     }
@@ -40,7 +41,7 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 4),
+                        damage = GetDmg(s, 3),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 4
                     },
@@ -52,7 +53,7 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 4),
+                        damage = GetDmg(s, 3),
                         status = ModEntry.Instance.Flammable.Status,
                         statusAmount = 4
                     }
@@ -64,9 +65,9 @@ internal sealed class CardBlueFlare : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 6),
+                        damage = GetDmg(s, 5),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 5
+                        statusAmount = 6
                     }
                 };
                 break;
