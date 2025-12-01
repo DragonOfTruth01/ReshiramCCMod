@@ -85,7 +85,7 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
