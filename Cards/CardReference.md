@@ -21,7 +21,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Solar Beam | 2 | Deal piercing damage equal to your heat + enemy heat. Exhaust. | Card gains retain. | You and the enemy gain 1 heat before the attack. |
 | Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Enemy gains 1 smoldering instead of heat. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
 | Yes | Uncommon | Imprison | 1 | Cancel all enemy's non-attack actions (outgoing). | Also reduce heat by 1. | Also gain 1 energy next turn. Gain 1 heat. |
-| Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat and 1 flammable. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
+| Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
 | Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 1 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 2 smoldering. Increase self heat gain to 3. |
 | Yes | Rare | Blue Flare | 3 | Attack 4. Enemy gains 4 flammable. | Reduce cost to 2. | Increase damage to 6 and flammable to 5. Increase cost to 4. |

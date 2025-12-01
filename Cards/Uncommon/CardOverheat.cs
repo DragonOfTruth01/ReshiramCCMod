@@ -58,12 +58,6 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                         status = Status.heat,
                         statusAmount = 3,
                         targetPlayer = true
-                    },
-                    new AStatus
-                    {
-                        status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
-                        targetPlayer = true
                     }
                 };
                 break;
@@ -90,12 +84,6 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                         status = Status.heat,
                         statusAmount = 2,
                         targetPlayer = true
-                    },
-                    new AStatus
-                    {
-                        status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
-                        targetPlayer = true
                     }
                 };
                 break;
@@ -121,12 +109,6 @@ internal sealed class CardOverheat : Card, IReshiramCCModCard
                     {
                         status = Status.heat,
                         statusAmount = 3,
-                        targetPlayer = true
-                    },
-                    new AStatus
-                    {
-                        status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };
