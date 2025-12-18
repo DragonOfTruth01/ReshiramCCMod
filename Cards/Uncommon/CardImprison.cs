@@ -40,6 +40,12 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
             case Upgrade.None:
                 actions = new List<CardAction>()
                 {
+                    new AStatus()
+                    {
+                        status = Status.tempShield,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    },
                     new ANonAttackStun()
                 };
                 break;
@@ -47,6 +53,12 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
             case Upgrade.A:
                 actions = new List<CardAction>()
                 {
+                    new AStatus()
+                    {
+                        status = Status.tempShield,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    },
                     new ANonAttackStun(),
                     new AStatus()
                     {
@@ -60,6 +72,12 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
             case Upgrade.B:
                 actions = new List<CardAction>()
                 {
+                    new AStatus()
+                    {
+                        status = Status.tempShield,
+                        statusAmount = 1,
+                        targetPlayer = true
+                    },
                     new ANonAttackStun(),
                     new AStatus()
                     {
