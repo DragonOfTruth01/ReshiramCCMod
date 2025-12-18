@@ -56,6 +56,7 @@ internal sealed class CardSolarBeam : Card, IReshiramCCModCard
                 {
                     new AHeatAttack()
                     {
+                        damage = GetDmg(s, 10), // +10/-10 to workaround conflicts w/ damage calculation
                         piercing = true
                     }
                 };
@@ -66,6 +67,7 @@ internal sealed class CardSolarBeam : Card, IReshiramCCModCard
                 {
                     new AHeatAttack()
                     {
+                        damage = GetDmg(s, 10), // +10/-10 to workaround conflicts w/ damage calculation
                         piercing = true
                     }
                 };
@@ -87,6 +89,7 @@ internal sealed class CardSolarBeam : Card, IReshiramCCModCard
                     },
                     new AHeatAttack()
                     {
+                        damage = GetDmg(s, 10), // +10/-10 to workaround conflicts w/ damage calculation
                         piercing = true
                     }
                 };
