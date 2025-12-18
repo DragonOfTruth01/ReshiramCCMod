@@ -39,7 +39,7 @@ internal sealed class CardLightScreen : Card, IReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.tempShield,
+                        status = Status.shield,
                         statusAmount = 1,
                         targetPlayer = true
                     },
@@ -55,7 +55,7 @@ internal sealed class CardLightScreen : Card, IReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.tempShield,
+                        status = Status.shield,
                         statusAmount = 1,
                         targetPlayer = true
                     },
@@ -71,7 +71,7 @@ internal sealed class CardLightScreen : Card, IReshiramCCModCard
                 actions = new()
                 {
                     new AStatus(){
-                        status = Status.tempShield,
+                        status = Status.shield,
                         statusAmount = 1,
                         targetPlayer = true
                     },

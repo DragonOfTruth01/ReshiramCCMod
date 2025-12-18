@@ -12,7 +12,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Will-O-Wisp | 0 | Gain 1 temp shield. Enemy gains 2 heat (outgoing). Gain 1 heat. | Gain 2 temp shield. Enemy also gains 1 smoldering beforehand. Increase cost to 1. | Gain 1 shield. Enemy instead gains 2 heat twice. Gain 2 heat instead of 1. |
 | Yes | Common | Heat Wave | 1 | Enemy gains 1 smoldering and 3 heat (outgoing). Gain 1 heat. | Remove self heat gain. | Increase smoldering gain to 2. Gain 2 heat instead. |
 | Yes | Common | Facade | 1 | Deal piercing damage equal to your heat. | Reduce cost to 0. | Add retain. |
-| Yes | Common | Light Screen | 1 | Gain 1 temp shield. Reduce heat by 1. | Reduce cost to 0. | Instead reduce heat by 2. |
+| Yes | Common | Light Screen | 1 | Gain 1 shield. Reduce heat by 1. | Reduce cost to 0. | Instead reduce heat by 2. |
 | Yes | Common | Flamethrower | 1 | Deploy a flamethrower from the missile bay. | Gain 1 droneshift before deploying. | Increase cost to 2. Deploy an additional flamethrower to the left of the missile bay. |
 ||||||||
 | Yes | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and stun. If not, attack for 2. Apply 1 flammable (outgoing). | Only do the first action. | Apply 3 flammable instead. |
