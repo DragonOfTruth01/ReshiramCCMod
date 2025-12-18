@@ -27,7 +27,7 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardImprisonBG.Sprite,
-            cost = 1
+            cost = 2
         };
         return data;
     }
@@ -43,7 +43,7 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.tempShield,
-                        statusAmount = 1,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new ANonAttackStun()
@@ -56,7 +56,7 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.tempShield,
-                        statusAmount = 1,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new ANonAttackStun(),
@@ -75,7 +75,7 @@ internal sealed class CardImprison : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.tempShield,
-                        statusAmount = 1,
+                        statusAmount = 3,
                         targetPlayer = true
                     },
                     new ANonAttackStun(),
