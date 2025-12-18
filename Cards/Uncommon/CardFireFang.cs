@@ -56,10 +56,15 @@ internal sealed class CardFireFang : Card, IReshiramCCModCard
             case Upgrade.A:
                 actions = new()
                 {
+                    new AStatus
+                    {
+                        status = ModEntry.Instance.Smoldering.Status,
+                        statusAmount = 1
+                    },
                     new AAttack()
                     {
                         damage = GetDmg(s, 1),
-                        status = ModEntry.Instance.Smoldering.Status,
+                        status = Status.heat,
                         statusAmount = 1
                     },
                     new AStatus
