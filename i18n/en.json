@@ -148,6 +148,12 @@
       }
     }
   },
+  "midrow":{
+    "Flamethrower":{
+      "name": "Flamethrower",
+      "description": "Beams 1 <c=status>heat</c> at its target once per turn."
+    }
+  },
   "status": {
     "Smoldering": {
       "name": "SMOLDERING",
