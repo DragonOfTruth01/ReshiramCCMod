@@ -9,7 +9,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Flame Charge | 0 | Attack 1. Gain 1 evade. Gain 2 heat. | Reduce heat gain to 1. | Increase attack to 2 and evade to 2. |
 | Yes | Common | Dragon Breath | 1 | Attack 1. Enemy gains 1 heat. If enemy is overheated, they also gain 2 flammable. | Enemy gains 2 heat instead of 1. | Increase enemy heat gain to 3. Gain 2 heat. |
 | Yes | Common | Psychic | 2 | Gain 1 evade. Gain 2 temp shield. Enemy is moved 1 to the left (outgoing, flippable). | Card gains retain. | Gain 2 real shield instead of temp shield. |
-| Yes | Common | Will-O-Wisp | 0 | Gain 1 temp shield. Enemy gains 2 heat (outgoing). Gain 1 heat. | Gain 2 temp shield. Enemy also gains 1 smoldering beforehand. Increase cost to 1. | Gain 1 shield. Enemy instead gains 2 heat twice. Gain 2 heat instead of 1. |
+| Yes | Common | Will-O-Wisp | 0 | Gain 1 temp shield. Enemy gains 2 heat (outgoing). Gain 1 heat. | Enemy also gains 1 smoldering beforehand. | Gain 2 temp shield. Enemy instead gains 2 heat twice. Gain 2 heat instead of 1. |
 | Yes | Common | Heat Wave | 1 | Enemy gains 1 smoldering and 3 heat (outgoing). Gain 1 heat. | Remove self heat gain. | Increase smoldering gain to 2. Gain 2 heat instead. |
 | Yes | Common | Facade | 1 | Deal piercing damage equal to your heat. | Reduce cost to 0. | Add retain. |
 | Yes | Common | Light Screen | 1 | Gain 1 shield. Reduce heat by 1. | Reduce cost to 0. | Instead reduce heat by 2. |

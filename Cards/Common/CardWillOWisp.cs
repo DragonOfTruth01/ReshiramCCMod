@@ -25,7 +25,7 @@ internal sealed class CardWillOWisp : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardWillOWispBG.Sprite,
-            cost = upgrade == Upgrade.A ? 1 : 0
+            cost = 0
         };
         return data;
     }
@@ -64,7 +64,7 @@ internal sealed class CardWillOWisp : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.tempShield,
-                        statusAmount = 2,
+                        statusAmount = 1,
                         targetPlayer = true
                     },
                     new AStatus()
@@ -91,8 +91,8 @@ internal sealed class CardWillOWisp : Card, IReshiramCCModCard
                 {
                     new AStatus()
                     {
-                        status = Status.shield,
-                        statusAmount = 1,
+                        status = Status.tempShield,
+                        statusAmount = 2,
                         targetPlayer = true
                     },
                     new AStatus()
