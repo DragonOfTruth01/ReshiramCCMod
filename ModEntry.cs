@@ -44,6 +44,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardHeatWaveBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFacadeBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardLightScreenBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_CardFlamethrowerBG { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_CardDragonPulseBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardExtrasensoryBG { get; }
@@ -101,6 +102,11 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
 
+    // Midrow Objects
+
+    internal ISpriteEntry ReshiramCCMod_Midrow_Flamethrower { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_FlamethrowerSmall { get; }
+
     internal IDeckEntry ReshiramCCMod_Deck { get; }
 
     internal IDeckEntry ReshiramCCMod_Victini_Deck { get; }
@@ -129,7 +135,8 @@ public sealed class ModEntry : SimpleMod
         typeof(CardWillOWisp),
         typeof(CardHeatWave),
         typeof(CardFacade),
-        typeof(CardLightScreen)
+        typeof(CardLightScreen),
+        typeof(CardFlamethrower)
     ];
 
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_UncommonCard_Types { get; } = [
@@ -233,6 +240,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardHeatWaveBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardHeatWaveBG.png"));
         ReshiramCCMod_Character_CardFacadeBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardFacadeBG.png"));
         ReshiramCCMod_Character_CardLightScreenBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardLightScreenBG.png"));
+        ReshiramCCMod_Character_CardFlamethrowerBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardFlamethrowerBG.png"));
 
         ReshiramCCMod_Character_CardDragonPulseBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardDragonPulseBG.png"));
         ReshiramCCMod_Character_CardExtrasensoryBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/uncommon/ReshiramCCMod_CardExtrasensoryBG.png"));
@@ -263,6 +271,11 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_ArtifactLibertyPass = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/libertyPass.png"));
 
         ReshiramCCMod_Character_ArtifactFireGem = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/fireGem.png"));
+
+        // Midrow Objects
+
+        ReshiramCCMod_Midrow_Flamethrower = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/midrow/flamethrower.png"));
+        ReshiramCCMod_Icon_FlamethrowerSmall = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/icons/flamethrowerSmall.png"));
 
         ReshiramCCMod_Character_Panel = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_panel.png"));
 

@@ -79,6 +79,9 @@
     "Light Screen": {
       "name": "Light Screen"
     },
+    "Flamethrower": {
+      "name": "Flame-thrower"
+    },
     "Dragon Pulse": {
       "name": "Dragon Pulse"
     },
@@ -146,6 +149,12 @@
         "A": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>. Apply 3 <c=status>heat</c>.",
         "B": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 3 <c=status>smoldering</c>."
       }
+    }
+  },
+  "midrow":{
+    "Flamethrower":{
+      "name": "Flamethrower",
+      "description": "Beams 1 <c=status>heat</c> at its target once per turn."
     }
   },
   "status": {
