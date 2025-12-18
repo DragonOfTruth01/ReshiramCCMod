@@ -47,7 +47,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                 {
                     new AVCreateAttack()
                     {
-                        damageAmount = 3,
+                        damageAmount = GetDmg(s, 3),
                         smolderingAmount = 2,
                         heatAmount = 0
                     }
@@ -59,7 +59,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                 {
                     new AVCreateAttack()
                     {
-                        damageAmount = 3,
+                        damageAmount = GetDmg(s, 3),
                         smolderingAmount = 2,
                         heatAmount = 3
                     }
@@ -71,7 +71,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                 {
                     new AVCreateAttack()
                     {
-                        damageAmount = 5,
+                        damageAmount = GetDmg(s, 5),
                         smolderingAmount = 3,
                         heatAmount = 0
                     }

@@ -1,4 +1,5 @@
 using Nickel;
+using System;
 using System.Collections.Generic;
 
 namespace DragonOfTruth01.ReshiramCCMod;
@@ -27,9 +28,9 @@ public sealed class ChooseCardInYourHandToSearingShot : CardAction
                 });
             c.Queue(new AAttack
                 {
-                    damage = Card.GetActualDamage(s, damageHeatDealt, card: null),
+                    damage = Math.Max(0, damageHeatDealt - 10),
                     status = Status.heat,
-                    statusAmount = damageHeatDealt
+                    statusAmount = Math.Max(0, damageHeatDealt - 10)
                 });
             }
     }

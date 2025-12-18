@@ -52,7 +52,7 @@ public sealed class AVCreateAttack : CardAction
 
         c.Queue(new AAttack
             {
-                damage = Card.GetActualDamage(s, damageAmount, card: null),
+                damage = damageAmount,
                 status = ModEntry.Instance.Smoldering.Status,
                 statusAmount = smolderingAmount
             });
