@@ -8,7 +8,7 @@ internal sealed class MidrowFlamethrower : ShieldDrone
 {
     public override Spr? GetIcon()
     {
-        return ModEntry.Instance.ReshiramCCMod_Midrow_Flamethrower.Sprite;
+        return ModEntry.Instance.ReshiramCCMod_Icon_FlamethrowerSmall.Sprite;
     }
 
     public override double GetWiggleAmount() => 0.0;
