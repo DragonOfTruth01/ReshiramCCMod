@@ -23,9 +23,9 @@
   },
   "artifact": {
     "boss": {
-      "Fire Gem": {
-        "name": "FIRE GEM",
-        "description": "Every 5th time you or the enemy gains <c=status>heat</c>, gain 1 <c=status>ENERGY</c>."
+      "Flame Orb": {
+        "name": "FLAME ORB",
+        "description": "Gain 1 extra <c=status>ENERGY</c> every turn. <c=downside>Lose 1 <c=status>heat resist</c> at the start of combat.</c>"
       }
     },
     "common": {
@@ -33,8 +33,8 @@
         "name": "HEAT ROCK",
         "description": "At start of combat, enemy gains 2 <c=status>FLAMMABLE</c>."
       },
-      "Flame Orb": {
-        "name": "FLAME ORB",
+      "Fire Gem": {
+        "name": "FIRE GEM",
         "description": "The first time you gain <c=status>heat</c> each turn, gain 1 <c=status>OVERDRIVE</c>."
       },
       "Charcoal": {
@@ -91,8 +91,8 @@
     "Sunny Day": {
       "name": "Sunny Day",
       "description": {
-        "None": "<c=status>Solar Flare</c>. Gain 1 <c=status>Heat Resist</c>.",
-        "A": "<c=status>Solar Flare</c>. Gain 2 <c=status>Heat Resist</c>.",
+        "None": "<c=status>Solar Flare</c>. Gain 1 <c=status>heat resist</c>.",
+        "A": "<c=status>Solar Flare</c>. Gain 2 <c=status>heat resist</c>.",
         "B": "<c=status>Solar Flare</c>, or apply 2 <c=status>flammable</c> if already active. Gain 1 <c=status>heat resist</c>."
       }
     },
