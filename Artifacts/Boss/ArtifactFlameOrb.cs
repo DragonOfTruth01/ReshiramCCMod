@@ -2,10 +2,12 @@
 using Nickel;
 using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Artifacts;
 
+[HarmonyPatch]
 internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
 {
     public static void Register(IModHelper helper)
@@ -22,6 +24,16 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "boss", "Flame Orb", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "boss", "Flame Orb", "description"]).Localize
         });
+    }
+
+    [HarmonyPostfix]
+	[HarmonyPatch(typeof(Ship), "CanBeNegative")]
+    private static void Ship_CanBeNegative_Postfix(Status status, ref bool __result)
+    {
+        if (status == ModEntry.Instance.HeatResist.Status)
+        {
+            __result = true;
+        }
     }
 
     public override void OnReceiveArtifact(State state)
