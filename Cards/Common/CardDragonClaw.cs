@@ -46,7 +46,7 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 2
+                        statusAmount = 1
                     }
                 };
                 break;
@@ -62,7 +62,7 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 2
+                        statusAmount = 1
                     }
                 };
                 break;
@@ -80,12 +80,12 @@ internal sealed class CardDragonClaw : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 2
+                        statusAmount = 1
                     },
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };

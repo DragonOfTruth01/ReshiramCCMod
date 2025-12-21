@@ -5,7 +5,7 @@ This document acts as a reference for which cards are part of this mod.
 | Done? | Rarity | Name | Cost | Effect | Upgrade A | Upgrade B |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Yes | Common | Incinerate | 1 | Attack 1. Enemy gains 3 heat. | Before attack, apply 1 smoldering (outgoing). | Attack 1 x 2, apply 2 burn on both attacks. |
-| Yes | Common | Dragon Claw | 2 | Attack 1 x 2. Enemy gains 2 flammable on second attack. | Increase attack to 2 x 2. | Enemy gains 3 heat on first attack. Gain 2 heat. |
+| Yes | Common | Dragon Claw | 2 | Attack 1 x 2. Enemy gains 1 flammable on second attack. | Increase attack to 2 x 2. | Enemy gains 3 heat on first attack. Gain 1 heat. |
 | Yes | Common | Flame Charge | 0 | Attack 1. Gain 1 evade. Gain 2 heat. | Reduce heat gain to 1. | Increase attack to 2 and evade to 2. |
 | Yes | Common | Dragon Breath | 1 | Attack 1. Enemy gains 1 heat. If enemy is overheated, they also gain 2 flammable. | Enemy gains 2 heat instead of 1. | Increase enemy heat gain to 3. Gain 2 heat. |
 | Yes | Common | Psychic | 2 | Gain 1 evade. Gain 2 temp shield. Enemy is moved 1 to the left (outgoing, flippable). | Card gains retain. | Gain 2 real shield instead of temp shield. |
