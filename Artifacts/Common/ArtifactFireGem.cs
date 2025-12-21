@@ -19,26 +19,20 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
             Meta = new()
             {
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
-                pools = [ArtifactPool.Boss]
+                pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/fireGem.png")).Sprite,
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "boss", "Fire Gem", "name"]).Localize,
-            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "boss", "Fire Gem", "description"]).Localize
+            Sprite = ModEntry.Instance.ReshiramCCMod_Character_ArtifactFlameOrb.Sprite,
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Fire Gem", "name"]).Localize,
+            Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Fire Gem", "description"]).Localize
         });
     }
 
-    public int counter = 0;
-    public readonly int artifactTriggerAmt = 5;
+    public bool hasTriggeredThisTurn = false;
 
     private class HarmonyRef
     {
         public int oldHeatAmt;
-        public int ct;
-    }
-
-    public override int? GetDisplayNumber(State s)
-    {
-        return counter;
+        public bool triggered;
     }
 
     [HarmonyPrefix]
@@ -50,10 +44,9 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
         // If we have the artifact, populate our __state with meaningful values
         if (artifact != null)
         {
-            var ship = GetShip(__instance, s);
             __state = new HarmonyRef();
-            __state.oldHeatAmt = ship.Get(Status.heat);
-            __state.ct = artifact.counter;
+            __state.oldHeatAmt = s.ship.Get(Status.heat);
+            __state.triggered = artifact.hasTriggeredThisTurn;
         }
         // If we don't have an instance of the artifact, we dont' care what we assign it
         // (Don't worry, we're not going to use __state in the postfix anyway)
@@ -61,7 +54,6 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
         {
             __state = new HarmonyRef();
         }
-        
     }
 
     [HarmonyPostfix]
@@ -73,46 +65,48 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
 
         if (artifact != null)
         {
-            var ship = GetShip(__instance, s);
+            var heatDiff = s.ship.Get(Status.heat) - __state.oldHeatAmt;
 
-            // Check if either ship gained heat
-            var heatDiff = ship.Get(Status.heat) - __state.oldHeatAmt;
-
-            // If a ship did gain heat, increment the artifact counter
-            if (heatDiff > 0)
+            // If the player ship has more heat, and this is the first time heat is gained this turn...
+            if (heatDiff > 0 && !__state.triggered)
             {
-                ++__state.ct;
-            }
+                // First set that we triggered the relic for this turn, to prevent recursion
+                artifact.hasTriggeredThisTurn = true;
 
-            // If the artifact counter is at the trigger threshold, reset it and trigger the effect
-            if (__state.ct >= artifact.artifactTriggerAmt)
-            {
+                //Then, apply this relic's effects
                 c.Queue([
-                    new AEnergy
+                    new AStatus
                     {
-                        changeAmount = 1,
+                        status = Status.overdrive,
+                        statusAmount = 1,
+                        targetPlayer = true
                     }
                 ]);
 
                 artifact.Pulse();
-
-                __state.ct = 0;
             }
-
-            // Finally, propagate the state value to the relic's static value
-            artifact.counter = __state.ct;
         }
-
-        
     }
 
-    private static Ship GetShip(AStatus instance, State s)
+    public override void OnTurnStart(State s, Combat c)
     {
-        return instance.targetPlayer ? s.ship : ((Combat)s.route).otherShip;
+        hasTriggeredThisTurn = false;
+    }
+
+    public override void OnCombatEnd(State state)
+    {
+        hasTriggeredThisTurn = false;
     }
 
     public override Spr GetSprite()
     {
-        return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFireGem.Sprite;
+        if (!hasTriggeredThisTurn)
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFireGem.Sprite;
+        }
+        else
+        {
+            return ModEntry.Instance.ReshiramCCMod_Character_ArtifactFireGem_Disabled.Sprite;
+        }
     }
 }
