@@ -15,7 +15,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Light Screen | 1 | Gain 1 shield. Reduce heat by 1. | Reduce cost to 0. | Instead reduce heat by 2. |
 | Yes | Common | Flamethrower | 1 | Deploy a flamethrower from the missile bay. | Gain 1 droneshift before deploying. | Increase cost to 2. Deploy an additional flamethrower to the left of the missile bay. |
 ||||||||
-| Yes | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and stun. If not, attack for 2. Apply 1 flammable (outgoing). | Only do the first action. | Apply 3 flammable instead. |
+| Yes | Uncommon | Dragon Pulse | 2 | If enemy is overheating, attack for 3 (piercing) and stun. If not, attack for 2. Apply 1 flammable (outgoing). | Only do the first action. | Apply 2 flammable instead. |
 | Yes | Uncommon | Extrasensory | 1 | Enemy is moved 2 to the left (outgoing, flippable.) | This ship also moves 1 to the right (flippable). | Enemy instead moves 3 to the left (outgoing, flippable). Gain 1 evade. Gain 2 heat.
 | Yes | Uncommon | Sunny Day | 2 | Change field effect to solar flare. Gain 1 heat resist. | Instead gain 2 heat resist. | Remove exhaust. If solar flare is already active, also apply 2 flammable. |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 3 heat and 1 flammable. Exhaust. | Reduce cost to 0. | Instead gain 1 powerdrive. |
