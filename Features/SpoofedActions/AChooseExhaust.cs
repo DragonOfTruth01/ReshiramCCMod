@@ -25,7 +25,7 @@ public sealed class AChooseExhaust : DynamicWidthCardAction
                 Icon = ModEntry.Instance.ReshiramCCMod_Icon_ChooseExhaust.Sprite,
                 TitleColor = Colors.action,
                 Title = ModEntry.Instance.Localizations.Localize(["action", "Choose Exhaust", "name"]),
-                Description = ModEntry.Instance.Localizations.Localize(["action", "Chose Exhaust", "description"])
+                Description = ModEntry.Instance.Localizations.Localize(["action", "Choose Exhaust", "description"])
             }
         ];
 }

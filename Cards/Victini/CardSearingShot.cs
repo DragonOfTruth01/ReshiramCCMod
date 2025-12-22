@@ -49,7 +49,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
-                        new AVariableHint()
+                        new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
                             secondStatus = ModEntry.Instance.One.Status
@@ -89,7 +89,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
-                        new AVariableHint()
+                        new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
                             secondStatus = ModEntry.Instance.Two.Status
@@ -133,7 +133,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                     }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
-                        new AVariableHint()
+                        new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
                             secondStatus = ModEntry.Instance.One.Status
