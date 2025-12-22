@@ -42,9 +42,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 1),
-                        status = Status.heat,
-                        statusAmount = 1,
+                        damage = GetDmg(s, 1)
                     }
                 };
 
@@ -76,7 +74,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 1),
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 1,
                     }
                 };
 
@@ -108,7 +106,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 1),
                         status = Status.heat,
-                        statusAmount = 3,
+                        statusAmount = 2,
                     }
                 };
 
@@ -134,7 +132,7 @@ internal sealed class CardDragonBreath : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 2,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 );
