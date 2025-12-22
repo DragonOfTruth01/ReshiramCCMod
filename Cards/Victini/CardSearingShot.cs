@@ -41,7 +41,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                 {
                     new ADamageHeatRightmostExhaust()
                     {
-                        damageHeatMod = GetDmg(s, 1 + 10) // +10/-10 to workaround conflicts w/ damage calculation
+                        damageMod = GetDmg(s, 1 + 10), // +10/-10 to workaround conflicts w/ damage calculation
+                        heatMod = 1
                     }
                 };
                 break;
@@ -51,7 +52,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                 {
                     new ADamageHeatRightmostExhaust()
                     {
-                        damageHeatMod = GetDmg(s, 2 + 10) // +10/-10 to workaround conflicts w/ damage calculation
+                        damageMod = GetDmg(s, 2 + 10), // +10/-10 to workaround conflicts w/ damage calculation
+                        heatMod = 2
                     }
                 };
                 break;
@@ -63,7 +65,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                     {
                         browseAction = new ChooseCardInYourHandToSearingShot()
                         {
-                            damageHeatMod = GetDmg(s, 1 + 10) // +10/-10 to workaround conflicts w/ damage calculation
+                            damageMod = GetDmg(s, 1 + 10), // +10/-10 to workaround conflicts w/ damage calculation
+                            heatMod = 1
                         },
                         browseSource = CardBrowse.Source.Hand
                     }

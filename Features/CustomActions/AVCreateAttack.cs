@@ -11,6 +11,25 @@ public sealed class AVCreateAttack : CardAction
 
     public override void Begin(G g, State s, Combat c)
     {
+        // Everything is queued in inverse order, since we're using QueueImmediate()
+
+        // Queue attack immediately
+        if(heatAmount != 0)
+        {
+            c.QueueImmediate(new AStatus
+            {
+                status = Status.heat,
+                statusAmount = heatAmount
+            });
+        }
+
+        c.QueueImmediate(new AAttack
+            {
+                damage = damageAmount,
+                status = ModEntry.Instance.Smoldering.Status,
+                statusAmount = smolderingAmount
+            });
+
         // Get the leftmost and rightmost cards to exhaust
 
         // If we have no cards, don't exhaust anything
@@ -19,14 +38,13 @@ public sealed class AVCreateAttack : CardAction
         if(c.hand.Count == 1 && c.hand[0] != null)
         {
             Card card = c.hand[0];
-
-            c.Queue(new ADelay
-                {
-                    timer = 0.5
-                });
-            c.Queue(new AExhaustOtherCard
+            c.QueueImmediate(new AExhaustOtherCard
                 {
                     uuid = card.uuid
+                });
+            c.QueueImmediate(new ADelay
+                {
+                    timer = 0.5
                 });
         }
 
@@ -36,34 +54,18 @@ public sealed class AVCreateAttack : CardAction
             Card leftmost = c.hand[0];
             Card rightmost = c.hand[c.hand.Count - 1];
 
-            c.Queue(new ADelay
-                {
-                    timer = 0.5
-                });
-            c.Queue(new AExhaustOtherCard
-                {
-                    uuid = leftmost.uuid
-                });
-            c.Queue(new AExhaustOtherCard
+            c.QueueImmediate(new AExhaustOtherCard
                 {
                     uuid = rightmost.uuid
                 });
-        }
-
-        c.Queue(new AAttack
-            {
-                damage = damageAmount,
-                status = ModEntry.Instance.Smoldering.Status,
-                statusAmount = smolderingAmount
-            });
-
-        if(heatAmount != 0)
-        {
-            c.Queue(new AStatus
-            {
-                status = Status.heat,
-                statusAmount = heatAmount
-            });
+            c.QueueImmediate(new AExhaustOtherCard
+                {
+                    uuid = leftmost.uuid
+                });
+            c.QueueImmediate(new ADelay
+                {
+                    timer = 0.5
+                });
         }
 
         base.Begin(g, s, c);

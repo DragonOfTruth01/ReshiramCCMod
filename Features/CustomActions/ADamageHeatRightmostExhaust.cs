@@ -6,7 +6,8 @@ namespace DragonOfTruth01.ReshiramCCMod;
 
 public sealed class ADamageHeatRightmostExhaust : CardAction
 {
-    public int damageHeatMod;
+    public int damageMod;
+    public int heatMod;
 
     public override void Begin(G g, State s, Combat c)
     {
@@ -15,22 +16,25 @@ public sealed class ADamageHeatRightmostExhaust : CardAction
         {
             Card card = c.hand[c.hand.Count - 1];
 
-            int damageHeatDealt = card.GetCurrentCost(s) + damageHeatMod;
+            int damageDealt = card.GetCurrentCost(s) + damageMod;
+            int heatDealt = card.GetCurrentCost(s) + heatMod;
 
             timer = 0.0;
-            c.Queue(new ADelay
+
+            // Queue actions in inverse order because we're using QueueImmediate
+            c.QueueImmediate(new AAttack
                 {
-                    timer = 0.5
+                    damage = Math.Max(0, damageDealt - 10),
+                    status = Status.heat,
+                    statusAmount = heatDealt
                 });
-            c.Queue(new AExhaustOtherCard
+            c.QueueImmediate(new AExhaustOtherCard
                 {
                     uuid = card.uuid
                 });
-            c.Queue(new AAttack
+            c.QueueImmediate(new ADelay
                 {
-                    damage = Math.Max(0, damageHeatDealt - 10),
-                    status = Status.heat,
-                    statusAmount = Math.Max(0, damageHeatDealt - 10)
+                    timer = 0.5
                 });
         }
     }
