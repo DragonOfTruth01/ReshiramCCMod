@@ -1,5 +1,6 @@
 using Nickel;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
@@ -33,9 +34,46 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
     {
         List<CardAction> actions = new();
 
+        int thisHandPos = -1;
+        int rightmostEnergyVal = 0;
+
         switch (upgrade)
         {
             case Upgrade.None:
+
+                // Get the energy value of the other rightmost card
+                
+                for(int i = 0; i < c.hand.Count(); ++i)
+                {
+                    if(c.hand[i].uuid == uuid)
+                    {
+                        thisHandPos = i;
+                    }
+                }
+                
+                // If this card is in our hand, do this logic
+                if(thisHandPos != -1)
+                {
+                    // Check if there is a card to the right of this one
+                    if(thisHandPos != c.hand.Count() - 1)
+                    {
+                        rightmostEnergyVal = c.hand[c.hand.Count() - 1].GetCurrentCost(s);
+                    }
+                    // Otherwise, check if there is a card to the left of this one (e.g. our position is not 0)
+                    else if(thisHandPos > 0)
+                    {
+                        rightmostEnergyVal = c.hand[thisHandPos - 1].GetCurrentCost(s);
+                    }
+                }
+                // This is possible if we play this card while it's not in our hand
+                else
+                {
+                    if(c.hand.Count() != 0)
+                    {
+                        rightmostEnergyVal = c.hand[c.hand.Count() - 1].GetCurrentCost(s);
+                    }
+                }
+
                 actions = new()
                 {
                     // Spoof actions for better visibility
@@ -59,7 +97,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
                         {
-                            damage = 0,
+                            damage = GetDmg(s, 1) + rightmostEnergyVal,
                             xHint = 1
                         },
                         new ADummyAction()
@@ -68,6 +106,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = Status.heat,
+                            statusAmount = 1 + rightmostEnergyVal,
                             xHint = 1
                         },
                         new ADummyAction()
@@ -76,6 +115,39 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                 break;
 
             case Upgrade.A:
+                // Get the energy value of the other rightmost card
+                
+                for(int i = 0; i < c.hand.Count(); ++i)
+                {
+                    if(c.hand[i].uuid == uuid)
+                    {
+                        thisHandPos = i;
+                    }
+                }
+                
+                // If this card is in our hand, do this logic
+                if(thisHandPos != -1)
+                {
+                    // Check if there is a card to the right of this one
+                    if(thisHandPos != c.hand.Count() - 1)
+                    {
+                        rightmostEnergyVal = c.hand[c.hand.Count() - 1].GetCurrentCost(s);
+                    }
+                    // Otherwise, check if there is a card to the left of this one (e.g. our position is not 0)
+                    else if(thisHandPos > 0)
+                    {
+                        rightmostEnergyVal = c.hand[thisHandPos - 1].GetCurrentCost(s);
+                    }
+                }
+                // This is possible if we play this card while it's not in our hand
+                else
+                {
+                    if(c.hand.Count() != 0)
+                    {
+                        rightmostEnergyVal = c.hand[c.hand.Count() - 1].GetCurrentCost(s);
+                    }
+                }
+
                 actions = new()
                 {
                     // Spoof actions for better visibility
@@ -99,7 +171,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
                         {
-                            damage = 0,
+                            damage = GetDmg(s, 2) + rightmostEnergyVal,
                             xHint = 1
                         },
                         new ADummyAction()
@@ -108,6 +180,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = Status.heat,
+                            statusAmount = 2 + rightmostEnergyVal,
                             xHint = 1
                         },
                         new ADummyAction()
@@ -143,7 +216,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
                         {
-                            damage = 0,
+                            damage = GetDmg(s, 1),
                             xHint = 1
                         },
                         new ADummyAction()
@@ -152,6 +225,7 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AStatus()
                         {
                             status = Status.heat,
+                            statusAmount = 1,
                             xHint = 1
                         },
                         new ADummyAction()
