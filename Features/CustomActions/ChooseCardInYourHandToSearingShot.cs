@@ -6,7 +6,8 @@ namespace DragonOfTruth01.ReshiramCCMod;
 
 public sealed class ChooseCardInYourHandToSearingShot : CardAction
 {
-    public int damageHeatMod;
+    public int damageMod;
+    public int heatMod;
 
     public override void Begin(G g, State s, Combat c)
     {
@@ -15,16 +16,17 @@ public sealed class ChooseCardInYourHandToSearingShot : CardAction
         {
             Card card = selectedCard;
 
-            int damageHeatDealt = card.GetCurrentCost(s) + damageHeatMod;
+            int damageDealt = card.GetCurrentCost(s) + damageMod;
+            int heatDealt = card.GetCurrentCost(s) + heatMod;
 
             timer = 0.0;
 
             // Queue actions in inverse order because we're using QueueImmediate
             c.QueueImmediate(new AAttack
                 {
-                    damage = Math.Max(0, damageHeatDealt - 10),
+                    damage = Math.Max(0, damageDealt - 10),
                     status = Status.heat,
-                    statusAmount = Math.Max(0, damageHeatDealt - 10)
+                    statusAmount = heatDealt
                 });
             c.QueueImmediate(new AExhaustOtherCard
                 {
