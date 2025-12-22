@@ -101,6 +101,10 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_SolarFlareActive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustRight { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustLeftRight { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ChooseExhaust { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
 
     // Midrow Objects
 
@@ -302,6 +306,10 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_SolarFlareActive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/solarFlareActive.png"));
         ReshiramCCMod_Icon_NonAttackStun = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/nonAttackStun.png"));
         ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
+        ReshiramCCMod_Icon_ExhaustRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustRight.png"));
+        ReshiramCCMod_Icon_ExhaustLeftRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustLeftRight.png"));
+        ReshiramCCMod_Icon_ChooseExhaust = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/chooseExhaust.png"));
+        ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
