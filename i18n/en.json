@@ -31,10 +31,6 @@
     "Choose Exhaust":{
       "name": "     CHOOSE A CARD TO EXHAUST",
       "description": "Choose a card in your hand to exhaust."
-    },
-    "Exhaust Energy":{
-      "name": "ENERGY OF EXHAUSTED CARD",
-      "description": "Energy value of the card that was exhausted."
     }
   },
   "artifact": {
@@ -179,6 +175,18 @@
     "Heat Resist": {
       "name": "HEAT RESIST",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
+    },
+    "Exhaust Energy":{
+      "name": "exhausted card's energy value",
+      "description": "Energy value of the card that was exhausted."
+    },
+    "One":{
+      "name": "1",
+      "description": "Nobody really knows what this does."
+    },
+    "Two":{
+      "name": "2",
+      "description": "Nobody really knows what this does."
     }
   },
   "condition": {
