@@ -26,7 +26,7 @@ internal sealed class CardSafeguard : Card, IReshiramCCModCard
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardSafeguardBG.Sprite,
             cost = 0,
-            retain = true,
+            retain = upgrade == Upgrade.A,
             exhaust = true
         };
         return data;
@@ -55,12 +55,6 @@ internal sealed class CardSafeguard : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.Safeguard.Status,
-                        statusAmount = 1,
-                        targetPlayer = true
-                    },
-                    new AStatus()
-                    {
-                        status = Status.serenity,
                         statusAmount = 1,
                         targetPlayer = true
                     }
