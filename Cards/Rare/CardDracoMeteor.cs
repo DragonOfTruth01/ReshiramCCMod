@@ -71,6 +71,28 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = Status.heat,
+                        statusAmount = 2
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2),
+                        status = ModEntry.Instance.Flammable.Status,
+                        statusAmount = 1
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 3)
+                    }
+                };
+                break;
+
+            case Upgrade.B:
+                actions = new()
+                {
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2),
+                        status = Status.heat,
                         statusAmount = 3
                     },
                     new AAttack()
@@ -88,28 +110,6 @@ internal sealed class CardDracoMeteor : Card, IReshiramCCModCard
                         status = Status.energyLessNextTurn,
                         statusAmount = 1,
                         targetPlayer = true
-                    }
-                };
-                break;
-
-            case Upgrade.B:
-                actions = new()
-                {
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 2),
-                        status = Status.heat,
-                        statusAmount = 2
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 2),
-                        status = ModEntry.Instance.Flammable.Status,
-                        statusAmount = 1
-                    },
-                    new AAttack()
-                    {
-                        damage = GetDmg(s, 3)
                     }
                 };
                 break;
