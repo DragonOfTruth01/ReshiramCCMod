@@ -22,11 +22,14 @@ public sealed class ChooseCardInYourHandToSearingShot : CardAction
             timer = 0.0;
 
             // Queue actions in inverse order because we're using QueueImmediate
-            c.QueueImmediate(new AAttack
+            c.QueueImmediate(new AStatus
                 {
-                    damage = Math.Max(0, damageDealt - 10),
                     status = Status.heat,
                     statusAmount = heatDealt
+                });
+            c.QueueImmediate(new AAttack
+                {
+                    damage = Math.Max(0, damageDealt - 10)
                 });
             c.QueueImmediate(new AExhaustOtherCard
                 {

@@ -19,6 +19,18 @@
     },
     "SearingShotChooseExhaust":{
       "SelectText": "Choose a card in your hand to exhaust for Searing Shot."
+    },
+    "Exhaust Right":{
+      "name": "     EXHAUST RIGHTMOST CARD",
+      "description": "Exhaust the rightmost card in your hand."
+    },
+    "Exhaust Left Right":{
+      "name": "     EXHAUST LEFTMOST AND RIGHTMOST CARDS",
+      "description": "Exhaust the leftmost and rightmost cards in your hand."
+    },
+    "Choose Exhaust":{
+      "name": "     CHOOSE A CARD TO EXHAUST",
+      "description": "Choose a card in your hand to exhaust."
     }
   },
   "artifact": {
@@ -91,9 +103,9 @@
     "Sunny Day": {
       "name": "Sunny Day",
       "description": {
-        "None": "<c=status>Solar Flare</c>. Gain 1 <c=status>heat resist</c>.",
-        "A": "<c=status>Solar Flare</c>. Gain 2 <c=status>heat resist</c>.",
-        "B": "<c=status>Solar Flare</c>, or apply 2 <c=status>flammable</c> if already active. Gain 1 <c=status>heat resist</c>."
+        "None": "Summon a <c=action>Solar Flare</c>. Gain 1 <c=status>heat resist</c>.",
+        "A": "Summon a <c=action>Solar Flare</c>. Gain 2 <c=status>heat resist</c>.",
+        "B": "<c=action>Solar Flare</c>, or apply 2 <c=status>flammable</c> if already active. Gain 1 <c=status>heat resist</c>."
       }
     },
     "Hone Claws": {
@@ -135,20 +147,10 @@
       "name": "Safeguard"
     },
     "Searing Shot": {
-      "name": "Searing Shot",
-      "description": {
-        "None": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg + heat</c> equal to <c=boldPink>its cost + 1</c>.",
-        "A": "<c=cardtrait>Exhaust</c> rightmost card. Deal <c=cardtrait>dmg + heat</c> equal to <c=boldPink>its cost + 2</c>.",
-        "B": "Choose a card to <c=cardtrait>exhaust</c>. Deal <c=cardtrait>dmg + heat</c> equal to <c=boldPink>its cost + 1</c>."
-      }
+      "name": "Searing Shot"
     },
     "V-Create": {
-      "name": "V-Create",
-      "description": {
-        "None": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>.",
-        "A": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 2 <c=status>smoldering</c>. Apply 3 <c=status>heat</c>.",
-        "B": "<c=cardtrait>Exhaust</c> left & rightmost cards. Deal {{damageString}} dmg + 3 <c=status>smoldering</c>."
-      }
+      "name": "V-Create"
     }
   },
   "midrow":{
@@ -173,6 +175,18 @@
     "Heat Resist": {
       "name": "HEAT RESIST",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
+    },
+    "Exhaust Energy":{
+      "name": "exhausted card's energy value",
+      "description": "Energy value of the card that was exhausted."
+    },
+    "One":{
+      "name": "1",
+      "description": "Nobody really knows what this does."
+    },
+    "Two":{
+      "name": "2",
+      "description": "Nobody really knows what this does."
     }
   },
   "condition": {

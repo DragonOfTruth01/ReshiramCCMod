@@ -101,6 +101,12 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_SolarFlareActive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustRight { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustLeftRight { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ChooseExhaust { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_One { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Two { get; }
 
     // Midrow Objects
 
@@ -115,6 +121,9 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Flammable { get; }
     internal IStatusEntry Safeguard { get; }
     internal IStatusEntry HeatResist { get; }
+    internal IStatusEntry ExhaustEnergy { get; }
+    internal IStatusEntry One { get; }
+    internal IStatusEntry Two { get; }
 
     // NOTE TO SELF ABOUT CARDS:
     // It would be cool to have them follow these rules:
@@ -302,6 +311,13 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_SolarFlareActive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/solarFlareActive.png"));
         ReshiramCCMod_Icon_NonAttackStun = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/nonAttackStun.png"));
         ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
+        ReshiramCCMod_Icon_ExhaustRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustRight.png"));
+        ReshiramCCMod_Icon_ExhaustLeftRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustLeftRight.png"));
+        ReshiramCCMod_Icon_ChooseExhaust = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/chooseExhaust.png"));
+
+        ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
+        ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
+        ReshiramCCMod_Icon_Two = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png"));
 
         /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
          * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
@@ -555,6 +571,46 @@ public sealed class ModEntry : SimpleMod
             },
             Name = AnyLocalizations.Bind(["status", "Heat Resist", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Heat Resist", "description"]).Localize
+        });
+
+        // Below are fake statuses only used to abuse equation formatting on cards
+        // They don't do anything, but apparently some modded characters apply random statuses
+        // So maybe it would be funny if these did something completely unhinged at some point
+
+        ExhaustEnergy = helper.Content.Statuses.RegisterStatus("Exhaust Energy", new()
+        {
+            Definition = new()
+            {
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png")).Sprite,
+                color = new("285cc4"),
+                isGood = true
+            },
+            Name = AnyLocalizations.Bind(["status", "Exhaust Energy", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Exhaust Energy", "description"]).Localize
+        });
+
+        One = helper.Content.Statuses.RegisterStatus("One", new()
+        {
+            Definition = new()
+            {
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png")).Sprite,
+                color = new("ff687d"),
+                isGood = true
+            },
+            Name = AnyLocalizations.Bind(["status", "One", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "One", "description"]).Localize
+        });
+
+        Two = helper.Content.Statuses.RegisterStatus("Two", new()
+        {
+            Definition = new()
+            {
+                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png")).Sprite,
+                color = new("ff687d"),
+                isGood = true
+            },
+            Name = AnyLocalizations.Bind(["status", "Two", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Two", "description"]).Localize
         });
         
         _ = new StatusManager();
