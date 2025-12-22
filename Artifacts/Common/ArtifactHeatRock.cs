@@ -30,7 +30,7 @@ internal sealed class ArtifactHeatRock : Artifact, IReshiramCCModArtifact
             new AStatus
             {
                 status = ModEntry.Instance.Flammable.Status,
-                statusAmount = 2
+                statusAmount = 1
             }
         ]);
 
