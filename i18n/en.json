@@ -19,6 +19,22 @@
     },
     "SearingShotChooseExhaust":{
       "SelectText": "Choose a card in your hand to exhaust for Searing Shot."
+    },
+    "Exhaust Right":{
+      "name": "     EXHAUST RIGHTMOST CARD",
+      "description": "Exhaust the rightmost card in your hand."
+    },
+    "Exhaust Left Right":{
+      "name": "     EXHAUST LEFTMOST AND RIGHTMOST CARD",
+      "description": "Exhaust the leftmost and rightmost cards in your hand."
+    },
+    "Choose Exhaust":{
+      "name": "     CHOOSE A CARD TO EXHAUST",
+      "description": "Choose a card in your hand to exhaust."
+    },
+    "Exhaust Energy":{
+      "name": "ENERGY OF EXHAUSTED CARD",
+      "description": "Energy value of the card that was exhausted."
     }
   },
   "artifact": {
