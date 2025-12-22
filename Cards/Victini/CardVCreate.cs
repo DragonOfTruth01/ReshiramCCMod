@@ -1,6 +1,7 @@
 using Nickel;
 using System.Collections.Generic;
 using System.Reflection;
+using DragonOfTruth01.ReshiramCCMod;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
@@ -44,36 +45,86 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
             case Upgrade.None:
                 actions = new()
                 {
-                    new AVCreateAttack()
-                    {
-                        damageAmount = GetDmg(s, 3),
-                        smolderingAmount = 2,
-                        heatAmount = 0
-                    }
+                    // Spoof actions for better visibility
+
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AExhaustLeftRight(),
+                        new ADummyAction()
+                    ).AsCardAction,
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AAttack()
+                        {
+                            damage = GetDmg(s, 3),
+                            status = ModEntry.Instance.Smoldering.Status,
+                            statusAmount = 2
+                        },
+                        new AVCreateAttack()
+                        {
+                            damageAmount = GetDmg(s, 3),
+                            smolderingAmount = 2,
+                            heatAmount = 0
+                        }
+                    ).AsCardAction
                 };
                 break;
 
             case Upgrade.A:
                 actions = new()
                 {
-                    new AVCreateAttack()
-                    {
-                        damageAmount = GetDmg(s, 3),
-                        smolderingAmount = 2,
-                        heatAmount = 3
-                    }
+                    // Spoof actions for better visibility
+
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AExhaustLeftRight(),
+                        new ADummyAction()
+                    ).AsCardAction,
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AAttack()
+                        {
+                            damage = GetDmg(s, 3),
+                            status = ModEntry.Instance.Smoldering.Status,
+                            statusAmount = 2
+                        },
+                        new AVCreateAttack()
+                        {
+                            damageAmount = GetDmg(s, 3),
+                            smolderingAmount = 2,
+                            heatAmount = 3
+                        }
+                    ).AsCardAction,
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AStatus()
+                        {
+                            status = Status.heat,
+                            statusAmount = 3
+                        },
+                        new ADummyAction()
+                    ).AsCardAction
                 };
                 break;
 
             case Upgrade.B:
                 actions = new()
                 {
-                    new AVCreateAttack()
-                    {
-                        damageAmount = GetDmg(s, 5),
-                        smolderingAmount = 3,
-                        heatAmount = 0
-                    }
+                    // Spoof actions for better visibility
+
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AExhaustLeftRight(),
+                        new ADummyAction()
+                    ).AsCardAction,
+                    ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
+                        new AAttack()
+                        {
+                            damage = GetDmg(s, 5),
+                            status = ModEntry.Instance.Smoldering.Status,
+                            statusAmount = 3
+                        },
+                        new AVCreateAttack()
+                        {
+                            damageAmount = GetDmg(s, 5),
+                            smolderingAmount = 3,
+                            heatAmount = 0
+                        }
+                    ).AsCardAction
                 };
                 break;
         }

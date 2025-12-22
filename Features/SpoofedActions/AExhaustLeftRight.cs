@@ -22,7 +22,7 @@ public sealed class AExhaustLeftRight : DynamicWidthCardAction
         => [
             new GlossaryTooltip($"action.{ModEntry.Instance.Package.Manifest.UniqueName}::ExhaustLeftRight")
             {
-                Icon = ModEntry.Instance.ReshiramCCMod_Icon_ExhaustRight.Sprite,
+                Icon = ModEntry.Instance.ReshiramCCMod_Icon_ExhaustLeftRight.Sprite,
                 TitleColor = Colors.action,
                 Title = ModEntry.Instance.Localizations.Localize(["action", "Exhaust Left Right", "name"]),
                 Description = ModEntry.Instance.Localizations.Localize(["action", "Exhaust Left Right", "description"])
