@@ -31,7 +31,6 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
-    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
 
     // Custom Card Arts
@@ -236,7 +235,6 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
-        ReshiramCCMod_Character_Victini_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_victini_cardbackground.png"));
         ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
 
         // Custom Card Arts
