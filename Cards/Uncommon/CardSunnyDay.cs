@@ -61,6 +61,12 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                         status = ModEntry.Instance.HeatResist.Status,
                         statusAmount = 3,
                         targetPlayer = true
+                    },
+                    new AStatus()
+                    {
+                        status = Status.serenity,
+                        statusAmount = 1,
+                        targetPlayer = true
                     }
                 };
                 break;
