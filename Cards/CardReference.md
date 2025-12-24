@@ -24,7 +24,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Imprison | 2 | Gain 3 temp shield. Cancel all enemy's non-attack actions (outgoing). | Also reduce heat by 1. | Also gain 1 energy next turn. Gain 1 heat. |
 | Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
-| Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 1 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 3 smoldering. Increase self heat gain to 3. |
+| Yes | Rare | Fusion Flare | 2 | Attack 2. Enemy gains 2 smoldering. Enemy gains 3 heat (outgoing). Gain 1 heat. | Increase damage to 4. | Enemy gains 3 smoldering. Increase self heat gain to 2. |
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 4 flammable. Exhaust. | Reduce cost to 2. | Increase cost to 4. Increase damage to 5 and flammable to 6. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 2 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Remove next turn energy loss. | Enemy gains 3 heat and 2 flammable instead. |
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Card gains retain. | Also gain 2 shield. |
