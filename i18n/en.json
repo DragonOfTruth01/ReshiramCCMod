@@ -103,9 +103,9 @@
     "Sunny Day": {
       "name": "Sunny Day",
       "description": {
-        "None": "Summon a <c=action>Solar Flare</c>. Gain 1 <c=status>heat resist</c>.",
-        "A": "Summon a <c=action>Solar Flare</c>. Gain 2 <c=status>heat resist</c>.",
-        "B": "<c=action>Solar Flare</c>, or apply 2 <c=status>flammable</c> if already active. Gain 1 <c=status>heat resist</c>."
+        "None": "Summon a <c=action>Solar Flare</c>. Gain 2 <c=status>heat resist</c>.",
+        "A": "Summon a <c=action>Solar Flare</c>. Gain 3 <c=status>heat resist</c> and 1 <c=status>serenity</c>.",
+        "B": "<c=action>Solar Flare</c>, or apply 2 <c=status>flammable</c> if already active. Gain 2 <c=status>heat resist</c>."
       }
     },
     "Hone Claws": {

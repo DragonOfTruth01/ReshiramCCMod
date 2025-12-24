@@ -42,7 +42,7 @@ internal sealed class CardFusionFlare : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AStatus()
                     {
@@ -65,7 +65,7 @@ internal sealed class CardFusionFlare : Card, IReshiramCCModCard
                     {
                         damage = GetDmg(s, 4),
                         status = ModEntry.Instance.Smoldering.Status,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AStatus()
                     {
@@ -98,7 +98,7 @@ internal sealed class CardFusionFlare : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 3,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
