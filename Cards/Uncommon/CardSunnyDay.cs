@@ -46,7 +46,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.HeatResist.Status,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     }
                 };
@@ -59,7 +59,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = ModEntry.Instance.HeatResist.Status,
-                        statusAmount = 2,
+                        statusAmount = 3,
                         targetPlayer = true
                     }
                 };
@@ -84,7 +84,7 @@ internal sealed class CardSunnyDay : Card, IReshiramCCModCard
                 actions.Add(new AStatus()
                             {
                                 status = ModEntry.Instance.HeatResist.Status,
-                                statusAmount = 1,
+                                statusAmount = 2,
                                 targetPlayer = true
                             });
                 break;
