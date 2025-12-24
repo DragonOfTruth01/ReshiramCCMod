@@ -18,7 +18,7 @@ internal sealed class ArtifactHeatRock : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png")).Sprite,
+            Sprite = ModEntry.Instance.ReshiramCCMod_Character_ArtifactHeatRock.Sprite,
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Heat Rock", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Heat Rock", "description"]).Localize
         });

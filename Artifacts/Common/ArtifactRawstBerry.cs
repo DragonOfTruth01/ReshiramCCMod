@@ -21,7 +21,7 @@ internal sealed class ArtifactRawstBerry : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/common/rawstBerry.png")).Sprite,
+            Sprite = ModEntry.Instance.ReshiramCCMod_Character_ArtifactRawstBerry.Sprite,
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Rawst Berry", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Rawst Berry", "description"]).Localize
         });
