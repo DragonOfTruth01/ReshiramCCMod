@@ -18,7 +18,7 @@ internal sealed class ArtifactLibertyPass : Artifact, IReshiramCCModArtifact
                 owner = ModEntry.Instance.ReshiramCCMod_Deck.Deck,
                 pools = [ArtifactPool.Common]
             },
-            Sprite = helper.Content.Sprites.RegisterSprite(ModEntry.Instance.Package.PackageRoot.GetRelativeFile("assets/artifacts/common/libertyPass.png")).Sprite,
+            Sprite = ModEntry.Instance.ReshiramCCMod_Character_ArtifactLibertyPass.Sprite,
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Liberty Pass", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "common", "Liberty Pass", "description"]).Localize
         });

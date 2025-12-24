@@ -31,7 +31,6 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
-    internal ISpriteEntry ReshiramCCMod_Character_Victini_CardBackground { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
 
     // Custom Card Arts
@@ -104,6 +103,10 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustLeftRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ChooseExhaust { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Icon_Smoldering { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Flammable { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Safeguard { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_One { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Two { get; }
@@ -236,7 +239,6 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
-        ReshiramCCMod_Character_Victini_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_victini_cardbackground.png"));
         ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
 
         // Custom Card Arts
@@ -315,6 +317,9 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_ExhaustLeftRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustLeftRight.png"));
         ReshiramCCMod_Icon_ChooseExhaust = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/chooseExhaust.png"));
 
+        ReshiramCCMod_Icon_Smoldering = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png"));
+        ReshiramCCMod_Icon_Flammable = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png"));
+        ReshiramCCMod_Icon_Safeguard = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png"));
         ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
         ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
         ReshiramCCMod_Icon_Two = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png"));
@@ -529,7 +534,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png")).Sprite,
+                icon = ReshiramCCMod_Icon_Smoldering.Sprite,
                 color = new("8b93af"),
                 isGood = false
             },
@@ -541,7 +546,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png")).Sprite,
+                icon = ReshiramCCMod_Icon_Flammable.Sprite,
                 color = new("285cc4"),
                 isGood = false
             },
@@ -553,7 +558,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png")).Sprite,
+                icon = ReshiramCCMod_Icon_Safeguard.Sprite,
                 color = new("249fde"),
                 isGood = true
             },
@@ -565,7 +570,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png")).Sprite,
+                icon = ReshiramCCMod_Icon_HeatResist.Sprite,
                 color = new("ff687d"),
                 isGood = true
             },
@@ -581,7 +586,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png")).Sprite,
+                icon = ReshiramCCMod_Icon_ExhaustedEnergy.Sprite,
                 color = new("285cc4"),
                 isGood = true
             },
@@ -593,7 +598,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png")).Sprite,
+                icon = ReshiramCCMod_Icon_One.Sprite,
                 color = new("ff687d"),
                 isGood = true
             },
@@ -605,7 +610,7 @@ public sealed class ModEntry : SimpleMod
         {
             Definition = new()
             {
-                icon = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png")).Sprite,
+                icon = ReshiramCCMod_Icon_Two.Sprite,
                 color = new("ff687d"),
                 isGood = true
             },
