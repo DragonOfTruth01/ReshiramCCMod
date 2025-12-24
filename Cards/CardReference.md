@@ -10,7 +10,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Common | Dragon Breath | 1 | Attack 1. If enemy is overheated, they also gain 2 flammable. | Enemy gains 1 heat. on attack | Enemy gains 2 heat on attack. Gain 1 heat. |
 | Yes | Common | Psychic | 2 | Gain 1 evade. Gain 2 temp shield. Enemy is moved 1 to the left (outgoing, flippable). | Card gains retain. | Gain 2 real shield instead of temp shield. |
 | Yes | Common | Will-O-Wisp | 0 | Gain 1 temp shield. Enemy gains 2 heat (outgoing). Gain 1 heat. | Enemy also gains 1 smoldering beforehand. | Gain 2 temp shield. Enemy instead gains 2 heat twice. Gain 2 heat instead of 1. |
-| Yes | Common | Heat Wave | 1 | Enemy gains 1 smoldering and 3 heat (outgoing). Gain 1 heat. | Remove self heat gain. | Increase smoldering gain to 2. Gain 2 heat instead. |
+| Yes | Common | Heat Wave | 1 | Enemy gains 1 smoldering and 3 heat (outgoing). Gain 1 heat. | Reduce cost to 0. | Increase smoldering gain to 2. Gain 2 heat instead. |
 | Yes | Common | Facade | 1 | Deal piercing damage equal to your heat. | Reduce cost to 0. | Add retain. |
 | Yes | Common | Light Screen | 1 | Gain 1 shield. Reduce heat by 1. | Reduce cost to 0. | Instead reduce heat by 2. |
 | Yes | Common | Flamethrower | 1 | Deploy a flamethrower from the missile bay. | Gain 1 droneshift before deploying. | Increase cost to 2. Deploy an additional flamethrower to the left of the missile bay. |

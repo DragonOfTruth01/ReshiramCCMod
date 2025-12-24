@@ -25,7 +25,7 @@ internal sealed class CardHeatWave : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardHeatWaveBG.Sprite,
-            cost = 1
+            cost = upgrade == Upgrade.A ? 0 : 1
         };
         return data;
     }
@@ -64,6 +64,11 @@ internal sealed class CardHeatWave : Card, IReshiramCCModCard
                     new AStatus(){
                         status = Status.heat,
                         statusAmount = 3
+                    },
+                    new AStatus(){
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
                     }
                 };
                 break;
