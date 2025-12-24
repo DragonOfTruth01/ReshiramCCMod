@@ -39,7 +39,7 @@ internal sealed class CardSolarBeam : Card, IReshiramCCModCard
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardSolarBeamBG.Sprite,
             description = ModEntry.Instance.Localizations.Localize(["card", "Solar Beam", "description", upgrade.ToString()], new { damageString }),
-            cost = 2,
+            cost = 1,
             exhaust = true,
             retain = upgrade == Upgrade.A
         };
