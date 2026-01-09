@@ -180,6 +180,10 @@
       "name": "HEAT RESIST",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
     },
+    "Frozen": {
+      "name": "FROZEN",
+      "description": "This ship cannot move, except from forced or instant movement.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
+    },
     "Thermosensitive": {
       "name": "THERMOSENSITIVE",
       "description": "Whenever this ship is inflicted with <c=status>heat</c> or <c=status>FROZEN</c>, one ship part is stunned at random."

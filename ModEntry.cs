@@ -108,6 +108,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_Flammable { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Safeguard { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Frozen { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Thermosensitive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_One { get; }
@@ -126,6 +127,7 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Flammable { get; }
     internal IStatusEntry Safeguard { get; }
     internal IStatusEntry HeatResist { get; }
+    internal IStatusEntry Frozen { get; }
     internal IStatusEntry Thermosensitive { get; }
     internal IStatusEntry ExhaustEnergy { get; }
     internal IStatusEntry One { get; }
@@ -325,6 +327,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_Flammable = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png"));
         ReshiramCCMod_Icon_Safeguard = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png"));
         ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
+        ReshiramCCMod_Icon_Frozen = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/frozen.png"));
         ReshiramCCMod_Icon_Thermosensitive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/thermosensitive.png"));
         ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
         ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
@@ -582,6 +585,18 @@ public sealed class ModEntry : SimpleMod
             },
             Name = AnyLocalizations.Bind(["status", "Heat Resist", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Heat Resist", "description"]).Localize
+        });
+
+        Frozen = helper.Content.Statuses.RegisterStatus("Frozen", new()
+        {
+            Definition = new()
+            {
+                icon = ReshiramCCMod_Icon_Frozen.Sprite,
+                color = new("ff687d"),
+                isGood = false
+            },
+            Name = AnyLocalizations.Bind(["status", "Frozen", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Frozen", "description"]).Localize
         });
 
         Thermosensitive = helper.Content.Statuses.RegisterStatus("Thermosensitive", new()
