@@ -25,6 +25,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         public int oldHeatAmt;
         public int oldFlammableAmt;
         public int oldHeatResistAmt;
+        public int oldFrozenAmt;
     }
 
     public IKokoroApi.IV2.IStatusRenderingApi.IStatusInfoRenderer? OverrideStatusInfoRenderer(IKokoroApi.IV2.IStatusRenderingApi.IHook.IOverrideStatusInfoRendererArgs args)
@@ -35,6 +36,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         return ModEntry.Instance.KokoroApi.StatusRendering.MakeBarStatusInfoRenderer().SetSegments(Array.Empty<Color>()).SetRows(1);
 	}
 
+    // Prefix for Frozen Status
     [HarmonyPrefix]
     [HarmonyPatch(typeof(AIHelpers), nameof(AIHelpers.MoveToAimAt))]
     [HarmonyPatch(new Type[] {typeof(State), typeof(Ship), typeof(Ship), typeof(int), typeof(int), typeof(bool), typeof(bool?), typeof(bool), typeof(bool), typeof(bool)})]
@@ -66,6 +68,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         __state.oldHeatAmt = ship.Get(Status.heat);
         __state.oldFlammableAmt = ship.Get(ModEntry.Instance.Flammable.Status);
         __state.oldHeatResistAmt = ship.Get(ModEntry.Instance.HeatResist.Status);
+        __state.oldFrozenAmt = ship.Get(ModEntry.Instance.Frozen.Status);
 
         // Set heat gain to 0 if the ship has safeguard
         if( __instance.status == Status.heat && __instance.statusAmount > 0
@@ -84,6 +87,9 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         // Handle Smoldering (if ship gained heat, check for smoldering damage)
         var heatDiff = ship.Get(Status.heat) - __state.oldHeatAmt;
 
+        // Check if the amount of frozen increased
+        var frozenDiff = ship.Get(ModEntry.Instance.Frozen.Status) - __state.oldFrozenAmt;
+
         if (ship.Get(ModEntry.Instance.Smoldering.Status) > 0 && ship.Get(Status.heat) >= ship.heatTrigger && heatDiff > 0)
         {
             ship.DirectHullDamage(s, c, ship.Get(ModEntry.Instance.Smoldering.Status));
@@ -97,6 +103,46 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         // Handle Heat Resist (if amount changed, temporarily modify our overheat threshold)
         var heatResistDiff = ship.Get(ModEntry.Instance.HeatResist.Status) - __state.oldHeatResistAmt;
         ship.heatTrigger += heatResistDiff;
+
+        // Stun random ship part if heat or frozen was gained, while thermosensitive is active
+        if( ship.Get(ModEntry.Instance.Thermosensitive.Status) > 0
+            && ( heatDiff > 0 || frozenDiff > 0))
+        {
+            // Record each ship part
+            List<int> list = new List<int>();
+            int num = 0;
+
+            foreach (Part part in c.otherShip.parts)
+            {
+                if (part != null)
+                {
+                    list.Add(num);
+                }
+                ++num;
+            }
+
+            // Stun a ship part at random
+            int stunIndex = 0;
+            if (list.Count > 0)
+            {
+                if(list.Count == 1)
+                {
+                    // If there is only one ship part, stun it
+                    stunIndex = list[0];
+                }
+                else
+                {
+                    // Otherwise, roll RNG to determine the part to stun
+                    int randIndex = s.rngActions.NextInt() % list.Count;
+                    stunIndex = list[randIndex];
+                }
+
+                c.QueueImmediate(new AStunPart
+                {
+                    worldX = c.otherShip.x + stunIndex
+                });
+            }
+        }
     }
 
     public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)

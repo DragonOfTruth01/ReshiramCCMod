@@ -186,7 +186,7 @@
     },
     "Thermosensitive": {
       "name": "THERMOSENSITIVE",
-      "description": "Whenever this ship is inflicted with <c=status>heat</c> or <c=status>FROZEN</c>, one ship part is stunned at random."
+      "description": "Whenever this ship is inflicted with <c=status>HEAT</c> or <c=status>FROZEN</c>, one ship part is stunned at random."
     },
     "Exhaust Energy":{
       "name": "exhausted card's energy value",

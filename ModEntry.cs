@@ -592,7 +592,7 @@ public sealed class ModEntry : SimpleMod
             Definition = new()
             {
                 icon = ReshiramCCMod_Icon_Frozen.Sprite,
-                color = new("ff687d"),
+                color = new("4485ab"),
                 isGood = false
             },
             Name = AnyLocalizations.Bind(["status", "Frozen", "name"]).Localize,

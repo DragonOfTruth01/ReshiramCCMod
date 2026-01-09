@@ -31,6 +31,16 @@ internal sealed class ArtifactDnaSplicers : Artifact, IReshiramCCModArtifact
         
     }
 
+    public override void OnCombatStart(State state, Combat combat)
+    {
+        combat.QueueImmediate(new AStatus()
+        {
+            status = ModEntry.Instance.Thermosensitive.Status,
+            statusAmount = 1,
+            targetPlayer = false
+        });
+    }
+
     public override Spr GetSprite()
     {
         return ModEntry.Instance.ReshiramCCMod_Character_ArtifactDnaSplicers.Sprite;
