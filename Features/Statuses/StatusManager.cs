@@ -28,12 +28,10 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
 
     public IKokoroApi.IV2.IStatusRenderingApi.IStatusInfoRenderer? OverrideStatusInfoRenderer(IKokoroApi.IV2.IStatusRenderingApi.IHook.IOverrideStatusInfoRendererArgs args)
 	{
-		if (args.Status != ModEntry.Instance.Thermosensitive.Status)
-			return null;
-		
-		var colors = new Color[0];
+        if (args.Status != ModEntry.Instance.Thermosensitive.Status)
+            return null;
 
-		return ModEntry.Instance.KokoroApi.StatusRendering.MakeBarStatusInfoRenderer().SetSegments(colors).SetRows(1);
+        return ModEntry.Instance.KokoroApi.StatusRendering.MakeBarStatusInfoRenderer().SetSegments(Array.Empty<Color>()).SetRows(1);
 	}
 
     [HarmonyPrefix]
