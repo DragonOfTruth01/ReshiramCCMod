@@ -100,7 +100,6 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyNotOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_SolarFlareActive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
-    internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustLeftRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ChooseExhaust { get; }
@@ -108,6 +107,8 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_Smoldering { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Flammable { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Safeguard { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Thermosensitive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_One { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Two { get; }
@@ -125,6 +126,7 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry Flammable { get; }
     internal IStatusEntry Safeguard { get; }
     internal IStatusEntry HeatResist { get; }
+    internal IStatusEntry Thermosensitive { get; }
     internal IStatusEntry ExhaustEnergy { get; }
     internal IStatusEntry One { get; }
     internal IStatusEntry Two { get; }
@@ -315,7 +317,6 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
         ReshiramCCMod_Icon_SolarFlareActive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/solarFlareActive.png"));
         ReshiramCCMod_Icon_NonAttackStun = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/nonAttackStun.png"));
-        ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
         ReshiramCCMod_Icon_ExhaustRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustRight.png"));
         ReshiramCCMod_Icon_ExhaustLeftRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustLeftRight.png"));
         ReshiramCCMod_Icon_ChooseExhaust = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/chooseExhaust.png"));
@@ -323,6 +324,8 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_Smoldering = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png"));
         ReshiramCCMod_Icon_Flammable = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png"));
         ReshiramCCMod_Icon_Safeguard = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png"));
+        ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
+        ReshiramCCMod_Icon_Thermosensitive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/thermosensitive.png"));
         ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
         ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
         ReshiramCCMod_Icon_Two = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png"));
@@ -579,6 +582,18 @@ public sealed class ModEntry : SimpleMod
             },
             Name = AnyLocalizations.Bind(["status", "Heat Resist", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Heat Resist", "description"]).Localize
+        });
+
+        Thermosensitive = helper.Content.Statuses.RegisterStatus("Thermosensitive", new()
+        {
+            Definition = new()
+            {
+                icon = ReshiramCCMod_Icon_Thermosensitive.Sprite,
+                color = new("ff687d"),
+                isGood = false
+            },
+            Name = AnyLocalizations.Bind(["status", "Thermosensitive", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Thermosensitive", "description"]).Localize
         });
 
         // Below are fake statuses only used to abuse equation formatting on cards

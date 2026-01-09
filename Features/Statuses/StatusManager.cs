@@ -2,9 +2,13 @@
 
 using HarmonyLib;
 using FSPRO;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 
 [HarmonyPatch]
-internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
+internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKokoroApi.IV2.IStatusRenderingApi.IHook
 {
     public static ModEntry Instance => ModEntry.Instance;
 
@@ -12,6 +16,7 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
     {
         /* We task Kokoro with the job to register our status into the game */
         Instance.KokoroApi.StatusLogic.RegisterHook(this, 0);
+        Instance.KokoroApi.StatusRendering.RegisterHook(this, 0);
     }
 
     private class HarmonyRef
@@ -20,6 +25,16 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook
         public int oldFlammableAmt;
         public int oldHeatResistAmt;
     }
+
+    public IKokoroApi.IV2.IStatusRenderingApi.IStatusInfoRenderer? OverrideStatusInfoRenderer(IKokoroApi.IV2.IStatusRenderingApi.IHook.IOverrideStatusInfoRendererArgs args)
+	{
+		if (args.Status != ModEntry.Instance.Thermosensitive.Status)
+			return null;
+		
+		var colors = new Color[0];
+
+		return ModEntry.Instance.KokoroApi.StatusRendering.MakeBarStatusInfoRenderer().SetSegments(colors).SetRows(1);
+	}
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(AStatus), "Begin")]

@@ -180,6 +180,10 @@
       "name": "HEAT RESIST",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
     },
+    "Thermosensitive": {
+      "name": "THERMOSENSITIVE",
+      "description": "Whenever this ship is inflicted with <c=status>heat</c> or <c=status>FROZEN</c>, one ship part is stunned at random."
+    },
     "Exhaust Energy":{
       "name": "exhausted card's energy value",
       "description": "Energy value of the card that was exhausted."
