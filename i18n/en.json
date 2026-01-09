@@ -41,7 +41,7 @@
       },
       "DNA Splicers": {
         "name": "DNA SPLICERS",
-        "description": "Add <c=card>Glaciate</c> and <c=card>Ice Burn</c> to your deck. Enemy starts combat with 1 <c=status>THERMOSENSITIVE</c>."
+        "description": "Add <c=card>Glaciate</c> and <c=card>Ice Burn</c> to your deck. Enemy starts combat with <c=status>THERMOSENSITIVE</c>."
       }
     },
     "common": {
