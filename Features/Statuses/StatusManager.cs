@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using OneOf.Types;
 
 [HarmonyPatch]
 internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKokoroApi.IV2.IStatusRenderingApi.IHook
@@ -33,6 +34,28 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
 
         return ModEntry.Instance.KokoroApi.StatusRendering.MakeBarStatusInfoRenderer().SetSegments(Array.Empty<Color>()).SetRows(1);
 	}
+
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(AIHelpers), nameof(AIHelpers.MoveToAimAt))]
+    [HarmonyPatch(new Type[] {typeof(State), typeof(Ship), typeof(Ship), typeof(int), typeof(int), typeof(bool), typeof(bool?), typeof(bool), typeof(bool), typeof(bool)})]
+    public static bool MoveToAimAt_Prefix(State s, Ship movingShip, ref List<CardAction> __result)
+    {
+        if ((Combat)s.route == null)
+        {
+            __result = new List<CardAction>();
+            return false;
+        }
+        
+        if (movingShip.Get(ModEntry.Instance.Frozen.Status) > 0)
+        {
+            Audio.Play(Event.Status_PowerDown);
+            movingShip.shake += 1.0;
+            __result = new List<CardAction>();
+            return false;
+        }
+
+        return true;
+    }
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
@@ -78,9 +101,9 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
 
     public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)
     {
-        // Handle start-of-turn decrements for safeguard
+        // Handle start-of-turn decrements for safeguard and frozen
         if ( args.Timing != IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnStart
-             && args.Status == Instance.Safeguard.Status
+             && (args.Status == Instance.Safeguard.Status || args.Status == Instance.Frozen.Status)
              && args.Amount > 0)
         {
             args.Amount -= 1;
