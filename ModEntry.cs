@@ -74,6 +74,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactLibertyPass { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactFlameOrb { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactDnaSplicers { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
 
@@ -195,7 +196,8 @@ public sealed class ModEntry : SimpleMod
         typeof(ArtifactLibertyPass)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
-        typeof(ArtifactFireGem)
+        typeof(ArtifactFireGem),
+        typeof(ArtifactDnaSplicers)
     ];
     internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
         => ReshiramCCMod_CommonArtifact_Types
@@ -282,6 +284,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_ArtifactLibertyPass = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/libertyPass.png"));
 
         ReshiramCCMod_Character_ArtifactFlameOrb = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/flameOrb.png"));
+        ReshiramCCMod_Character_ArtifactDnaSplicers = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/dnaSplicers.png"));
 
         // Midrow Objects
 

@@ -38,6 +38,10 @@
       "Flame Orb": {
         "name": "FLAME ORB",
         "description": "Gain 1 extra <c=status>ENERGY</c> every turn. <c=downside>Lose 1 <c=status>heat resist</c> at the start of combat.</c>"
+      },
+      "DNA Splicers": {
+        "name": "DNA SPLICERS",
+        "description": "Add <c=card>Glaciate</c> and <c=card>Ice Burn</c> to your deck. Enemy starts combat with 1 <c=status>THERMOSENSITIVE</c>."
       }
     },
     "common": {
