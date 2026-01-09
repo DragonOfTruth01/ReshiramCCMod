@@ -165,27 +165,27 @@
   },
   "status": {
     "Smoldering": {
-      "name": "SMOLDERING",
+      "name": "Smoldering",
       "description": "After <c=status>heat</c> is inflicted, take <c=boldPink>{0}</c> hull damage if at or above the <c=ff687d>overheating</c> threshold.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
     },
     "Flammable": {
-      "name": "FLAMMABLE",
+      "name": "Flammable",
       "description": "Take <c=boldPink>{0}</c> extra damage from <c=ff687d>overheating</c>."
     },
     "Safeguard": {
-      "name": "SAFEGUARD",
+      "name": "Safeguard",
       "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
     },
     "Heat Resist": {
-      "name": "HEAT RESIST",
+      "name": "Heat Resist",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
     },
     "Frozen": {
-      "name": "FROZEN",
+      "name": "Frozen",
       "description": "This ship cannot move, except from forced or instant movement.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
     },
     "Thermosensitive": {
-      "name": "THERMOSENSITIVE",
+      "name": "Thermosensitive",
       "description": "Whenever this ship is inflicted with <c=status>HEAT</c> or <c=status>FROZEN</c>, one ship part is stunned at random."
     },
     "Exhaust Energy":{
