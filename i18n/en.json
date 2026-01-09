@@ -174,7 +174,7 @@
     },
     "Safeguard": {
       "name": "SAFEGUARD",
-      "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
+      "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
     },
     "Heat Resist": {
       "name": "HEAT RESIST",
