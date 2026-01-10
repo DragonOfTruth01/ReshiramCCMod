@@ -12,18 +12,18 @@ This README was made using Louis3797's awesome-readme-template
 <!-- Features -->
 # Summary
 
-This mod has added:
+This mod adds the following:
 
 - <b>1</b> Character
-- <b>26/29</b> Cards
+- <b>29</b> Cards
   - <b>10</b> common
   - <b>8</b> uncommon
   - <b>6</b> rare
-  - <b>2/5</b> other
-- <b>6/7</b> Artifacts
+  - <b>5</b> other
+- <b>7</b> Artifacts
   - <b>5</b> common
-  - <b>1/2</b> boss
-- <b>4/6</b> Statuses
+  - <b>2</b> boss
+- <b>6</b> Statuses
 
 # Content Infographics
 
