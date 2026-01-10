@@ -145,6 +145,23 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
         }
     }
 
+    // Prevent player ship from moving if frozen
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(AMove), "Begin")]
+    public static bool AMove_Begin_Prefix(AMove __instance, G g, State s, Combat c)
+    {
+        bool prefixFlag = FeatureFlags.Debug && Input.shift;
+
+        if(__instance.targetPlayer && !prefixFlag && s.ship.Get(ModEntry.Instance.Frozen.Status) > 0 && __instance.fromEvade)
+        {
+            Audio.Play(Event.Status_PowerDown);
+            s.ship.shake += 1.0;
+            return false;
+        }
+
+        return true;
+    }
+
     public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)
     {
         // Handle start-of-turn decrements for safeguard and frozen

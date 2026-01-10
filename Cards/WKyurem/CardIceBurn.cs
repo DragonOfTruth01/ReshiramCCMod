@@ -25,8 +25,7 @@ internal sealed class CardIceBurn : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_WKyurem_CardIceBurnBG.Sprite,
-            cost = 1,
-            exhaust = upgrade == Upgrade.B
+            cost = 2,
         };
         return data;
     }
@@ -41,9 +40,15 @@ internal sealed class CardIceBurn : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 1
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 1),
+                        status = Status.heat,
+                        statusAmount = 3
                     }
                 };
                 break;
@@ -53,9 +58,15 @@ internal sealed class CardIceBurn : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3),
+                        damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 1
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 2),
+                        status = Status.heat,
+                        statusAmount = 3
                     }
                 };
                 break;
@@ -65,9 +76,21 @@ internal sealed class CardIceBurn : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 2
+                    },
+                    new AAttack()
+                    {
+                        damage = GetDmg(s, 1),
+                        status = Status.heat,
+                        statusAmount = 3
+                    },
+                    new AStatus()
+                    {
+                        status = ModEntry.Instance.Frozen.Status,
+                        statusAmount = 1,
+                        targetPlayer = true
                     }
                 };
                 break;

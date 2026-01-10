@@ -72,8 +72,8 @@ internal sealed class CardIceNeedle : Card, IReshiramCCModCard
                     },
                     new AStatus()
                     {
-                        status = Status.heat,
-                        statusAmount = 3,
+                        status = ModEntry.Instance.Frozen.Status,
+                        statusAmount = 1,
                         targetPlayer = true
                     }
                 };

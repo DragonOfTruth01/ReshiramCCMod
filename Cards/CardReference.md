@@ -32,7 +32,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Safeguard | 0 | Gain 1 safeguard. Exhaust. | Card gains retain. | Gain 2 heat. Increase safeguard gain to 2. |
 ||||||||
 | No | Uncommon (Kyurem) | Glaciate | 1 | Add a temp Ice Needle to your hand. | Add a temp Ice Needle A to your hand. | Add 1 temp Ice Needle to your hand, and 2 to your discard pile. Card gains exhaust. |
-| No | Common (Kyurem) | Ice Needle | 1 | Attack 1. Enemy gains 1 frozen. | Reduce cost to 0. | Increase attack and frozen to 2. Gain 3 heat. |
-| No | Rare (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 3 heat and 1 frozen. | Increase damage to 2 x 2. | Shift left 1 between attacks. |
+| No | Common (Kyurem) | Ice Needle | 1 | Attack 1. Enemy gains 1 frozen. | Reduce cost to 0. | Increase attack and frozen to 2. Gain 1 frozen. |
+| No | Rare (Kyurem) | Ice Burn | 2 | Attack 1 x 2. Enemy gains 3 heat and 1 frozen. | Increase damage to 2 x 2. | Apply 1 more frozen. Gain 1 frozen. |
 | Yes | Uncommon (Victini) | Searing Shot | 1 | Exhaust the rightmost card in your hand. Deal damage and apply heat equal to its cost + 1. | Damage + heat equal to its cost + 2. | Instead choose a card to exhaust. |
 | No | Rare (Victini) | V-Create | 2 | Exhaust the leftmost and rightmost cards in your hand. Attack 3 and apply 2 smoldering. Exhaust. | Also apply 3 heat. | Increase cost to 3. Increase damage to 5 and smoldering to 3. |
