@@ -400,7 +400,7 @@ public sealed class ModEntry : SimpleMod
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
             BorderSprite = ReshiramCCMod_Character_WKyurem_CardFrame.Sprite,
 
-            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Kyurem", "name"]).Localize,
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_WKyurem", "name"]).Localize,
         });
 
         // Register NPC Decks
