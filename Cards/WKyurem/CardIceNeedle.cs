@@ -26,9 +26,8 @@ internal sealed class CardIceNeedle : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_WKyurem_CardIceNeedleBG.Sprite,
-            cost = 1,
-            temporary = true,
-            exhaust = upgrade == Upgrade.B
+            cost = upgrade == Upgrade.A ? 0 : 1,
+            temporary = true
         };
         return data;
     }
@@ -43,7 +42,7 @@ internal sealed class CardIceNeedle : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 1
                     }
@@ -55,7 +54,7 @@ internal sealed class CardIceNeedle : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3),
+                        damage = GetDmg(s, 1),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 1
                     }
@@ -70,6 +69,12 @@ internal sealed class CardIceNeedle : Card, IReshiramCCModCard
                         damage = GetDmg(s, 2),
                         status = ModEntry.Instance.Frozen.Status,
                         statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 3,
+                        targetPlayer = true
                     }
                 };
                 break;

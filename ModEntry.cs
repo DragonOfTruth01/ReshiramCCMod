@@ -188,7 +188,9 @@ public sealed class ModEntry : SimpleMod
     ];
 
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_WKyuremCard_Types { get; } = [
-        typeof(CardGlaciate)
+        typeof(CardGlaciate),
+        typeof(CardIceBurn),
+        typeof(CardIceNeedle)
     ];
 
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
