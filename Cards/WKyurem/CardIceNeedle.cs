@@ -4,28 +4,30 @@ using System.Reflection;
 
 namespace DragonOfTruth01.ReshiramCCMod.Cards;
 
-internal sealed class CardGlaciate : Card, IReshiramCCModCard
+internal sealed class CardIceNeedle : Card, IReshiramCCModCard
 {
     public static void Register(IModHelper helper)
     {
-        helper.Content.Cards.RegisterCard("Glaciate", new()
+        helper.Content.Cards.RegisterCard("Ice Needle", new()
         {
             CardType = MethodBase.GetCurrentMethod()!.DeclaringType!,
             Meta = new()
             {
                 deck = ModEntry.Instance.ReshiramCCMod_WKyurem_Deck.Deck,
-                rarity = Rarity.uncommon,
+                rarity = Rarity.common,
+                dontOffer = true,
                 upgradesTo = [Upgrade.A, Upgrade.B]
             },
-            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Glaciate", "name"]).Localize
+            Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "Ice Needle", "name"]).Localize
         });
     }
     public override CardData GetData(State state)
     {
         CardData data = new CardData()
         {
-            art = ModEntry.Instance.ReshiramCCMod_Character_WKyurem_CardGlaciateBG.Sprite,
+            art = ModEntry.Instance.ReshiramCCMod_Character_WKyurem_CardIceNeedleBG.Sprite,
             cost = 1,
+            temporary = true,
             exhaust = upgrade == Upgrade.B
         };
         return data;
