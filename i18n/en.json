@@ -6,6 +6,9 @@
     },
     "ReshiramCCMod_Victini": {
       "name": "Victini"
+    },
+    "ReshiramCCMod_WKyurem": {
+      "name": "White Kyurem"
     }
   },
   "action": {
@@ -38,6 +41,10 @@
       "Flame Orb": {
         "name": "FLAME ORB",
         "description": "Gain 1 extra <c=status>ENERGY</c> every turn. <c=downside>Lose 1 <c=status>heat resist</c> at the start of combat.</c>"
+      },
+      "DNA Splicers": {
+        "name": "DNA SPLICERS",
+        "description": "Add <c=card>Glaciate</c> and <c=card>Ice Burn</c> to your deck. Enemy starts combat <c=status>THERMOSENSITIVE</c>."
       }
     },
     "common": {
@@ -151,6 +158,20 @@
     },
     "V-Create": {
       "name": "V-Create"
+    },
+    "Glaciate": {
+      "name": "Glaciate",
+      "description": {
+        "None": "Add an <c=card>Ice Needle</c> to your hand.",
+        "A": "Add an <c=card>Ice Needle A</c> to your draw pile.",
+        "B": "Add 1 <c=card>Ice Needle</c> to your hand. Add 2 more to your discard pile."
+      }
+    },
+    "Ice Needle": {
+      "name": "Ice Needle"
+    },
+    "Ice Burn": {
+      "name": "Ice Burn"
     }
   },
   "midrow":{
@@ -161,20 +182,28 @@
   },
   "status": {
     "Smoldering": {
-      "name": "SMOLDERING",
+      "name": "Smoldering",
       "description": "After <c=status>heat</c> is inflicted, take <c=boldPink>{0}</c> hull damage if at or above the <c=ff687d>overheating</c> threshold.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
     },
     "Flammable": {
-      "name": "FLAMMABLE",
+      "name": "Flammable",
       "description": "Take <c=boldPink>{0}</c> extra damage from <c=ff687d>overheating</c>."
     },
     "Safeguard": {
-      "name": "SAFEGUARD",
-      "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at end of turn.</c>"
+      "name": "Safeguard",
+      "description": "This ship cannot gain <c=status>heat</c>.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
     },
     "Heat Resist": {
-      "name": "HEAT RESIST",
+      "name": "Heat Resist",
       "description": "This ship must gain <c=boldPink>{0}</c> extra <c=status>heat</c> before <c=ff687d>overheating</c>."
+    },
+    "Frozen": {
+      "name": "Frozen",
+      "description": "This ship cannot move, except from forced or instant movement.\n<c=ff687d>Decreases by 1 at start of turn.</c>"
+    },
+    "Thermosensitive": {
+      "name": "Thermosensitive",
+      "description": "Whenever this ship is inflicted with <c=status>HEAT</c> or <c=status>FROZEN</c>, one ship part is stunned at random."
     },
     "Exhaust Energy":{
       "name": "exhausted card's energy value",

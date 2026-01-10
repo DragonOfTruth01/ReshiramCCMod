@@ -47,16 +47,16 @@ public sealed class AnimationHandler
         victiniAnim["gameover"] = "gameover_victini";
 
         // Populate white kyurem animations
-        wKyuremAnim["neutral"]  = "neutral";
+        wKyuremAnim["neutral"]  = "neutral_wkyurem";
         wKyuremAnim["mini"]     = "mini";
-        wKyuremAnim["squint"]   = "squint";
-        wKyuremAnim["gameover"] = "gameover";
+        wKyuremAnim["squint"]   = "squint_wkyurem";
+        wKyuremAnim["gameover"] = "gameover_wkyurem";
 
         // Populate white kyurem + victini animations
-        wKyuremVictiniAnim["neutral"]  = "neutral";
+        wKyuremVictiniAnim["neutral"]  = "neutral_wkyurem_victini";
         wKyuremVictiniAnim["mini"]     = "mini";
-        wKyuremVictiniAnim["squint"]   = "squint";
-        wKyuremVictiniAnim["gameover"] = "gameover";
+        wKyuremVictiniAnim["squint"]   = "squint_wkyurem_victini";
+        wKyuremVictiniAnim["gameover"] = "gameover_wkyurem_victini";
 
     }
 
@@ -82,7 +82,7 @@ public sealed class AnimationHandler
 
     public static void UpdateCharacterVariant(State s)
     {
-        // Check for artifacts
+        // Check for liberty pass
         var libertyPass = s.EnumerateAllArtifacts().OfType<ArtifactLibertyPass>().FirstOrDefault();
         bool hasLibertyPass = false;
 
@@ -91,8 +91,25 @@ public sealed class AnimationHandler
             hasLibertyPass = true;
         }
 
+        // Check for liberty pass
+        var dnaSplicers = s.EnumerateAllArtifacts().OfType<ArtifactDnaSplicers>().FirstOrDefault();
+        bool hasDnaSplicers = false;
+
+        if (dnaSplicers != null)
+        {
+            hasDnaSplicers = true;
+        }
+
         // Apply the correct character variant
-        if (hasLibertyPass)
+        if (hasDnaSplicers && hasLibertyPass)
+        {
+            ModEntry.Instance.currCharVariant = ModEntry.CharacterVariant.WKyuremVictini;
+        }
+        else if (hasDnaSplicers)
+        {
+            ModEntry.Instance.currCharVariant = ModEntry.CharacterVariant.WKyurem;
+        }
+        else if (hasLibertyPass)
         {
             ModEntry.Instance.currCharVariant = ModEntry.CharacterVariant.ReshiVictini;
         }

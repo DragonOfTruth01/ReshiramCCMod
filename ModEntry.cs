@@ -32,6 +32,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardFrame { get; }
 
     // Custom Card Arts
     internal ISpriteEntry ReshiramCCMod_Character_CardIncinerateBG { get; }
@@ -64,6 +65,10 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardVCreateBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardSearingShotBG { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardGlaciateBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardIceNeedleBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardIceBurnBG { get; }
+
     // Artifact Arts
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactHeatRock { get; }
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactFireGem { get; }
@@ -74,6 +79,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactLibertyPass { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactFlameOrb { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_ArtifactDnaSplicers { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Panel { get; }
 
@@ -85,6 +91,14 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_2 { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_2 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Mini_0 { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Squint_0 { get; }
@@ -95,11 +109,18 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_2 { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_2 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyNotOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_SolarFlareActive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_NonAttackStun { get; }
-    internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustLeftRight { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ChooseExhaust { get; }
@@ -107,6 +128,9 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Icon_Smoldering { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Flammable { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Safeguard { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_HeatResist { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Frozen { get; }
+    internal ISpriteEntry ReshiramCCMod_Icon_Thermosensitive { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_ExhaustedEnergy { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_One { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_Two { get; }
@@ -119,11 +143,14 @@ public sealed class ModEntry : SimpleMod
     internal IDeckEntry ReshiramCCMod_Deck { get; }
 
     internal IDeckEntry ReshiramCCMod_Victini_Deck { get; }
+    internal IDeckEntry ReshiramCCMod_WKyurem_Deck { get; }
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
     internal IStatusEntry Safeguard { get; }
     internal IStatusEntry HeatResist { get; }
+    internal IStatusEntry Frozen { get; }
+    internal IStatusEntry Thermosensitive { get; }
     internal IStatusEntry ExhaustEnergy { get; }
     internal IStatusEntry One { get; }
     internal IStatusEntry Two { get; }
@@ -176,6 +203,12 @@ public sealed class ModEntry : SimpleMod
         typeof(CardVCreate)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_WKyuremCard_Types { get; } = [
+        typeof(CardGlaciate),
+        typeof(CardIceBurn),
+        typeof(CardIceNeedle)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
@@ -183,7 +216,8 @@ public sealed class ModEntry : SimpleMod
         .. ReshiramCCModCharacter_CommonCard_Types,
         .. ReshiramCCModCharacter_UncommonCard_Types,
         .. ReshiramCCModCharacter_RareCard_Types,
-        .. ReshiramCCModCharacter_VictiniCard_Types
+        .. ReshiramCCModCharacter_VictiniCard_Types,
+        .. ReshiramCCModCharacter_WKyuremCard_Types
     ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
@@ -195,7 +229,8 @@ public sealed class ModEntry : SimpleMod
         typeof(ArtifactLibertyPass)
     ];
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
-        typeof(ArtifactFireGem)
+        typeof(ArtifactFireGem),
+        typeof(ArtifactDnaSplicers)
     ];
     internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
         => ReshiramCCMod_CommonArtifact_Types
@@ -240,6 +275,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
         ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
+        ReshiramCCMod_Character_WKyurem_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_wkyurem_cardframe.png"));
 
         // Custom Card Arts
         ReshiramCCMod_Character_CardIncinerateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardIncinerateBG.png"));
@@ -272,6 +308,10 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Victini_CardVCreateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardVCreateBG.png"));
         ReshiramCCMod_Character_Victini_CardSearingShotBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardSearingShotBG.png"));
 
+        ReshiramCCMod_Character_WKyurem_CardGlaciateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/wkyurem/ReshiramCCMod_CardGlaciateBG.png"));
+        ReshiramCCMod_Character_WKyurem_CardIceNeedleBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/wkyurem/ReshiramCCMod_CardIceNeedleBG.png"));
+        ReshiramCCMod_Character_WKyurem_CardIceBurnBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/wkyurem/ReshiramCCMod_CardIceBurnBG.png"));
+
         // Artifact Arts
         ReshiramCCMod_Character_ArtifactHeatRock = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png"));
         ReshiramCCMod_Character_ArtifactFireGem = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/fireGem.png"));
@@ -282,6 +322,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_ArtifactLibertyPass = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/libertyPass.png"));
 
         ReshiramCCMod_Character_ArtifactFlameOrb = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/flameOrb.png"));
+        ReshiramCCMod_Character_ArtifactDnaSplicers = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/boss/dnaSplicers.png"));
 
         // Midrow Objects
 
@@ -298,6 +339,14 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Victini_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_1.png"));
         ReshiramCCMod_Character_Victini_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_2.png"));
 
+        ReshiramCCMod_Character_WKyurem_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_0.png"));
+        ReshiramCCMod_Character_WKyurem_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_1.png"));
+        ReshiramCCMod_Character_WKyurem_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_2.png"));
+    
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_0.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_1.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_2.png"));
+
         ReshiramCCMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_mini_0.png"));
 
         ReshiramCCMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_0.png"));
@@ -308,11 +357,18 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_1.png"));
         ReshiramCCMod_Character_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_2.png"));
 
+        ReshiramCCMod_Character_WKyurem_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_0.png"));
+        ReshiramCCMod_Character_WKyurem_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_1.png"));
+        ReshiramCCMod_Character_WKyurem_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_2.png"));
+
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_0.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_1.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_2.png"));
+
         ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
         ReshiramCCMod_Icon_SolarFlareActive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/solarFlareActive.png"));
         ReshiramCCMod_Icon_NonAttackStun = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/nonAttackStun.png"));
-        ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
         ReshiramCCMod_Icon_ExhaustRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustRight.png"));
         ReshiramCCMod_Icon_ExhaustLeftRight = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustLeftRight.png"));
         ReshiramCCMod_Icon_ChooseExhaust = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/chooseExhaust.png"));
@@ -320,6 +376,9 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_Smoldering = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/smoldering.png"));
         ReshiramCCMod_Icon_Flammable = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/flammable.png"));
         ReshiramCCMod_Icon_Safeguard = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/safeguard.png"));
+        ReshiramCCMod_Icon_HeatResist = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/heatResist.png"));
+        ReshiramCCMod_Icon_Frozen = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/frozen.png"));
+        ReshiramCCMod_Icon_Thermosensitive = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/thermosensitive.png"));
         ReshiramCCMod_Icon_ExhaustedEnergy = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/exhaustedEnergy.png"));
         ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
         ReshiramCCMod_Icon_Two = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png"));
@@ -354,13 +413,28 @@ public sealed class ModEntry : SimpleMod
             {
                 color = new Color("de543d"),
 
-                titleColor = new Color("202020")
+                titleColor = new Color("000000")
             },
 
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
             BorderSprite = ReshiramCCMod_Character_Victini_CardFrame.Sprite,
 
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Victini", "name"]).Localize,
+        });
+
+        ReshiramCCMod_WKyurem_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModWKyuremDeck", new DeckConfiguration()
+        {
+            Definition = new DeckDef()
+            {
+                color = new Color("86cece"),
+
+                titleColor = new Color("000000")
+            },
+
+            DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
+            BorderSprite = ReshiramCCMod_Character_WKyurem_CardFrame.Sprite,
+
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_WKyurem", "name"]).Localize,
         });
 
         // Register NPC Decks
@@ -417,6 +491,40 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+
+            LoopTag = "neutral_wkyurem",
+
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+
+            LoopTag = "neutral_wkyurem_victini",
+
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "mini",
             Frames = new[]
             {
@@ -458,6 +566,36 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "squint_wkyurem",
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "squint_wkyurem_victini",
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "gameover",
             Frames = new[]
             {
@@ -474,6 +612,28 @@ public sealed class ModEntry : SimpleMod
             {
                 // The squint sprite is okay to use here...
                 ReshiramCCMod_Character_Victini_Squint_0.Sprite,
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_wkyurem",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_wkyurem_victini",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
             }
         });
         
@@ -576,6 +736,30 @@ public sealed class ModEntry : SimpleMod
             },
             Name = AnyLocalizations.Bind(["status", "Heat Resist", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Heat Resist", "description"]).Localize
+        });
+
+        Frozen = helper.Content.Statuses.RegisterStatus("Frozen", new()
+        {
+            Definition = new()
+            {
+                icon = ReshiramCCMod_Icon_Frozen.Sprite,
+                color = new("4485ab"),
+                isGood = false
+            },
+            Name = AnyLocalizations.Bind(["status", "Frozen", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Frozen", "description"]).Localize
+        });
+
+        Thermosensitive = helper.Content.Statuses.RegisterStatus("Thermosensitive", new()
+        {
+            Definition = new()
+            {
+                icon = ReshiramCCMod_Icon_Thermosensitive.Sprite,
+                color = new("ff687d"),
+                isGood = false
+            },
+            Name = AnyLocalizations.Bind(["status", "Thermosensitive", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["status", "Thermosensitive", "description"]).Localize
         });
 
         // Below are fake statuses only used to abuse equation formatting on cards
