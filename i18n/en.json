@@ -160,7 +160,12 @@
       "name": "V-Create"
     },
     "Glaciate": {
-      "name": "Glaciate"
+      "name": "Glaciate",
+      "description": {
+        "None": "Add an <c=card>Ice Needle</c> to your hand.",
+        "A": "Add an <c=card>Ice Needle A</c> to your hand.",
+        "B": "Add 1 <c=card>Ice Needle</c> to your hand. Add 2 more to your discard pile."
+      }
     },
     "Ice Needle": {
       "name": "Ice Needle"

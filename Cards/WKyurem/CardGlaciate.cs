@@ -25,11 +25,13 @@ internal sealed class CardGlaciate : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_WKyurem_CardGlaciateBG.Sprite,
+            description = ModEntry.Instance.Localizations.Localize(["card", "Glaciate", "description", upgrade.ToString()]),
             cost = 1,
             exhaust = upgrade == Upgrade.B
         };
         return data;
     }
+
     public override List<CardAction> GetActions(State s, Combat c)
     {
         List<CardAction> actions = new();
@@ -39,11 +41,11 @@ internal sealed class CardGlaciate : Card, IReshiramCCModCard
             case Upgrade.None:
                 actions = new()
                 {
-                    new AAttack()
+                    new AAddCard()
                     {
-                        damage = GetDmg(s, 2),
-                        status = ModEntry.Instance.Frozen.Status,
-                        statusAmount = 1
+                        card = new CardIceNeedle(),
+                        destination = CardDestination.Hand,
+                        amount = 1
                     }
                 };
                 break;
@@ -51,11 +53,11 @@ internal sealed class CardGlaciate : Card, IReshiramCCModCard
             case Upgrade.A:
                 actions = new()
                 {
-                    new AAttack()
+                    new AAddCard()
                     {
-                        damage = GetDmg(s, 3),
-                        status = ModEntry.Instance.Frozen.Status,
-                        statusAmount = 1
+                        card = new CardIceNeedle(){ upgrade = Upgrade.A },
+                        destination = CardDestination.Hand,
+                        amount = 1
                     }
                 };
                 break;
@@ -63,11 +65,17 @@ internal sealed class CardGlaciate : Card, IReshiramCCModCard
             case Upgrade.B:
                 actions = new()
                 {
-                    new AAttack()
+                    new AAddCard()
                     {
-                        damage = GetDmg(s, 2),
-                        status = ModEntry.Instance.Frozen.Status,
-                        statusAmount = 2
+                        card = new CardIceNeedle(),
+                        destination = CardDestination.Hand,
+                        amount = 1
+                    },
+                    new AAddCard()
+                    {
+                        card = new CardIceNeedle(),
+                        destination = CardDestination.Discard,
+                        amount = 2
                     }
                 };
                 break;
