@@ -32,6 +32,7 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_CardFrame { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardFrame { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardFrame { get; }
 
     // Custom Card Arts
     internal ISpriteEntry ReshiramCCMod_Character_CardIncinerateBG { get; }
@@ -63,6 +64,9 @@ public sealed class ModEntry : SimpleMod
 
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardVCreateBG { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_CardSearingShotBG { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardGlaciateBG { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_CardIceBurnBG { get; }
 
     // Artifact Arts
     internal ISpriteEntry ReshiramCCMod_Character_ArtifactHeatRock { get; }
@@ -122,6 +126,7 @@ public sealed class ModEntry : SimpleMod
     internal IDeckEntry ReshiramCCMod_Deck { get; }
 
     internal IDeckEntry ReshiramCCMod_Victini_Deck { get; }
+    internal IDeckEntry ReshiramCCMod_WKyurem_Deck { get; }
 
     internal IStatusEntry Smoldering { get; }
     internal IStatusEntry Flammable { get; }
@@ -181,6 +186,10 @@ public sealed class ModEntry : SimpleMod
         typeof(CardVCreate)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_WKyuremCard_Types { get; } = [
+        typeof(CardGlaciate)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
@@ -188,7 +197,8 @@ public sealed class ModEntry : SimpleMod
         .. ReshiramCCModCharacter_CommonCard_Types,
         .. ReshiramCCModCharacter_UncommonCard_Types,
         .. ReshiramCCModCharacter_RareCard_Types,
-        .. ReshiramCCModCharacter_VictiniCard_Types
+        .. ReshiramCCModCharacter_VictiniCard_Types,
+        .. ReshiramCCModCharacter_WKyuremCard_Types
     ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
@@ -246,6 +256,7 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
         ReshiramCCMod_Character_Victini_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_victini_cardframe.png"));
+        ReshiramCCMod_Character_WKyurem_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_wkyurem_cardframe.png"));
 
         // Custom Card Arts
         ReshiramCCMod_Character_CardIncinerateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/common/ReshiramCCMod_CardIncinerateBG.png"));
@@ -277,6 +288,9 @@ public sealed class ModEntry : SimpleMod
 
         ReshiramCCMod_Character_Victini_CardVCreateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardVCreateBG.png"));
         ReshiramCCMod_Character_Victini_CardSearingShotBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/victini/ReshiramCCMod_CardSearingShotBG.png"));
+
+        ReshiramCCMod_Character_WKyurem_CardGlaciateBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/wkyurem/ReshiramCCMod_CardGlaciateBG.png"));
+        ReshiramCCMod_Character_WKyurem_CardIceBurnBG = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/wkyurem/ReshiramCCMod_CardIceBurnBG.png"));
 
         // Artifact Arts
         ReshiramCCMod_Character_ArtifactHeatRock = helper.Content.Sprites.RegisterSprite(Package.PackageRoot.GetRelativeFile("assets/artifacts/common/heatRock.png"));
@@ -370,6 +384,21 @@ public sealed class ModEntry : SimpleMod
             BorderSprite = ReshiramCCMod_Character_Victini_CardFrame.Sprite,
 
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Victini", "name"]).Localize,
+        });
+
+        ReshiramCCMod_WKyurem_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModWKyuremDeck", new DeckConfiguration()
+        {
+            Definition = new DeckDef()
+            {
+                color = new Color("86cece"),
+
+                titleColor = new Color("202020")
+            },
+
+            DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
+            BorderSprite = ReshiramCCMod_Character_WKyurem_CardFrame.Sprite,
+
+            Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_Kyurem", "name"]).Localize,
         });
 
         // Register NPC Decks

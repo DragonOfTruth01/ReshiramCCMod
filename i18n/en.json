@@ -6,6 +6,9 @@
     },
     "ReshiramCCMod_Victini": {
       "name": "Victini"
+    },
+    "ReshiramCCMod_WKyurem": {
+      "name": "White Kyurem"
     }
   },
   "action": {
@@ -155,6 +158,9 @@
     },
     "V-Create": {
       "name": "V-Create"
+    },
+    "Glaciate": {
+      "name": "Glaciate"
     }
   },
   "midrow":{
