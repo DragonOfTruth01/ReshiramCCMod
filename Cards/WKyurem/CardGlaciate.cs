@@ -56,7 +56,7 @@ internal sealed class CardGlaciate : Card, IReshiramCCModCard
                     new AAddCard()
                     {
                         card = new CardIceNeedle(){ upgrade = Upgrade.A },
-                        destination = CardDestination.Hand,
+                        destination = CardDestination.Deck,
                         amount = 1
                     }
                 };

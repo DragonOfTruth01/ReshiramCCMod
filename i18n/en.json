@@ -163,7 +163,7 @@
       "name": "Glaciate",
       "description": {
         "None": "Add an <c=card>Ice Needle</c> to your hand.",
-        "A": "Add an <c=card>Ice Needle A</c> to your hand.",
+        "A": "Add an <c=card>Ice Needle A</c> to your draw pile.",
         "B": "Add 1 <c=card>Ice Needle</c> to your hand. Add 2 more to your discard pile."
       }
     },

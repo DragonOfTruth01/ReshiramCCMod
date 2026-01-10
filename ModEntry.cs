@@ -381,7 +381,7 @@ public sealed class ModEntry : SimpleMod
             {
                 color = new Color("de543d"),
 
-                titleColor = new Color("202020")
+                titleColor = new Color("000000")
             },
 
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
@@ -396,7 +396,7 @@ public sealed class ModEntry : SimpleMod
             {
                 color = new Color("86cece"),
 
-                titleColor = new Color("202020")
+                titleColor = new Color("000000")
             },
 
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
