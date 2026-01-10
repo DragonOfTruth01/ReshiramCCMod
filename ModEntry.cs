@@ -91,6 +91,14 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Neutral_2 { get; }
 
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Neutral_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Neutral_2 { get; }
+
     internal ISpriteEntry ReshiramCCMod_Character_Mini_0 { get; }
 
     internal ISpriteEntry ReshiramCCMod_Character_Squint_0 { get; }
@@ -100,6 +108,14 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_0 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_1 { get; }
     internal ISpriteEntry ReshiramCCMod_Character_Victini_Squint_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Squint_2 { get; }
+
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_0 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_1 { get; }
+    internal ISpriteEntry ReshiramCCMod_Character_WKyurem_Victini_Squint_2 { get; }
 
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyOverheat { get; }
     internal ISpriteEntry ReshiramCCMod_Icon_EnemyNotOverheat { get; }
@@ -323,6 +339,14 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Victini_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_1.png"));
         ReshiramCCMod_Character_Victini_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_neutral_2.png"));
 
+        ReshiramCCMod_Character_WKyurem_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_0.png"));
+        ReshiramCCMod_Character_WKyurem_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_1.png"));
+        ReshiramCCMod_Character_WKyurem_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_neutral_2.png"));
+    
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_0.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_1.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Neutral_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_neutral_2.png"));
+
         ReshiramCCMod_Character_Mini_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_mini_0.png"));
 
         ReshiramCCMod_Character_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/reshi/ReshiramCCMod_character_reshi_squint_0.png"));
@@ -332,6 +356,14 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Character_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_0.png"));
         ReshiramCCMod_Character_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_1.png"));
         ReshiramCCMod_Character_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/victini/ReshiramCCMod_character_victini_squint_2.png"));
+
+        ReshiramCCMod_Character_WKyurem_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_0.png"));
+        ReshiramCCMod_Character_WKyurem_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_1.png"));
+        ReshiramCCMod_Character_WKyurem_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem/ReshiramCCMod_character_wkyurem_squint_2.png"));
+
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_0 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_0.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_1 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_1.png"));
+        ReshiramCCMod_Character_WKyurem_Victini_Squint_2 = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/wkyurem_victini/ReshiramCCMod_character_wkyurem_victini_squint_2.png"));
 
         ReshiramCCMod_Icon_EnemyOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyOverheat.png"));
         ReshiramCCMod_Icon_EnemyNotOverheat = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/enemyNotOverheat.png"));
@@ -459,6 +491,40 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+
+            LoopTag = "neutral_wkyurem",
+
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Neutral_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+
+            LoopTag = "neutral_wkyurem_victini",
+
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Neutral_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "mini",
             Frames = new[]
             {
@@ -500,6 +566,36 @@ public sealed class ModEntry : SimpleMod
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "squint_wkyurem",
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Squint_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "squint_wkyurem_victini",
+            Frames = new[]
+            {
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_2.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_1.Sprite,
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_2.Sprite
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
             LoopTag = "gameover",
             Frames = new[]
             {
@@ -516,6 +612,28 @@ public sealed class ModEntry : SimpleMod
             {
                 // The squint sprite is okay to use here...
                 ReshiramCCMod_Character_Victini_Squint_0.Sprite,
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_wkyurem",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_WKyurem_Squint_0.Sprite,
+            }
+        });
+
+        helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
+        {
+            CharacterType = ReshiramCCMod_Deck.Deck.Key(),
+            LoopTag = "gameover_wkyurem_victini",
+            Frames = new[]
+            {
+                // The squint sprite is okay to use here...
+                ReshiramCCMod_Character_WKyurem_Victini_Squint_0.Sprite,
             }
         });
         
