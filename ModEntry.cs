@@ -156,16 +156,7 @@ public sealed class ModEntry : SimpleMod
     internal IStatusEntry One { get; }
     internal IStatusEntry Two { get; }
 
-    // NOTE TO SELF ABOUT CARDS:
-    // It would be cool to have them follow these rules:
-    // Fire cards (cards reated to heat) should have red backgrounds (and are usually associated with the smoldering status)
-    // Dragon cards should have purple backgrounds (and are usually associated with the flammable status)
-    // Ice cards (kyurem cards) can have light blue backgrounds (and are associated with engine lock)
-    // Other cards could be associated with colors related to the type of the move from pokemon
-
-    /* You can create many IReadOnlyList<Type> as a way to organize your content.
-     * We recommend having a Starter Cards list, a Common Cards list, an Uncommon Cards list, and a Rare Cards list
-     * However you can be more detailed, or you can be more loose, if that's your style */
+    // Define our lists of cards
     internal static IReadOnlyList<Type> ReshiramCCModCharacter_CommonCard_Types { get; } = [
         typeof(CardIncinerate),
         typeof(CardDragonClaw),
@@ -214,9 +205,7 @@ public sealed class ModEntry : SimpleMod
         typeof(CardReshiramEXE)
     ];
 
-    /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
-     * Maybe you created a new list for Uncommon cards, and want to add it.
-     * If so, you can .Concat(TheUncommonListYouMade) */
+    // Combine all the lists into a single object for reference
     internal static IEnumerable<Type> ReshiramCCMod_AllCard_Types = [
         .. ReshiramCCModCharacter_CommonCard_Types,
         .. ReshiramCCModCharacter_UncommonCard_Types,
@@ -226,7 +215,7 @@ public sealed class ModEntry : SimpleMod
         .. ReshiramCCModCharacter_ExeCard_Types
     ];
 
-    /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
+    // Define our artifact lists
     internal static IReadOnlyList<Type> ReshiramCCMod_CommonArtifact_Types { get; } = [
         typeof(ArtifactHeatRock),
         typeof(ArtifactFlameOrb),
@@ -234,20 +223,23 @@ public sealed class ModEntry : SimpleMod
         typeof(ArtifactRawstBerry),
         typeof(ArtifactLibertyPass)
     ];
+
     internal static IReadOnlyList<Type> ReshiramCCMod_BossArtifact_Types { get; } = [
         typeof(ArtifactFireGem),
         typeof(ArtifactDnaSplicers)
     ];
-    internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types
-        => ReshiramCCMod_CommonArtifact_Types
-        .Concat(ReshiramCCMod_BossArtifact_Types);
+
+    // Combine all the artifacts into a single list
+    internal static IEnumerable<Type> ReshiramCCMod_AllArtifact_Types = [
+        .. ReshiramCCMod_CommonArtifact_Types,
+        .. ReshiramCCMod_BossArtifact_Types
+    ];
 
 
     public ModEntry(IPluginPackage<IModManifest> package, IModHelper helper, ILogger logger) : base(package, helper, logger)
     {
         Instance = this;
 
-        // Kokoro is needed to handle statuses
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!.V2;
 
         Harmony = new Harmony("DragonOfTruth01.ReshiramCCMod");
@@ -257,12 +249,7 @@ public sealed class ModEntry : SimpleMod
         // the patch hasn't been given visibility via constructor). This is expected behavior.
         Harmony.PatchAll();
 
-        /* These localizations lists help us organize our mod's text and messages by language.
-         * For general use, prefer AnyLocalizations, as that will provide an easier time to potential localization submods that are made for your mod 
-         * IMPORTANT: These localizations are found in the i18n folder (short for internationalization). The Demo Mod comes with a barebones en.json localization file that you might want to check out before continuing 
-         * Whenever you add a card, artifact, character, ship, pretty much whatever, you will want to update your locale file in i18n with the necessary information
-         * Example: You added your own character, you will want to create an appropiate entry in the i18n file. 
-         * If you would rather use simple strings whenever possible, that's also an option -you do you. */
+        // Setup localization support
         AnyLocalizations = new JsonLocalizationProvider(
             tokenExtractor: new SimpleLocalizationTokenExtractor(),
             localeStreamFunction: locale => package.PackageRoot.GetRelativeFile($"i18n/{locale}.json").OpenRead()
@@ -271,12 +258,10 @@ public sealed class ModEntry : SimpleMod
             new CurrentLocaleOrEnglishLocalizationProvider<IReadOnlyList<string>>(AnyLocalizations)
         );
 
-        // When loading the mod, always default to the regular Reshiram variant
-        // This may have to change when loading a run - maybe by doing a relic check
+        // When loading the mod, default to the regular Reshiram variant
+        // This gets updated each frame depending on which relics you have
         currCharVariant = CharacterVariant.Reshiram;
 
-        /* Assigning our ISpriteEntry objects manually. This is the easiest way to do it when starting out!
-         * Of note: GetRelativeFile is case sensitive. Double check you've written the file names correctly */
         ReshiramCCMod_Character_CardBackground = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/CardBGs/ReshiramCCMod_character_cardbackground.png"));
         ReshiramCCMod_Character_CardFrame = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/characters/ReshiramCCMod_character_cardframe.png"));
 
@@ -389,30 +374,22 @@ public sealed class ModEntry : SimpleMod
         ReshiramCCMod_Icon_One = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/one.png"));
         ReshiramCCMod_Icon_Two = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/icons/two.png"));
 
-        /* Decks are assigned separate of the character. This is because the game has decks like Trash which is not related to a playable character
-         * Do note that Color accepts a HEX string format (like Color("a1b2c3")) or a Float RGB format (like Color(0.63, 0.7, 0.76). It does NOT allow a traditional RGB format (Meaning Color(161, 178, 195) will NOT work) */
+        // Register the mod character's deck
         ReshiramCCMod_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModDeck", new DeckConfiguration()
         {
             Definition = new DeckDef()
             {
-                /* This color is used in various situations. 
-                 * It is used as the deck's rarity 'shine'
-                 * If a playable character uses this deck, the character Name will use this color
-                 * If a playable character uses this deck, the character mini panel will use this color */
                 color = new Color("f4f7f0"),
-
-                /* This color is for the card name in-game
-                 * Make sure it has a good contrast against the CardFrame, and take rarity 'shine' into account as well */
                 titleColor = new Color("000000")
             },
-            /* We give it a default art and border some Sprite types by adding '.Sprite' at the end of the ISpriteEntry definitions we made above. */
+
             DefaultCardArt = ReshiramCCMod_Character_CardBackground.Sprite,
             BorderSprite = ReshiramCCMod_Character_CardFrame.Sprite,
 
-            /* Since this deck will be used by our Demo Character, we'll use their name. */
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod", "name"]).Localize,
         });
 
+        // Register the alt starters for the MoreDifficulties mod
         helper.ModRegistry.AwaitApi<IMoreDifficultiesApi>(
             "TheJazMaster.MoreDifficulties",
             new SemanticVersion(1, 3, 0),
@@ -429,6 +406,7 @@ public sealed class ModEntry : SimpleMod
             )
         );  
 
+        // Register NPC Decks
         ReshiramCCMod_Victini_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModVictiniDeck", new DeckConfiguration()
         {
             Definition = new DeckDef()
@@ -459,31 +437,15 @@ public sealed class ModEntry : SimpleMod
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod_WKyurem", "name"]).Localize,
         });
 
-        // Register NPC Decks
-
-        /* Let's create some animations, because if you were to boot up this mod from what you have above,
-         * DemoCharacter would be a blank void inside a box, we haven't added their sprites yet! 
-         * We first begin by registering the animations. I know, weird. 'Why are we making animations when we still haven't made the character itself', stick with me, okay? 
-         * Animations are actually assigned to Deck types, not Characters! */
-
-        /*Of Note: You may notice we aren't assigning these ICharacterAnimationEntry and ICharacterEntry to any object, unlike stuff above,
-        * It's totally fine to assign them if you'd like, but we don't have a reason to so in this mod */
+        // Register character animations
         helper.Content.Characters.V2.RegisterCharacterAnimation(new CharacterAnimationConfigurationV2()
         {
-            /* What we registered above was an IDeckEntry object, but when you register a character animation the Helper will ask for you to provide its Deck 'id'
-             * This is simple enough, as you can get it from ReshiramCCMod_Deck */
             CharacterType = ReshiramCCMod_Deck.Deck.Key(),
 
-            /* The Looptag is the 'name' of the animation. When making shouts and events, and you want your character to show emotions, the LoopTag is what you want
-             * In vanilla Cobalt Core, there are 4 'animations' looptags that any character should have: "neutral", "mini", "squint" and "gameover",
-             * as these are used in: Neutral is used as default, mini is used in character select and out-of-combat UI, Squink is hardcoded used in certain events, and Gameover is used when your run ends */
             LoopTag = "neutral",
 
-            /* The game doesn't use frames properly when there are only 2 or 3 frames. If you want a proper animation, avoid only adding 2 or 3 frames to it */
             Frames = new[]
             {
-                // ThE GaMe DoEsNt UsE fRaMeS pRoPeRlY wHeN tHeRe ArE oNlY 2 oR 3 fRaMeS
-                // get looped idiot
                 ReshiramCCMod_Character_Neutral_0.Sprite,
                 ReshiramCCMod_Character_Neutral_1.Sprite,
                 ReshiramCCMod_Character_Neutral_2.Sprite,
@@ -550,7 +512,6 @@ public sealed class ModEntry : SimpleMod
             LoopTag = "mini",
             Frames = new[]
             {
-                /* Mini only needs one sprite. We call it animation just because we add it the same way as other expressions. */
                 ReshiramCCMod_Character_Mini_0.Sprite
             }
         });
@@ -659,14 +620,11 @@ public sealed class ModEntry : SimpleMod
             }
         });
         
-        /* Let's continue with the character creation and finally, actually, register the character! */
+        // Register the mod character as a playable character
         helper.Content.Characters.V2.RegisterPlayableCharacter("ReshiramCCMod", new PlayableCharacterConfigurationV2()
         {
-            /* Same as animations, we want to provide the appropiate Deck type */
             Deck = ReshiramCCMod_Deck.Deck,
 
-            /* The Starter Card Types are, as the name implies, the cards you will start a DemoCharacter run with. 
-             * You could provide vanilla cards if you want, but it's way more fun to create your own cards! */
             Starters = new()
             {
                 cards = [
@@ -675,43 +633,20 @@ public sealed class ModEntry : SimpleMod
                 ]
             },
 
-            /* This is the little blurb that appears when you hover over the character in-game.
-             * You can make it fluff, use it as a way to tell players about the character's playstyle, or a little bit of both! */
             Description = AnyLocalizations.Bind(["character", "ReshiramCCMod", "description"]).Localize,
 
-            /* This is the fancy panel that encapsulates your character while in active combat.
-             * It's recommended that it follows the same color scheme as the character and deck, for cohesion */
             BorderSprite = ReshiramCCMod_Character_Panel.Sprite
         });
 
-        /* The basics for a Character mod are done!
-         * But you may still have mechanics you want to tackle, such as,
-         * 1. How to make cards
-         * 2. How to make artifacts
-         * 3. How to make ships
-         * 4. How to make statuses */
-
-        /* 1. CARDS
-         * DemoMod comes with a neat folder called Cards where all the .cs files for our cards are stored. Take a look.
-         * You can decide to not use the folder, or to add more folders to further organize your cards. That is up to you.
-         * We do recommend keeping files organized, however. It's way easier to traverse a project when the paths are clear and meaningful */
-
-        /* Here we register our cards so we can find them in game.
-         * Notice the IDemoCard interface, you can find it in InternalInterfaces.cs
-         * Each card in the IEnumerable 'ReshiramCCMod_AllCard_Types' will be asked to run their 'Register' method. Open a card's .cs file, and see what it does 
-         * We *can* instead register characts one by one, like what we did with the sprites. If you'd like an example of what that looks like, check out the Randall mod by Arin! */
+        // Register our cards
         foreach (var cardType in ReshiramCCMod_AllCard_Types)
             AccessTools.DeclaredMethod(cardType, nameof(IReshiramCCModCard.Register))?.Invoke(null, [helper]);
 
-        /* 2. ARTIFACTS
-         * Creating artifacts is pretty similar to creating Cards
-         * Take a look at the Artifacts folder for demo artifacts!
-         * You may also notice we're using the other interface from InternalInterfaces.cs, IDemoArtifact, to help us out */
+        // Register our artifacts
         foreach (var artifactType in ReshiramCCMod_AllArtifact_Types)
             AccessTools.DeclaredMethod(artifactType, nameof(IReshiramCCModArtifact.Register))?.Invoke(null, [helper]);
 
-        /* 4. STATUSES
-         * You might, now, with all this code behind our backs, start recognizing patterns in the way we can register stuff. */
+        // Register our statuses
         Smoldering = helper.Content.Statuses.RegisterStatus("Smoldering", new()
         {
             Definition = new()
