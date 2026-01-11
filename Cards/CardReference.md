@@ -20,7 +20,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Uncommon | Sunny Day | 1 | Change field effect to solar flare. Gain 2 heat resist. | Instead gain 3 heat resist. Also gain 1 serenity. | Remove exhaust. If solar flare is already active, also apply 2 flammable. |
 | Yes | Uncommon | Hone Claws | 1 | Gain 2 overdrive. Gain 3 heat and 1 flammable. Exhaust. | Reduce cost to 0. | Instead gain 1 powerdrive. |
 | Yes | Uncommon | Solar Beam | 1 | Deal piercing damage equal to your heat + enemy heat. Exhaust. | Card gains retain. | You and the enemy gain 1 heat before the attack. |
-| Yes | Uncommon | Fire Fang | 1 | Attack 1. Enemy gains 1 heat. Reduce heat by 1. | Apply 1 smoldering before attack. | Increase attack to 3 and add pierce. Gain 1 heat instead. |
+| Yes | Uncommon | Fire Fang | 1 | Attack 1 pierce. Enemy gains 2 heat. Reduce heat by 1. | Apply 1 smoldering before attack. | Increase attack to 3 and heat to 3. Gain 1 heat instead. |
 | Yes | Uncommon | Imprison | 2 | Gain 3 temp shield. Cancel all enemy's non-attack actions (outgoing). | Also reduce heat by 1. | Also gain 1 energy next turn. Gain 1 heat. |
 | Yes | Uncommon | Overheat | 1 | Enemy gains 1 smoldering, 3 heat, and 2 flammable (outgoing). Gain 3 heat. Exhaust. | Reduce self heat gain to 2. | Increase smoldering to 2. |
 ||||||||
