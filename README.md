@@ -15,11 +15,11 @@ This README was made using Louis3797's awesome-readme-template
 This mod adds the following:
 
 - <b>1</b> Character
-- <b>29</b> Cards
+- <b>30</b> Cards
   - <b>10</b> common
   - <b>8</b> uncommon
   - <b>6</b> rare
-  - <b>5</b> other
+  - <b>6</b> other
 - <b>7</b> Artifacts
   - <b>5</b> common
   - <b>2</b> boss
