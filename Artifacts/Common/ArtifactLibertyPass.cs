@@ -26,16 +26,8 @@ internal sealed class ArtifactLibertyPass : Artifact, IReshiramCCModArtifact
 
     public override void OnReceiveArtifact(State state)
     {
-        state.GetCurrentQueue().Add(new AAddCard
-        {
-            amount = 1,
-            card = new CardSearingShot()
-        });
-        state.GetCurrentQueue().Add(new AAddCard
-        {
-            amount = 1,
-            card = new CardVCreate()
-        });
+        state.deck.Add(new CardSearingShot());
+        state.deck.Add(new CardVCreate());
     }
 
     public override List<Tooltip>? GetExtraTooltips()

@@ -43,16 +43,9 @@ internal sealed class ArtifactDnaSplicers : Artifact, IReshiramCCModArtifact
 
     public override void OnReceiveArtifact(State state)
     {
-        state.GetCurrentQueue().Add(new AAddCard
-        {
-            amount = 1,
-            card = new CardGlaciate()
-        });
-        state.GetCurrentQueue().Add(new AAddCard
-        {
-            amount = 1,
-            card = new CardIceBurn()
-        });
+        
+        state.deck.Add(new CardGlaciate());
+        state.deck.Add(new CardIceBurn());
     }
 
     public override void OnCombatStart(State state, Combat combat)
