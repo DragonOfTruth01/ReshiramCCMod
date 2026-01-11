@@ -172,6 +172,14 @@
     },
     "Ice Burn": {
       "name": "Ice Burn"
+    },
+    "Reshiram.EXE": {
+      "name": "Reshiram\n.EXE",
+      "description": {
+        "None": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=f4f7f0>Reshiram</c> cards to your hand.",
+        "A": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=f4f7f0>Reshiram</c> cards to your hand.",
+        "B": "Add 1 of 3 <c=cardtrait>discount, temp</c> <c=f4f7f0>Reshiram</c> cards to your hand."
+      }
     }
   },
   "midrow":{
