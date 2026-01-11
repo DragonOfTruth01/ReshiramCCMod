@@ -63,7 +63,7 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                         damage = GetDmg(s, 2),
                         piercing = true,
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new ADrawCard()
                     {
@@ -84,7 +84,7 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                         damage = GetDmg(s, 3),
                         piercing = true,
                         status = Status.heat,
-                        statusAmount = 1
+                        statusAmount = 2
                     },
                     new AStatus()
                     {

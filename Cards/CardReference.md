@@ -28,7 +28,7 @@ This document acts as a reference for which cards are part of this mod.
 | Yes | Rare | Blue Flare | 3 | Attack 3. Enemy gains 4 flammable. Exhaust. | Reduce cost to 2. | Increase cost to 4. Increase damage to 5 and flammable to 6. |
 | Yes | Rare | Draco Meteor | 3 | Attack 2 + 2 heat, 2 + 1 flammable, 3. Lose 1 energy next turn. Exhaust. | Remove next turn energy loss. | Enemy gains 3 heat and 2 flammable instead. |
 | Yes | Rare | Roost | 2 | Heal 2 HP. Reduce heat by 3. Gain 2 flammable. Exhaust. | Card gains retain. | Also gain 2 shield. |
-| Yes | Rare | Outrage | 1 | Deal 2 piercing damage. Draw a card. Discard a card at random. Infinite. | Also inflict 1 heat on the enemy. | Increase damage to 3 and apply 1 heat. Gain 1 heat. |
+| Yes | Rare | Outrage | 1 | Deal 2 piercing damage. Draw a card. Discard a card at random. Infinite. | Also inflict 2 heat on the enemy. | Increase damage to 3 and apply 2 heat. Gain 1 heat. |
 | Yes | Rare | Safeguard | 0 | Gain 1 safeguard. Exhaust. | Card gains retain. | Gain 2 heat. Increase safeguard gain to 2. |
 ||||||||
 | Yes | Uncommon (Kyurem) | Glaciate | 1 | Add a temp Ice Needle to your hand. | Add a temp Ice Needle A to your draw pile. | Add 1 temp Ice Needle to your hand, and 2 to your discard pile. Card gains exhaust. |
