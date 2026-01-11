@@ -1,4 +1,5 @@
 ﻿using Nickel;
+using Nickel.Common;
 using HarmonyLib;
 using DragonOfTruth01.ReshiramCCMod.Cards;
 using DragonOfTruth01.ReshiramCCMod.Artifacts;
@@ -406,6 +407,22 @@ public sealed class ModEntry : SimpleMod
             /* Since this deck will be used by our Demo Character, we'll use their name. */
             Name = AnyLocalizations.Bind(["character", "ReshiramCCMod", "name"]).Localize,
         });
+
+        helper.ModRegistry.AwaitApi<IMoreDifficultiesApi>(
+            "TheJazMaster.MoreDifficulties",
+            new SemanticVersion(1, 3, 0),
+            api => api.RegisterAltStarters(
+                deck: ReshiramCCMod_Deck.Deck,
+                starterDeck: new StarterDeck
+                {
+                    cards = [
+                        new CardFlameCharge(),
+                        new CardLightScreen(),
+                    ]
+                }
+
+            )
+        );  
 
         ReshiramCCMod_Victini_Deck = helper.Content.Decks.RegisterDeck("ReshiramCCModVictiniDeck", new DeckConfiguration()
         {
