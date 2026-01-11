@@ -210,6 +210,10 @@ public sealed class ModEntry : SimpleMod
         typeof(CardIceNeedle)
     ];
 
+    internal static IReadOnlyList<Type> ReshiramCCModCharacter_ExeCard_Types { get; } = [
+        typeof(CardReshiramEXE)
+    ];
+
     /* We can use an IEnumerable to combine the lists we made above, and modify it if needed
      * Maybe you created a new list for Uncommon cards, and want to add it.
      * If so, you can .Concat(TheUncommonListYouMade) */
@@ -218,7 +222,8 @@ public sealed class ModEntry : SimpleMod
         .. ReshiramCCModCharacter_UncommonCard_Types,
         .. ReshiramCCModCharacter_RareCard_Types,
         .. ReshiramCCModCharacter_VictiniCard_Types,
-        .. ReshiramCCModCharacter_WKyuremCard_Types
+        .. ReshiramCCModCharacter_WKyuremCard_Types,
+        .. ReshiramCCModCharacter_ExeCard_Types
     ];
 
     /* We'll organize our artifacts the same way: making lists and then feed those to an IEnumerable */
