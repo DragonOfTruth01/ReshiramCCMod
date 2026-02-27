@@ -26,6 +26,11 @@ internal sealed class ArtifactFlameOrb : Artifact, IReshiramCCModArtifact
         });
     }
 
+    public override List<Tooltip>? GetExtraTooltips()
+    => [
+        .. StatusMeta.GetTooltips(ModEntry.Instance.HeatResist.Status, -1)
+    ];
+
     [HarmonyPostfix]
 	[HarmonyPatch(typeof(Ship), "CanBeNegative")]
     private static void Ship_CanBeNegative_Postfix(Status status, ref bool __result)
