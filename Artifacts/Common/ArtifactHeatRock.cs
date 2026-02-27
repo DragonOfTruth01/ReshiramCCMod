@@ -24,6 +24,11 @@ internal sealed class ArtifactHeatRock : Artifact, IReshiramCCModArtifact
         });
     }
 
+    public override List<Tooltip>? GetExtraTooltips()
+    => [
+        .. StatusMeta.GetTooltips(ModEntry.Instance.Flammable.Status, 1)
+    ];
+
     public override void OnCombatStart(State s, Combat c)
     {
         c.Queue([
