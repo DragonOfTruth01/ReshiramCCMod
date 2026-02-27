@@ -27,6 +27,11 @@ internal sealed class ArtifactCharcoal : Artifact, IReshiramCCModArtifact
         });
     }
 
+    public override List<Tooltip>? GetExtraTooltips()
+    => [
+        .. StatusMeta.GetTooltips(ModEntry.Instance.Smoldering.Status, 1)
+    ];
+
     public int counter = 0;
     public readonly int artifactTriggerAmt = 3;
 

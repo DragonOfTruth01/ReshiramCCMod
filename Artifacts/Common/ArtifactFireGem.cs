@@ -35,6 +35,11 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
         public bool triggered;
     }
 
+    public override List<Tooltip>? GetExtraTooltips()
+    => [
+        .. StatusMeta.GetTooltips(Status.overdrive, 1)
+    ];
+
     [HarmonyPrefix]
     [HarmonyPatch(typeof(AStatus), "Begin")]
     private static void AStatus_Begin_Prefix(AStatus __instance, State s, out HarmonyRef __state)

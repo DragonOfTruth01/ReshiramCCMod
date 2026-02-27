@@ -27,19 +27,17 @@ internal sealed class ArtifactDnaSplicers : Artifact, IReshiramCCModArtifact
     }
 
     public override List<Tooltip>? GetExtraTooltips()
-    {
-        return new List<Tooltip>
+    => [
+        new TTCard
         {
-            new TTCard
-            {
-                card = new CardGlaciate()
-            },
-            new TTCard
-            {
-                card = new CardIceBurn()
-            }
-        };
-    }
+            card = new CardGlaciate()
+        },
+        new TTCard
+        {
+            card = new CardIceBurn()
+        },
+        .. StatusMeta.GetTooltips(ModEntry.Instance.Thermosensitive.Status, 1)
+    ];
 
     public override void OnReceiveArtifact(State state)
     {
