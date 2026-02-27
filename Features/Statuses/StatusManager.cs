@@ -164,18 +164,18 @@ internal sealed class StatusManager : IKokoroApi.IV2.IStatusLogicApi.IHook, IKok
 
     public bool HandleStatusTurnAutoStep(IKokoroApi.IV2.IStatusLogicApi.IHook.IHandleStatusTurnAutoStepArgs args)
     {
-        // Handle start-of-turn decrements for safeguard and frozen
-        if ( args.Timing != IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnStart
-             && (args.Status == Instance.Safeguard.Status || args.Status == Instance.Frozen.Status)
+        // Handle start-of-turn decrements for smoldering
+        if ( args.Timing == IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnStart
+             && args.Status == Instance.Smoldering.Status
              && args.Amount > 0)
         {
             args.Amount -= 1;
             return false;
         }
 
-        // Handle end-of-turn decrements for smoldering
-        if ( args.Timing != IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnEnd
-             && args.Status == Instance.Smoldering.Status
+        // Handle end-of-turn decrements for safeguard and frozen
+        if ( args.Timing == IKokoroApi.IV2.IStatusLogicApi.StatusTurnTriggerTiming.TurnEnd
+             && (args.Status == Instance.Safeguard.Status || args.Status == Instance.Frozen.Status)
              && args.Amount > 0)
         {
             args.Amount -= 1;
