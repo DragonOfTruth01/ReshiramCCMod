@@ -37,7 +37,6 @@ internal sealed class ArtifactFireGem : Artifact, IReshiramCCModArtifact
 
     public override List<Tooltip>? GetExtraTooltips()
     => [
-        .. StatusMeta.GetTooltips(Status.heat, 3),
         .. StatusMeta.GetTooltips(Status.overdrive, 1)
     ];
 
