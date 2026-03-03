@@ -44,7 +44,7 @@ public sealed class AVCreateAttack : CardAction
                 });
             c.QueueImmediate(new ADelay
                 {
-                    timer = 0.5
+                    timer = 0.2
                 });
         }
 
@@ -64,7 +64,7 @@ public sealed class AVCreateAttack : CardAction
                 });
             c.QueueImmediate(new ADelay
                 {
-                    timer = 0.5
+                    timer = 0.2
                 });
         }
 
