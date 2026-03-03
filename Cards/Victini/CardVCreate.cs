@@ -49,7 +49,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
 
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AExhaustLeftRight(),
-                        new ADummyAction()
+                        new ADummyAction(){ timer = 0.0f }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
@@ -62,7 +62,8 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                         {
                             damageAmount = GetDmg(s, 3),
                             smolderingAmount = 2,
-                            heatAmount = 0
+                            heatAmount = 0,
+                            timer = 0.0f
                         }
                     ).AsCardAction
                 };
@@ -75,7 +76,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
 
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AExhaustLeftRight(),
-                        new ADummyAction()
+                        new ADummyAction(){ timer = 0.0f }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
@@ -88,7 +89,8 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                         {
                             damageAmount = GetDmg(s, 3),
                             smolderingAmount = 2,
-                            heatAmount = 3
+                            heatAmount = 3,
+                            timer = 0.0f
                         }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
@@ -109,7 +111,7 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
 
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AExhaustLeftRight(),
-                        new ADummyAction()
+                        new ADummyAction(){ timer = 0.0f }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new AAttack()
@@ -122,7 +124,8 @@ internal sealed class CardVCreate : Card, IReshiramCCModCard
                         {
                             damageAmount = GetDmg(s, 5),
                             smolderingAmount = 3,
-                            heatAmount = 0
+                            heatAmount = 0,
+                            timer = 0.0f
                         }
                     ).AsCardAction
                 };
