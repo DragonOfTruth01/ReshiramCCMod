@@ -41,8 +41,14 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 3),
                         piercing = true
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
                     },
                     new ADrawCard()
                     {
@@ -60,10 +66,16 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 2),
+                        damage = GetDmg(s, 3),
                         piercing = true,
                         status = Status.heat,
                         statusAmount = 2
+                    },
+                    new AStatus()
+                    {
+                        status = Status.heat,
+                        statusAmount = 1,
+                        targetPlayer = true
                     },
                     new ADrawCard()
                     {
@@ -81,7 +93,7 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                 {
                     new AAttack()
                     {
-                        damage = GetDmg(s, 3),
+                        damage = GetDmg(s, 4),
                         piercing = true,
                         status = Status.heat,
                         statusAmount = 2
@@ -89,7 +101,7 @@ internal sealed class CardOutrage : Card, IReshiramCCModCard
                     new AStatus()
                     {
                         status = Status.heat,
-                        statusAmount = 1,
+                        statusAmount = 2,
                         targetPlayer = true
                     },
                     new ADrawCard()
