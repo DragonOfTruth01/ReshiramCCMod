@@ -90,7 +90,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
-                            secondStatus = ModEntry.Instance.One.Status
+                            secondStatus = ModEntry.Instance.One.Status,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -98,7 +99,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AAttack()
                         {
                             damage = GetDmg(s, 1) + rightmostEnergyVal,
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -107,7 +109,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         {
                             status = Status.heat,
                             statusAmount = 1 + rightmostEnergyVal,
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction
@@ -157,14 +160,16 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new ADamageHeatRightmostExhaust()
                         {
                             damageMod = GetDmg(s, 2 + 10), // +10/-10 to workaround conflicts w/ damage calculation
-                            heatMod = 2
+                            heatMod = 2,
+                            disabled = c.hand.Count() == 1
                         }
                     ).AsCardAction,
                     ModEntry.Instance.KokoroApi.SpoofedActions.MakeAction(
                         new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
-                            secondStatus = ModEntry.Instance.Two.Status
+                            secondStatus = ModEntry.Instance.Two.Status,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -172,7 +177,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AAttack()
                         {
                             damage = GetDmg(s, 2) + rightmostEnergyVal,
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -181,7 +187,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         {
                             status = Status.heat,
                             statusAmount = 2 + rightmostEnergyVal,
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction
@@ -200,7 +207,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         browseAction = new ChooseCardInYourHandToSearingShot()
                         {
                             damageMod = GetDmg(s, 1 + 10), // +10/-10 to workaround conflicts w/ damage calculation
-                            heatMod = 1
+                            heatMod = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         browseSource = CardBrowse.Source.Hand
                     }
@@ -209,7 +217,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new ASearingShotVariableHint()
                         {
                             status = ModEntry.Instance.ExhaustEnergy.Status,
-                            secondStatus = ModEntry.Instance.One.Status
+                            secondStatus = ModEntry.Instance.One.Status,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -217,7 +226,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         new AAttack()
                         {
                             damage = GetDmg(s, 1),
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction,
@@ -226,7 +236,8 @@ internal sealed class CardSearingShot : Card, IReshiramCCModCard
                         {
                             status = Status.heat,
                             statusAmount = 1,
-                            xHint = 1
+                            xHint = 1,
+                            disabled = c.hand.Count() == 1
                         },
                         new ADummyAction()
                     ).AsCardAction
