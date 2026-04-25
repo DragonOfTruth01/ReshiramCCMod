@@ -653,7 +653,8 @@ public sealed class ModEntry : SimpleMod
             {
                 icon = ReshiramCCMod_Icon_Smoldering.Sprite,
                 color = new("8b93af"),
-                isGood = false
+                isGood = false,
+                affectedByTimestop = true
             },
             Name = AnyLocalizations.Bind(["status", "Smoldering", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Smoldering", "description"]).Localize
@@ -677,7 +678,8 @@ public sealed class ModEntry : SimpleMod
             {
                 icon = ReshiramCCMod_Icon_Safeguard.Sprite,
                 color = new("249fde"),
-                isGood = true
+                isGood = true,
+                affectedByTimestop = true
             },
             Name = AnyLocalizations.Bind(["status", "Safeguard", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Safeguard", "description"]).Localize
@@ -701,7 +703,8 @@ public sealed class ModEntry : SimpleMod
             {
                 icon = ReshiramCCMod_Icon_Frozen.Sprite,
                 color = new("4485ab"),
-                isGood = false
+                isGood = false,
+                affectedByTimestop = true
             },
             Name = AnyLocalizations.Bind(["status", "Frozen", "name"]).Localize,
             Description = AnyLocalizations.Bind(["status", "Frozen", "description"]).Localize
