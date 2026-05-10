@@ -635,7 +635,9 @@ public sealed class ModEntry : SimpleMod
 
             Description = AnyLocalizations.Bind(["character", "ReshiramCCMod", "description"]).Localize,
 
-            BorderSprite = ReshiramCCMod_Character_Panel.Sprite
+            BorderSprite = ReshiramCCMod_Character_Panel.Sprite,
+
+            ExeCardType = typeof(CardReshiramEXE)
         });
 
         // Register our cards
