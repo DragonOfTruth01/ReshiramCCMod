@@ -27,7 +27,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
         CardData data = new CardData()
         {
             art = ModEntry.Instance.ReshiramCCMod_Character_CardDragonPulseBG.Sprite,
-            cost = 2
+            cost = 1
         };
         return data;
     }
@@ -48,7 +48,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyOverheatCondition(true),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 3),
+                            damage = GetDmg(s, 2),
                             piercing = true,
                             stunEnemy = true
                         }
@@ -62,7 +62,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 2)
+                            damage = GetDmg(s, 1)
                         }
                     );
 
@@ -88,7 +88,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                 {
                     new AAttack()
                         {
-                            damage = GetDmg(s, 3),
+                            damage = GetDmg(s, 2),
                             piercing = true,
                             stunEnemy = true
                         },
@@ -113,7 +113,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 3),
+                            damage = GetDmg(s, 2),
                             piercing = true,
                             stunEnemy = true
                         }
@@ -127,7 +127,7 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
                         new EnemyNotOverheatCondition(false),
                         new AAttack()
                         {
-                            damage = GetDmg(s, 2)
+                            damage = GetDmg(s, 1)
                         }
                     );
 
@@ -135,15 +135,21 @@ internal sealed class CardDragonPulse : Card, IReshiramCCModCard
 
                     cardActionList3.Add(act.AsCardAction);
 
-                }
+                    act = Conditional.MakeAction(
+                            new EnemyOverheatCondition(false),
+                            new AStatus()
+                            {
+                                status = ModEntry.Instance.Flammable.Status,
+                                statusAmount = 3,
+                                targetPlayer = false
+                            }
+                        );
 
-                cardActionList3.Add(
-                        new AStatus()
-                        {
-                            status = ModEntry.Instance.Flammable.Status,
-                            statusAmount = 2
-                        }
-                    );
+                    act.SetFadeUnsatisfied(false);
+
+                    cardActionList3.Add(act.AsCardAction);
+
+                }
 
                 actions = cardActionList3;
                 break;
